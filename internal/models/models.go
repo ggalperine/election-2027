@@ -94,10 +94,13 @@ type Summary struct {
 	NPollsters  int     `json:"n_pollsters"`
 	FirstPoll   string  `json:"first_poll"`
 	LastPoll    string  `json:"last_poll"`
-	Leader      string  `json:"leader"`
-	LeaderPct   float64 `json:"leader_pct"`
-	LeaderColor string  `json:"leader_color"`
-	Margin      float64 `json:"margin"` // leader − runner-up
+	Leader        string  `json:"leader"`
+	LeaderPct     float64 `json:"leader_pct"`
+	LeaderColor   string  `json:"leader_color"`
+	Margin        float64 `json:"margin"` // leader − runner-up
+	LastUpdated   string  `json:"last_updated"`    // when data was last ingested (RFC3339)
+	LatestPoll    string  `json:"latest_poll"`     // field_end of the most recent poll
+	LatestPollster string `json:"latest_pollster"` // institut of the most recent poll
 }
 
 // AggregatePoint is one candidate's weighted average with a 95% confidence interval.

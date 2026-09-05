@@ -19,6 +19,19 @@ export function frDate(iso: string): string {
   });
 }
 
+/** "2026-09-05T17:40:10Z" → "5 sept. 2026, 17:40" */
+export function frDateTime(iso: string): string {
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  return d.toLocaleString("fr-FR", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 /** "2026-09-01" → "sept. 26" (compact, for axis ticks) */
 export function frMonth(iso: string): string {
   const d = new Date(iso);

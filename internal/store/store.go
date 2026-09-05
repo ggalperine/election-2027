@@ -136,6 +136,19 @@ func (s *Store) RawResults(ctx context.Context, cycle string, round int) ([]mode
 	return out, rows.Err()
 }
 
+// LatestPoll returns the ingest time, field_end and institut of the most recent
+// poll for a cycle+round.
+func (s *Store) LatestPoll(ctx context.Context, cycle string, round int) (lastUpdated, fieldEnd time.Time, pollster string, err error) {
+	err = s.pool.QueryRow(ctx, `
+		SELECT (SELECT MAX(created_at) FROM polls WHERE cycle = $1 AND round = $2),
+		       p.field_end, ps.name
+		FROM polls p JOIN pollsters ps ON ps.id = p.pollster_id
+		WHERE p.cycle = $1 AND p.round = $2
+		ORDER BY p.field_end DESC, p.created_at DESC
+		LIMIT 1`, cycle, round).Scan(&lastUpdated, &fieldEnd, &pollster)
+	return
+}
+
 // PollsterStats returns per-institut activity for a cycle+round.
 func (s *Store) PollsterStats(ctx context.Context, cycle string, round int) ([]models.PollsterStat, error) {
 	rows, err := s.pool.Query(ctx, `

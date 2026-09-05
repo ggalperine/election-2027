@@ -1,6 +1,6 @@
 import { getSummary } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
-import { pct, frDate, safeColor } from "../lib/format";
+import { pct, frDate, frDateTime, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
 
 export function Summary({
@@ -68,6 +68,15 @@ export function Summary({
             <div className="tile-value tnum">{s.n_pollsters}</div>
           </div>
 
+          <div className="tile">
+            <div className="tile-label">Dernier sondage</div>
+            <div className="tile-value latest-poll-value">
+              <span className="latest-poll-pollster">{s.latest_pollster}</span>{" "}
+              <span className="arrow-sep">·</span>{" "}
+              <span className="latest-poll-date tnum">{frDate(s.latest_poll)}</span>
+            </div>
+          </div>
+
           <div className="tile period">
             <div className="tile-label">Période couverte</div>
             <div className="tile-value period-value tnum">
@@ -76,6 +85,12 @@ export function Summary({
             </div>
           </div>
         </div>
+      )}
+
+      {s && s.n_polls > 0 && (
+        <p className="summary-updated">
+          Mis à jour le {frDateTime(s.last_updated)}
+        </p>
       )}
     </div>
   );

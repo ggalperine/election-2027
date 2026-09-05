@@ -125,7 +125,13 @@ func main() {
 			respond(w, nil, err)
 			return
 		}
-		httpx.JSON(w, 200, buildSummary(cycle, round, rows, pstats))
+		sum := buildSummary(cycle, round, rows, pstats)
+		if lu, fe, ps, err := st.LatestPoll(req.Context(), cycle, round); err == nil {
+			sum.LastUpdated = lu.UTC().Format(time.RFC3339)
+			sum.LatestPoll = fe.Format("2006-01-02")
+			sum.LatestPollster = ps
+		}
+		httpx.JSON(w, 200, sum)
 	})
 
 	// Both forecast methods (Holt + weighted linear regression) for comparison.

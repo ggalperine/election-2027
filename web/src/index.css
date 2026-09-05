@@ -952,6 +952,32 @@ table.polls td.pollster {
   font-weight: 600;
   margin: 0 2px;
 }
+.stat-tiles .tile .latest-poll-value {
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 4px;
+}
+.stat-tiles .tile .latest-poll-pollster {
+  font-weight: 800;
+  color: var(--ink);
+}
+.stat-tiles .tile .latest-poll-date {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* Discreet "last updated" caption below the summary tiles. */
+.summary-updated {
+  margin: 10px 2px 0;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
 
 /* ============================================================= */
 /*  Momentum — KPI cards (who's rising / who's falling)          */

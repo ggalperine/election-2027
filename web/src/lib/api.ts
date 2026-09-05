@@ -75,6 +75,9 @@ export interface Summary {
   leader_pct: number;
   leader_color: string;
   margin: number; // leader − runner-up (percentage points)
+  last_updated: string; // RFC3339 datetime when data was last ingested
+  latest_poll: string; // date (YYYY-MM-DD) of the most recent poll
+  latest_pollster: string; // institut of the most recent poll
 }
 
 /** One institut's activity for a cycle+round. */
