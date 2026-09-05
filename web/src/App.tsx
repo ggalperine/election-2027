@@ -95,19 +95,19 @@ export function App() {
         <Summary cycle={cycle} round={round} window={window} />
 
         <Section
-          kicker="Dynamique"
-          title="Qui progresse, qui recule"
-          sub="Variation de la moyenne pondérée sur 30 jours."
-        >
-          <Momentum cycle={cycle} round={round} />
-        </Section>
-
-        <Section
           kicker="Instantané"
           title="Où en est la course"
           sub="Intentions de vote actuelles, agrégées et pondérées, avec leur marge d'incertitude."
         >
           <Leaderboard cycle={cycle} round={round} window={window} />
+        </Section>
+
+        <Section
+          kicker="Dynamique"
+          title="Qui progresse, qui recule"
+          sub="Variation de la moyenne pondérée sur 30 jours."
+        >
+          <Momentum cycle={cycle} round={round} />
         </Section>
 
         <Section
