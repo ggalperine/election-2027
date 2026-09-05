@@ -96,6 +96,19 @@ export interface HouseEffect {
   n_polls: number;
 }
 
+/** A candidate's momentum (change in weighted average over a lookback window). */
+export interface MomentumPoint {
+  candidate: string;
+  party: string;
+  color: string;
+  current: number; // current weighted average (pct)
+  previous: number; // weighted average at start of window (pct)
+  delta: number; // current − previous (percentage points)
+  per_week: number; // delta normalized to points/week
+  direction: "up" | "down" | "flat";
+  n_polls: number;
+}
+
 /* ------------------------------------------------------------------ */
 /* Fetch helper                                                        */
 /* ------------------------------------------------------------------ */
@@ -132,6 +145,11 @@ export const getPollsters = (cycle: string, round = 1) =>
 
 export const getHouseEffects = (cycle: string, round = 1) =>
   get<HouseEffect[]>(`/api/houseeffects?cycle=${cycle}&round=${round}`);
+
+export const getMomentum = (cycle: string, round = 1, lookback = 30) =>
+  get<MomentumPoint[]>(
+    `/api/momentum?cycle=${cycle}&round=${round}&lookback=${lookback}`
+  );
 
 export const getPolls = (cycle: string, round = 1, limit = 100) =>
   get<Poll[]>(`/api/polls?cycle=${cycle}&round=${round}&limit=${limit}`);

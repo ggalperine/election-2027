@@ -1365,3 +1365,12 @@
 19:14:31 [vite] hmr update /src/index.css
 19:14:43 [vite] hmr update /src/index.css
 19:15:08 [vite] hmr update /src/index.css
+19:41:08 [vite] hmr update /src/App.tsx, /src/components/Summary.tsx, /src/components/Leaderboard.tsx, /src/components/SourcesTable.tsx, /src/components/Instituts.tsx, /src/components/PollVsOutcome.tsx, /src/components/Forecast.tsx, /src/components/TrendTracker.tsx, /src/components/ScenarioLab.tsx, /src/components/LatestPolls.tsx
+19:41:13 [vite] hmr update /src/App.tsx, /src/components/Summary.tsx, /src/components/Leaderboard.tsx, /src/components/SourcesTable.tsx, /src/components/Instituts.tsx, /src/components/PollVsOutcome.tsx, /src/components/Forecast.tsx, /src/components/TrendTracker.tsx, /src/components/ScenarioLab.tsx, /src/components/LatestPolls.tsx
+19:41:35 [vite] hmr update /src/App.tsx
+19:41:39 [vite] hmr update /src/App.tsx
+19:41:54 [vite] hmr update /src/index.css
+19:42:39 [vite] hmr update /src/components/Leaderboard.tsx
+19:42:45 [vite] hmr update /src/components/Leaderboard.tsx
+19:42:54 [vite] hmr update /src/components/Leaderboard.tsx
+19:43:00 [vite] hmr update /src/index.css

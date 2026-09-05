@@ -3,6 +3,7 @@ import { getCycles } from "./lib/api";
 import { useAsync } from "./lib/useAsync";
 import { Section, Segmented } from "./components/ui";
 import { Summary } from "./components/Summary";
+import { Momentum } from "./components/Momentum";
 import { Leaderboard } from "./components/Leaderboard";
 import { TrendTracker } from "./components/TrendTracker";
 import { Forecast } from "./components/Forecast";
@@ -92,6 +93,14 @@ export function App() {
 
       <main className="app">
         <Summary cycle={cycle} round={round} window={window} />
+
+        <Section
+          kicker="Dynamique"
+          title="Qui progresse, qui recule"
+          sub="Variation de la moyenne pondérée sur 30 jours."
+        >
+          <Momentum cycle={cycle} round={round} />
+        </Section>
 
         <Section
           kicker="Instantané"

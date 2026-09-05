@@ -429,6 +429,30 @@ a:hover {
   color: var(--ink-soft);
   margin-left: 2px;
 }
+/* Momentum trend — a small, subtle secondary indicator next to the % */
+.stat-card .big .mom-trend {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+}
+.stat-card .big .mom-trend.up {
+  color: var(--pos);
+}
+.stat-card .big .mom-trend.down {
+  color: var(--neg);
+}
+.stat-card .big .mom-trend.flat {
+  color: var(--muted);
+}
+.stat-card .big .mom-trend-delta {
+  font-size: 11px;
+  font-weight: 600;
+}
 .stat-card .ci {
   padding-left: 8px;
   margin-top: 8px;
@@ -927,6 +951,139 @@ table.polls td.pollster {
   color: var(--muted);
   font-weight: 600;
   margin: 0 2px;
+}
+
+/* ============================================================= */
+/*  Momentum — KPI cards (who's rising / who's falling)          */
+/* ============================================================= */
+.mom-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px 28px;
+}
+.mom-col {
+  min-width: 0;
+}
+.mom-col-head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.mom-col-head::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex: none;
+  background: var(--muted);
+}
+.mom-col-head--up::before {
+  background: var(--pos);
+}
+.mom-col-head--down::before {
+  background: var(--neg);
+}
+.mom-col-head--flat::before {
+  background: var(--muted);
+}
+.mom-col-empty {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  padding: 4px 0;
+}
+.mom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.mom-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 13px 14px 12px;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.mom-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.mom-cand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  min-width: 0;
+}
+.mom-cand .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex: none;
+}
+.mom-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mom-current {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.mom-current .unit {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.mom-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.mom-chip .mom-arrow {
+  font-size: 10px;
+  line-height: 1;
+}
+.mom-chip.up {
+  background: color-mix(in srgb, var(--pos) 16%, transparent);
+  color: var(--pos);
+}
+.mom-chip.down {
+  background: color-mix(in srgb, var(--neg) 16%, transparent);
+  color: var(--neg);
+}
+.mom-chip.flat {
+  background: var(--chip-bg);
+  color: var(--muted);
+}
+.mom-rate {
+  margin-top: 7px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 /* ============================================================= */

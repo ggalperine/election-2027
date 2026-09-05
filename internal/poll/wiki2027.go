@@ -235,6 +235,13 @@ func parseTable(tbl *html.Node, year, round int) []models.RawPoll {
 	if len(cands) < minCand {
 		return nil
 	}
+	// Excluded candidates (e.g. Bardella — the RN ticket is Le Pen). Skip any
+	// table featuring one so alternative-RN-candidate hypotheses aren't ingested.
+	for _, c := range cands {
+		if isExcludedCandidate(c.name) {
+			return nil
+		}
+	}
 	// For duels take exactly the 2 candidates; for round 1 take the full field.
 	if round == 2 && len(cands) != 2 {
 		return nil
@@ -293,6 +300,13 @@ func parseTable(tbl *html.Node, year, round int) []models.RawPoll {
 		})
 	}
 	return out
+}
+
+// excludedCandidates are dropped from ingestion (not running / duplicate ticket).
+var excludedCandidates = map[string]bool{"bardella": true}
+
+func isExcludedCandidate(name string) bool {
+	return excludedCandidates[strings.ToLower(strings.TrimSpace(name))]
 }
 
 func isNonCandidate(s string) bool {

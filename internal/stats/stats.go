@@ -259,6 +259,44 @@ func projPoint(method, cand, col string, d time.Time, f, band float64) models.Fo
 	}
 }
 
+// Momentum compares the current weighted snapshot with the snapshot `lookback`
+// days earlier, per candidate, to flag who is rising or falling.
+func Momentum(rows []models.RawResult, asOf time.Time, lookbackDays, windowDays int, tau float64) []models.MomentumPoint {
+	now := Snapshot(rows, asOf, windowDays, tau)
+	prev := Snapshot(rows, asOf.AddDate(0, 0, -lookbackDays), windowDays, tau)
+	prevBy := map[string]float64{}
+	for _, p := range prev {
+		prevBy[p.Candidate] = p.AvgPct
+	}
+	weeks := float64(lookbackDays) / 7
+	out := make([]models.MomentumPoint, 0, len(now))
+	for _, n := range now {
+		pv, ok := prevBy[n.Candidate]
+		if !ok {
+			continue // no comparable earlier value
+		}
+		delta := round1(n.AvgPct - pv)
+		dir := "flat"
+		if delta >= 0.5 {
+			dir = "up"
+		} else if delta <= -0.5 {
+			dir = "down"
+		}
+		perWeek := 0.0
+		if weeks > 0 {
+			perWeek = round1(delta / weeks)
+		}
+		out = append(out, models.MomentumPoint{
+			Candidate: n.Candidate, Party: n.Party, Color: n.Color,
+			Current: n.AvgPct, Previous: round1(pv), Delta: delta,
+			PerWeek: perWeek, Direction: dir, NPolls: n.NPolls,
+		})
+	}
+	// Biggest movers first (by absolute delta).
+	sort.Slice(out, func(i, j int) bool { return math.Abs(out[i].Delta) > math.Abs(out[j].Delta) })
+	return out
+}
+
 // HouseEffects computes each institut's average signed deviation from the
 // consensus (all-pollster mean) per candidate. Positive delta = the institut
 // tends to score that candidate higher than the field. Only institut/candidate

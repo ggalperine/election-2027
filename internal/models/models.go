@@ -72,6 +72,20 @@ type HouseEffect struct {
 	NPolls    int     `json:"n_polls"`
 }
 
+// MomentumPoint captures a candidate's short-term trend: current weighted
+// average vs the value `lookback` days earlier.
+type MomentumPoint struct {
+	Candidate string  `json:"candidate"`
+	Party     string  `json:"party"`
+	Color     string  `json:"color"`
+	Current   float64 `json:"current"`
+	Previous  float64 `json:"previous"`
+	Delta     float64 `json:"delta"`     // current − previous (percentage points)
+	PerWeek   float64 `json:"per_week"`  // delta normalized to pts/week
+	Direction string  `json:"direction"` // "up" | "down" | "flat"
+	NPolls    int     `json:"n_polls"`
+}
+
 // Summary is the top-of-page overview for a cycle+round.
 type Summary struct {
 	Cycle       string  `json:"cycle"`

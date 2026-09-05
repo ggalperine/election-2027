@@ -1,4 +1,4 @@
-import { getAggregates } from "../lib/api";
+import { getAggregates, getMomentum } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { pct, intFr, frDate, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
@@ -16,6 +16,17 @@ export function Leaderboard({
   const { data, error, loading } = useAsync(
     () => getAggregates(cycle, round, window),
     [cycle, round, window]
+  );
+
+  // Momentum is a secondary indicator: fetched independently so a failure
+  // here never blocks the leaderboard. Absent data → no arrow shown.
+  const { data: momentum } = useAsync(
+    () => getMomentum(cycle, round, 30),
+    [cycle, round]
+  );
+
+  const momByCand = new Map(
+    (momentum ?? []).map((m) => [m.candidate, { direction: m.direction, delta: m.delta }])
   );
 
   const rows = data ?? [];
@@ -49,6 +60,7 @@ export function Leaderboard({
           {rows.map((r, i) => {
             const c = safeColor(r.color);
             const margin = ((r.hi - r.lo) / 2).toFixed(1).replace(".", ",");
+            const mom = momByCand.get(r.candidate);
             return (
               <div className="stat-card" key={r.candidate}>
                 <span className="accent-bar" style={{ background: c }} />
@@ -58,6 +70,21 @@ export function Leaderboard({
                 <div className="big tnum">
                   {pct(r.avg_pct)}
                   <span className="unit">%</span>
+                  {mom && (
+                    <span className={`mom-trend ${mom.direction} tnum`}>
+                      {mom.direction === "up"
+                        ? "▲"
+                        : mom.direction === "down"
+                        ? "▼"
+                        : "—"}
+                      {mom.direction !== "flat" && (
+                        <span className="mom-trend-delta">
+                          {mom.delta >= 0 ? "+" : "−"}
+                          {pct(Math.abs(mom.delta))}
+                        </span>
+                      )}
+                    </span>
+                  )}
                 </div>
                 <div className="ci tnum">
                   IC 95 % {pct(r.lo)} – {pct(r.hi)} <span className="muted">(± {margin})</span>

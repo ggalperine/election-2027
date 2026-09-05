@@ -88,6 +88,19 @@ func main() {
 		httpx.JSON(w, 200, data)
 	})
 
+	// Momentum: who's rising/falling vs `lookback` days ago (default 30).
+	r.Get("/api/momentum", func(w http.ResponseWriter, req *http.Request) {
+		cycle, round := cycleRound(req)
+		rows, err := st.RawResults(req.Context(), cycle, round)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		lookback := queryInt(req, "lookback", 30)
+		window := queryInt(req, "window", snapshotWindow)
+		httpx.JSON(w, 200, stats.Momentum(rows, latestDate(rows), lookback, window, stats.DefaultTau))
+	})
+
 	// House effects: each institut's signed deviation from consensus per candidate.
 	r.Get("/api/houseeffects", func(w http.ResponseWriter, req *http.Request) {
 		cycle, round := cycleRound(req)
