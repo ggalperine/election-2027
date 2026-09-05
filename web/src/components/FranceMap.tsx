@@ -57,9 +57,9 @@ export function FranceMap({ cycle, round }: { cycle: string; round: number }) {
     const code = (feature?.properties as { code?: string })?.code ?? "";
     const w = byCode.get(code);
     return {
-      fillColor: w ? safeColor(w.color) : "#e6e6ec",
+      fillColor: w ? safeColor(w.color) : "var(--map-nodata)",
       fillOpacity: w ? 0.82 : 0.35,
-      color: "#ffffff",
+      color: "var(--map-stroke)",
       weight: 0.8,
     };
   };
@@ -71,7 +71,7 @@ export function FranceMap({ cycle, round }: { cycle: string; round: number }) {
     const name = w?.geo_name || props?.nom || code;
     layer.bindTooltip(
       w
-        ? `<b>${name}</b> <span style="color:#8a8a9a">(${code})</span><br/>${w.winner} — <b>${pct(
+        ? `<b>${name}</b> <span style="color:var(--muted)">(${code})</span><br/>${w.winner} — <b>${pct(
             w.pct
           )} %</b>`
         : `<b>${name}</b> (${code})<br/><i>pas de données</i>`,

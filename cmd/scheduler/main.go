@@ -25,10 +25,10 @@ func main() {
 	}
 	defer rb.Close()
 
-	// CRON_SPEC overrides the default (daily at 06:00). Format: robfig/cron.
+	// CRON_SPEC overrides the default (every 12h, at 06:00 and 18:00). Format: robfig/cron.
 	spec := os.Getenv("CRON_SPEC")
 	if spec == "" {
-		spec = "0 6 * * *" // every day 06:00
+		spec = "0 6,18 * * *" // twice a day: 06:00 and 18:00
 	}
 
 	c := cron.New()

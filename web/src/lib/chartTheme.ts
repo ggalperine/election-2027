@@ -4,16 +4,21 @@
 /** Economist brand red — the single accent used across the dashboard. */
 export const ECONOMIST_RED = "#E3120B";
 
-/** Near-black ink and muted gray, matching the CSS tokens. */
-export const INK = "#121212";
-export const MUTED = "#595959";
-export const AXIS_TICK = "#8a8a8a";
+/**
+ * Ink / muted / grid colors reference the CSS custom properties so recharts
+ * SVG elements auto-switch between light and dark via the
+ * `prefers-color-scheme` media query in index.css. SVG stroke/fill accept
+ * CSS var() values, so no JS toggle or re-render is needed.
+ */
+export const INK = "var(--ink)";
+export const MUTED = "var(--muted)";
+export const AXIS_TICK = "var(--muted)";
 
-/** Horizontal gridline stroke (soft ecru-gray). */
-export const GRID_STROKE = "#E4E4DE";
+/** Horizontal gridline stroke (soft ecru-gray in light, faint gray in dark). */
+export const GRID_STROKE = "var(--grid)";
 
-/** Zero baseline, slightly darker than the grid. */
-export const BASELINE_STROKE = "#c7c7bf";
+/** Zero baseline, slightly stronger than the grid. */
+export const BASELINE_STROKE = "var(--border-strong)";
 
 /**
  * Economist categorical palette — for NON-semantic series only
@@ -49,7 +54,7 @@ export const economistGrid = {
 export const economistXAxis = {
   tick: axisTick,
   tickLine: false as const,
-  axisLine: { stroke: GRID_STROKE } as const,
+  axisLine: { stroke: "var(--border)" } as const,
   minTickGap: 28,
 };
 
@@ -66,6 +71,19 @@ export const economistYAxis = {
 
 /** Tooltip cursor style: thin dashed gray line. */
 export const tooltipCursor = {
-  stroke: "#c7c7bf",
+  stroke: "var(--border-strong)",
   strokeDasharray: "3 3",
+} as const;
+
+/**
+ * Tooltip contentStyle for any recharts <Tooltip> that does NOT render a
+ * custom `content` element. Uses tokens so it adapts to dark mode.
+ * (The dashboard's charts mostly use custom `.rc-tooltip` content, which is
+ * themed in index.css, but this is exported for completeness/reuse.)
+ */
+export const tooltipContentStyle = {
+  background: "var(--surface)",
+  border: "1px solid var(--border)",
+  borderRadius: 4,
+  color: "var(--ink)",
 } as const;

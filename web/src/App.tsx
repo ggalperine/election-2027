@@ -9,6 +9,7 @@ import { Forecast } from "./components/Forecast";
 import { ScenarioLab } from "./components/ScenarioLab";
 import { PollVsOutcome } from "./components/PollVsOutcome";
 import { Instituts } from "./components/Instituts";
+import { LatestPolls } from "./components/LatestPolls";
 import { SourcesTable } from "./components/SourcesTable";
 // FranceMap kept on disk but no longer rendered.
 // import { FranceMap } from "./components/FranceMap";
@@ -145,6 +146,14 @@ export function App() {
           sub="Qui sonde, à quelle fréquence, et comment chaque maison s'écarte de la moyenne de tous les sondages."
         >
           <Instituts cycle={cycle} round={round} />
+        </Section>
+
+        <Section
+          kicker="Actualité"
+          title="Derniers sondages"
+          sub="Les enquêtes les plus récentes prises en compte dans l'agrégation."
+        >
+          <LatestPolls cycle={cycle} round={round} />
         </Section>
 
         <Section

@@ -28,5 +28,6 @@ services:
 
   web:
     restart: always
+    # Port 8090 so it coexists with the existing site (medlog.tech) on 80/443.
     ports: !override
-      - "80:80"
+      - "8090:80"

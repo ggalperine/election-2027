@@ -24,11 +24,11 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
 echo "==> Waiting for the API to come up"
 for i in $(seq 1 30); do
-  if curl -fsS localhost/api/cycles >/dev/null 2>&1; then
+  if curl -fsS localhost:8090/api/cycles >/dev/null 2>&1; then
     echo "OK — up after ${i} tries"; break
   fi
   sleep 3
 done
 
-echo "==> Done. App: http://$(curl -fsS ifconfig.me 2>/dev/null || echo SERVER_IP)/"
+echo "==> Done. App: http://$(curl -fsS ifconfig.me 2>/dev/null || echo SERVER_IP):8090/"
 docker compose -f docker-compose.yml -f docker-compose.prod.yml ps
