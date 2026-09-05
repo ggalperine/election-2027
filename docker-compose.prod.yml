@@ -1,0 +1,32 @@
+# Production overrides. Use with:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+# Passing -f explicitly means docker-compose.override.yml (dev) is NOT loaded.
+services:
+  postgres:
+    restart: always
+    ports: !override []   # no host exposure in prod
+
+  rabbitmq:
+    restart: always
+    ports: !override []   # no host exposure in prod
+
+  gateway:
+    restart: always
+    ports: !override []   # reached only via the web nginx proxy
+
+  aggregator:
+    restart: always
+
+  poll-ingester:
+    restart: always
+
+  results-ingester:
+    restart: always
+
+  scheduler:
+    restart: always
+
+  web:
+    restart: always
+    ports: !override
+      - "80:80"

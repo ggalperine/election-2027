@@ -1,0 +1,10 @@
+# Go
+/bin/
+*.exe
+
+# Node
+web/node_modules/
+web/dist/
+
+# Env
+.env

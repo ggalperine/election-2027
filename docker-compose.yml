@@ -1,0 +1,83 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: election
+      POSTGRES_PASSWORD: election
+      POSTGRES_DB: election2027
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U election"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: election
+      RABBITMQ_DEFAULT_PASS: election
+    ports:
+      - "5672:5672"    # amqp
+      - "15672:15672"  # management UI
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  gateway:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/gateway"]
+    environment: &env
+      DATABASE_URL: postgres://election:election@postgres:5432/election2027?sslmode=disable
+      AMQP_URL: amqp://election:election@rabbitmq:5672/
+      HTTP_ADDR: ":8080"
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+
+  aggregator:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/aggregator"]
+    environment: *env
+    depends_on:
+      postgres: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+
+  poll-ingester:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/poll-ingester"]
+    environment: *env
+    depends_on:
+      rabbitmq: { condition: service_healthy }
+
+  results-ingester:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/results-ingester"]
+    environment: *env
+    depends_on:
+      rabbitmq: { condition: service_healthy }
+
+  scheduler:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/scheduler"]
+    environment: *env
+    depends_on:
+      rabbitmq: { condition: service_healthy }
+
+  web:
+    build: { context: ./web, dockerfile: Dockerfile }
+    ports:
+      - "5173:80"
+    depends_on:
+      - gateway
+
+volumes:
+  pgdata:

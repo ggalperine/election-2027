@@ -1,0 +1,7 @@
+# Local overrides. RabbitMQ management UI moved to 15673 to avoid a clash with
+# another project already bound to 15672 on this machine.
+services:
+  rabbitmq:
+    ports: !override
+      - "5672:5672"
+      - "15673:15672"

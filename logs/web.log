@@ -1,0 +1,1343 @@
+
+> election-2027-web@0.1.0 dev
+> vite
+
+
+  VITE v5.4.21  ready in 148 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.1.152:5173/
+  ➜  Network: http://169.254.166.239:5173/
+18:22:09 [vite] hmr update /src/index.css
+18:22:12 [vite] hmr update /src/App.tsx
+18:22:17 [vite] hmr update /src/App.tsx
+18:37:14 [vite] hmr update /src/index.css
+18:37:18 [vite] hmr update /src/index.css
+18:37:20 [vite] hmr update /src/index.css
+18:37:25 [vite] hmr update /src/index.css
+18:37:29 [vite] hmr update /src/index.css
+18:37:34 [vite] hmr update /src/index.css
+18:37:41 [vite] hmr update /src/index.css
+18:37:47 [vite] hmr update /src/index.css
+18:37:54 [vite] hmr update /src/index.css
+18:38:00 [vite] hmr update /src/components/TrendTracker.tsx
+18:38:07 [vite] hmr update /src/components/TrendTracker.tsx
+18:38:07 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (258:10)
+
+  256 |         </>
+  257 |       )}
+> 258 |     </div>
+      |           ^
+  259 |   );
+  260 | }
+  261 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:258:10
+  256|          </>
+  257|        )}
+  258|      </div>
+     |            ^
+  259|    );
+  260|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:07 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (258:10)
+
+  256 |         </>
+  257 |       )}
+> 258 |     </div>
+      |           ^
+  259 |   );
+  260 | }
+  261 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:258:10
+  256|          </>
+  257|        )}
+  258|      </div>
+     |            ^
+  259|    );
+  260|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:09 [vite] Pre-transform error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (258:10)
+
+  256 |         </>
+  257 |       )}
+> 258 |     </div>
+      |           ^
+  259 |   );
+  260 | }
+  261 |
+18:38:09 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (258:10)
+
+  256 |         </>
+  257 |       )}
+> 258 |     </div>
+      |           ^
+  259 |   );
+  260 | }
+  261 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:258:10
+  256|          </>
+  257|        )}
+  258|      </div>
+     |            ^
+  259|    );
+  260|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:13 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (258:10)
+
+  256 |         </>
+  257 |       )}
+> 258 |     </div>
+      |           ^
+  259 |   );
+  260 | }
+  261 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:258:10
+  256|          </>
+  257|        )}
+  258|      </div>
+     |            ^
+  259|    );
+  260|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:15 [vite] hmr update /src/components/TrendTracker.tsx
+18:38:15 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (250:10)
+
+  248 |         </>
+  249 |       )}
+> 250 |     </div>
+      |           ^
+  251 |   );
+  252 | }
+  253 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:250:10
+  248|          </>
+  249|        )}
+  250|      </div>
+     |            ^
+  251|    );
+  252|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:19 [vite] Pre-transform error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (250:10)
+
+  248 |         </>
+  249 |       )}
+> 250 |     </div>
+      |           ^
+  251 |   );
+  252 | }
+  253 |
+18:38:19 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (250:10)
+
+  248 |         </>
+  249 |       )}
+> 250 |     </div>
+      |           ^
+  251 |   );
+  252 | }
+  253 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:250:10
+  248|          </>
+  249|        )}
+  250|      </div>
+     |            ^
+  251|    );
+  252|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:20 [vite] hmr update /src/components/TrendTracker.tsx
+18:38:20 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (252:10)
+
+  250 |         </>
+  251 |       )}
+> 252 |     </div>
+      |           ^
+  253 |   );
+  254 | }
+  255 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx:252:10
+  250|          </>
+  251|        )}
+  252|      </div>
+     |            ^
+  253|    );
+  254|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:26 [vite] Pre-transform error: /Users/Gregoire/Documents/election-2027/web/src/components/TrendTracker.tsx: Unterminated JSX contents. (252:10)
+
+  250 |         </>
+  251 |       )}
+> 252 |     </div>
+      |           ^
+  253 |   );
+  254 | }
+  255 |
+18:38:26 [vite] hmr update /src/components/TrendTracker.tsx
+18:38:30 [vite] hmr update /src/components/Forecast.tsx
+18:38:37 [vite] hmr update /src/components/Forecast.tsx
+18:38:37 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (225:10)
+
+  223 |         </>
+  224 |       )}
+> 225 |     </div>
+      |           ^
+  226 |   );
+  227 | }
+  228 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:225:10
+  223|          </>
+  224|        )}
+  225|      </div>
+     |            ^
+  226|    );
+  227|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:37 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (225:10)
+
+  223 |         </>
+  224 |       )}
+> 225 |     </div>
+      |           ^
+  226 |   );
+  227 | }
+  228 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:225:10
+  223|          </>
+  224|        )}
+  225|      </div>
+     |            ^
+  226|    );
+  227|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:44 [vite] hmr update /src/components/Forecast.tsx
+18:38:44 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (217:10)
+
+  215 |         </>
+  216 |       )}
+> 217 |     </div>
+      |           ^
+  218 |   );
+  219 | }
+  220 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:217:10
+  215|          </>
+  216|        )}
+  217|      </div>
+     |            ^
+  218|    );
+  219|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:44 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (217:10)
+
+  215 |         </>
+  216 |       )}
+> 217 |     </div>
+      |           ^
+  218 |   );
+  219 | }
+  220 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:217:10
+  215|          </>
+  216|        )}
+  217|      </div>
+     |            ^
+  218|    );
+  219|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:49 [vite] hmr update /src/components/Forecast.tsx
+18:38:49 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (219:10)
+
+  217 |         </>
+  218 |       )}
+> 219 |     </div>
+      |           ^
+  220 |   );
+  221 | }
+  222 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:219:10
+  217|          </>
+  218|        )}
+  219|      </div>
+     |            ^
+  220|    );
+  221|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:49 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx: Unterminated JSX contents. (219:10)
+
+  217 |         </>
+  218 |       )}
+> 219 |     </div>
+      |           ^
+  220 |   );
+  221 | }
+  222 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Forecast.tsx:219:10
+  217|          </>
+  218|        )}
+  219|      </div>
+     |            ^
+  220|    );
+  221|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:38:54 [vite] hmr update /src/components/Forecast.tsx
+18:38:59 [vite] hmr update /src/components/Leaderboard.tsx
+18:39:06 [vite] hmr update /src/components/Leaderboard.tsx
+18:39:06 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Leaderboard.tsx: Unterminated JSX contents. (74:10)
+
+  72 |         </div>
+  73 |       )}
+> 74 |     </div>
+     |           ^
+  75 |   );
+  76 | }
+  77 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Leaderboard.tsx:74:10
+  72 |          </div>
+  73 |        )}
+  74 |      </div>
+     |            ^
+  75 |    );
+  76 |  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:39:06 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Leaderboard.tsx: Unterminated JSX contents. (74:10)
+
+  72 |         </div>
+  73 |       )}
+> 74 |     </div>
+     |           ^
+  75 |   );
+  76 | }
+  77 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Leaderboard.tsx:74:10
+  72 |          </div>
+  73 |        )}
+  74 |      </div>
+     |            ^
+  75 |    );
+  76 |  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:39:09 [vite] hmr update /src/components/Leaderboard.tsx
+18:39:14 [vite] hmr update /src/components/ScenarioLab.tsx
+18:39:19 [vite] hmr update /src/components/ScenarioLab.tsx
+18:39:19 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/ScenarioLab.tsx: Expected corresponding JSX closing tag for <ChartFrame>. (240:4)
+
+  238 |         </>
+  239 |       )}
+> 240 |     </div>
+      |     ^
+  241 |   );
+  242 | }
+  243 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/ScenarioLab.tsx:240:4
+  238|          </>
+  239|        )}
+  240|      </div>
+     |      ^
+  241|    );
+  242|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12432:14)
+18:39:19 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/ScenarioLab.tsx: Expected corresponding JSX closing tag for <ChartFrame>. (240:4)
+
+  238 |         </>
+  239 |       )}
+> 240 |     </div>
+      |     ^
+  241 |   );
+  242 | }
+  243 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/ScenarioLab.tsx:240:4
+  238|          </>
+  239|        )}
+  240|      </div>
+     |      ^
+  241|    );
+  242|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12432:14)
+18:39:24 [vite] hmr update /src/components/ScenarioLab.tsx
+18:39:28 [vite] hmr update /src/components/Instituts.tsx
+18:39:34 [vite] hmr update /src/components/Instituts.tsx
+18:39:34 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Instituts.tsx: Unterminated JSX contents. (163:10)
+
+  161 |         </div>
+  162 |       )}
+> 163 |     </div>
+      |           ^
+  164 |   );
+  165 | }
+  166 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Instituts.tsx:163:10
+  161|          </div>
+  162|        )}
+  163|      </div>
+     |            ^
+  164|    );
+  165|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:39:34 [vite] Internal server error: /Users/Gregoire/Documents/election-2027/web/src/components/Instituts.tsx: Unterminated JSX contents. (163:10)
+
+  161 |         </div>
+  162 |       )}
+> 163 |     </div>
+      |           ^
+  164 |   );
+  165 | }
+  166 |
+  Plugin: vite:react-babel
+  File: /Users/Gregoire/Documents/election-2027/web/src/components/Instituts.tsx:163:10
+  161|          </div>
+  162|        )}
+  163|      </div>
+     |            ^
+  164|    );
+  165|  }
+      at constructor (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxReadToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4464:20)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4790:12)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10008:11)
+      at TypeScriptParserMixin.nextToken (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5803:10)
+      at TypeScriptParserMixin.next (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5713:10)
+      at TypeScriptParserMixin.eat (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:5717:12)
+      at TypeScriptParserMixin.expect (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6919:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4696:10)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4711:37)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9796:18)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12455:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10821:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12522:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11701:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11357:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:4780:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10852:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9807:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/Gregoire/Documents/election-2027/web/node_modules/@babel/parser/lib/index.js:12776:17)
+18:39:38 [vite] hmr update /src/components/Instituts.tsx
+18:45:30 [vite] hmr update /src/components/Summary.tsx
+18:45:40 [vite] hmr update /src/index.css

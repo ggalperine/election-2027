@@ -1,0 +1,2 @@
+dyld[33116]: missing LC_UUID load command in /Users/Gregoire/Documents/election-2027/bin/poll-ingester
+dyld[33116]: missing LC_UUID load command
