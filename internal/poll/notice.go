@@ -61,25 +61,47 @@ var candidateForms = sortedKeysByLenDesc(candidate2027)
 
 var pctRe = regexp.MustCompile(`(\d{1,2}(?:[.,]\d)?)\s*%`)
 
-// parseFirstHypothesis extracts the first-round base-hypothesis intentions from
-// notice text. Returns candidate→pct (redressé where two figures are present).
-// ok is false when the result fails the validation gate.
-func parseFirstHypothesis(text string) (results map[string]float64, ok bool) {
-	// Scope to the first-round section to avoid picking up run-off duel numbers.
-	lower := strings.ToLower(text)
-	start := indexOfFirst(lower, "hypothèse 1", "1er tour", "premier tour")
-	if start < 0 {
-		start = 0
-	}
-	// Stop before any explicit second-round section.
-	end := len(text)
-	if i := indexOfFirst(lower[start:], "2nd tour", "second tour", "2ème tour", "deuxième tour"); i >= 0 {
-		end = start + i
-	}
-	scope := text[start:end]
+// presidentialFirstRoundQ matches the legally-standardised first-round vote
+// question that heads each intentions table ("Si le 1er tour de l'élection
+// présidentielle avait lieu…"). We anchor on this wording — which is far more
+// stable across instituts than any table layout — to isolate the presidential
+// first round from run-off, European or legislative tables in the same notice.
+var presidentialFirstRoundQ = regexp.MustCompile(`(?i)(1er|premier)\s+tour\s+de\s+l.{0,3}élection\s+présidentielle`)
 
-	results = map[string]float64{}
-	for _, line := range strings.Split(scope, "\n") {
+// otherQuestion marks the start of any other question block (2nd round, or the
+// next hypothesis) so a first-round segment stops before it.
+var otherQuestion = regexp.MustCompile(`(?i)(2(nd|e|ème)?|second|deuxième)\s+tour\s+de\s+l.{0,3}élection|hypothèse\s+[2-9]|élections?\s+(européennes|législatives)|liste`)
+
+// parseFirstHypothesis extracts the first-round BASE-hypothesis intentions.
+// It splits the notice into segments starting at each presidential first-round
+// question and returns the first segment that passes the validation gate — so
+// the questionnaire (no %) and unrelated tables (European/legislative/run-off)
+// are skipped, and Hypothèse 1 is picked over 2, 3, …
+func parseFirstHypothesis(text string) (map[string]float64, bool) {
+	locs := presidentialFirstRoundQ.FindAllStringIndex(text, -1)
+	for i, loc := range locs {
+		start := loc[1]
+		end := len(text)
+		if i+1 < len(locs) {
+			end = locs[i+1][0]
+		}
+		seg := text[start:end]
+		// Cut the segment at the next non-first-round question if it appears.
+		if m := otherQuestion.FindStringIndex(seg); m != nil {
+			seg = seg[:m[0]]
+		}
+		if res, ok := extractCandidatePcts(seg); ok {
+			return res, true
+		}
+	}
+	return nil, false
+}
+
+// extractCandidatePcts reads candidate→pct (last % on the line = "redressé")
+// from one table segment and applies the validation gate.
+func extractCandidatePcts(seg string) (map[string]float64, bool) {
+	results := map[string]float64{}
+	for _, line := range strings.Split(seg, "\n") {
 		ll := strings.ToLower(line)
 		for _, form := range candidateForms {
 			if !strings.Contains(ll, form) {
@@ -87,9 +109,8 @@ func parseFirstHypothesis(text string) (results map[string]float64, ok bool) {
 			}
 			canon := candidate2027[form]
 			if _, seen := results[canon]; seen {
-				continue
+				break
 			}
-			// take the LAST percentage on the line = "redressé" column
 			if ms := pctRe.FindAllStringSubmatch(line, -1); len(ms) > 0 {
 				v := ms[len(ms)-1][1]
 				if f, err := strconv.ParseFloat(strings.Replace(v, ",", ".", 1), 64); err == nil {
@@ -99,8 +120,6 @@ func parseFirstHypothesis(text string) (results map[string]float64, ok bool) {
 			break // one candidate per line
 		}
 	}
-
-	// Validation gate: enough candidates + total near 100 %.
 	var sum float64
 	for _, v := range results {
 		sum += v
