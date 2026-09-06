@@ -47,71 +47,75 @@ export function App() {
   const blackout = activeBlackout();
 
   return (
-    <>
-      <header className="site-header">
-        <div className="inner">
-          <div className="brand">
-            <span className="brand-logo"><Logo size={34} /></span>
-            <span className="brand-name">Elyséomètre</span>
-          </div>
-          <p className="eyebrow">Agrégateur de sondages · France</p>
-          <h1>Présidentielle française — le tracker</h1>
-          <p className="lede">
-            Moyenne pondérée des sondages, intervalles de confiance à 95 % et
-            projections. Une lecture scientifique et transparente de la course
-            présidentielle.
-          </p>
-        </div>
-      </header>
+    <div className="dash">
+      <aside className="rail">
+        <a className="rail-logo" href="#top" aria-label="Elyséomètre">
+          <Logo size={30} />
+        </a>
+        <nav className="rail-nav" aria-label="Navigation">
+          <a className="rail-btn" href="#course" title="Course">◎</a>
+          <a className="rail-btn" href="#proba" title="Probabilités">◈</a>
+          <a className="rail-btn" href="#tendance" title="Tendance">∿</a>
+          <a className="rail-btn" href="#scenarios" title="Scénarios">⇄</a>
+          <a className="rail-btn" href="#sources" title="Sources">≣</a>
+        </nav>
+      </aside>
 
-      {blackout ? (
-        <main className="app">
-          <BlackoutNotice window={blackout} />
-          <LegalFooter />
-        </main>
-      ) : (
-       <>
-      <nav className="controls" aria-label="Filtres globaux">
-        <div className="inner">
-          <div className="control-group">
-            <span className="control-label">Cycle</span>
-            <Segmented
-              value={cycle}
-              onChange={setCycle}
-              options={cycleList.map((c) => ({
-                value: c.cycle,
-                label: c.cycle,
-              }))}
-            />
+      <div className="dash-main" id="top">
+        <header className="topbar">
+          <div className="topbar-brand">
+            <span className="tb-name">Elyséomètre</span>
+            <span className="tb-sub">Présidentielle 2027 · agrégateur scientifique</span>
           </div>
-          <div className="control-group">
-            <span className="control-label">Tour</span>
-            <Segmented<"1" | "2">
-              value={String(round) as "1" | "2"}
-              onChange={(v) => setRound(v === "1" ? 1 : 2)}
-              options={[
-                { value: "1", label: "1er tour" },
-                { value: "2", label: "2nd tour" },
-              ]}
-            />
-          </div>
-          <div className="control-group">
-            <span className="control-label">Période</span>
-            <Segmented
-              value={String(window)}
-              onChange={(v) => setWindow(Number(v))}
-              options={WINDOW_OPTIONS.map((o) => ({
-                value: o.value,
-                label: o.label,
-              }))}
-            />
-          </div>
-        </div>
-      </nav>
+          {!blackout && (
+            <div className="topbar-controls">
+              <div className="control-group">
+                <span className="control-label">Cycle</span>
+                <Segmented
+                  value={cycle}
+                  onChange={setCycle}
+                  options={cycleList.map((c) => ({
+                    value: c.cycle,
+                    label: c.cycle,
+                  }))}
+                />
+              </div>
+              <div className="control-group">
+                <span className="control-label">Tour</span>
+                <Segmented<"1" | "2">
+                  value={String(round) as "1" | "2"}
+                  onChange={(v) => setRound(v === "1" ? 1 : 2)}
+                  options={[
+                    { value: "1", label: "1er tour" },
+                    { value: "2", label: "2nd tour" },
+                  ]}
+                />
+              </div>
+              <div className="control-group">
+                <span className="control-label">Période</span>
+                <Segmented
+                  value={String(window)}
+                  onChange={(v) => setWindow(Number(v))}
+                  options={WINDOW_OPTIONS.map((o) => ({
+                    value: o.value,
+                    label: o.label,
+                  }))}
+                />
+              </div>
+            </div>
+          )}
+        </header>
 
-      <main className="app">
+        {blackout ? (
+          <main className="app">
+            <BlackoutNotice window={blackout} />
+            <LegalFooter />
+          </main>
+        ) : (
+          <main className="app">
         <Summary cycle={cycle} round={round} window={window} />
 
+        <div id="course">
         <Section
           kicker="Instantané"
           title="Où en est la course"
@@ -119,7 +123,9 @@ export function App() {
         >
           <Leaderboard cycle={cycle} round={round} window={window} />
         </Section>
+        </div>
 
+        <div id="proba">
         <Section
           kicker="Probabilités"
           title="Quelles chances de qualification et de victoire"
@@ -127,6 +133,7 @@ export function App() {
         >
           <Probabilities cycle={cycle} window={window} />
         </Section>
+        </div>
 
         <Section
           kicker="Dynamique"
@@ -136,6 +143,7 @@ export function App() {
           <Momentum cycle={cycle} round={round} />
         </Section>
 
+        <div id="tendance">
         <Section
           kicker="Tendance"
           title="L'évolution dans le temps"
@@ -148,6 +156,7 @@ export function App() {
             window={window}
           />
         </Section>
+        </div>
 
         <Section
           kicker="Prévision"
@@ -157,6 +166,7 @@ export function App() {
           <Forecast cycle={cycle} round={round} window={window} />
         </Section>
 
+        <div id="scenarios">
         <Section
           kicker="Scénarios"
           title="Et si… report des voix"
@@ -164,6 +174,7 @@ export function App() {
         >
           <ScenarioLab cycle={cycle} round={round} window={window} />
         </Section>
+        </div>
 
         {hasActual && (
           <Section
@@ -191,6 +202,7 @@ export function App() {
           <LatestPolls cycle={cycle} round={round} />
         </Section>
 
+        <div id="sources">
         <Section
           kicker="Transparence"
           title="Toutes les sources"
@@ -198,12 +210,13 @@ export function App() {
         >
           <SourcesTable cycle={cycle} round={round} />
         </Section>
+        </div>
 
         <MethodologyFooter />
         <LegalFooter />
-      </main>
-       </>
-      )}
-    </>
+          </main>
+        )}
+      </div>
+    </div>
   );
 }
