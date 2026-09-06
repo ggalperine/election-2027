@@ -74,6 +74,11 @@ var firstRoundMarker = regexp.MustCompile(`(?i)(1er|premier)\s+tour`)
 // a past-vote reconstitution/recall, or a legislative/European election.
 var headExclude = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|municipal|sénatorial`)
 
+// segCut marks where a first-round presidential segment must STOP, so it never
+// bleeds into an adjacent foreign table (another election, a party list, the
+// run-off, or the next hypothesis) that follows within the same marker gap.
+var segCut = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|municipal|sénatorial|\bliste\b|(2(nd|e|ème)?|second|deuxième)\s+tour`)
+
 // parseFirstHypothesis extracts the first-round BASE-hypothesis intentions.
 // For each "1er tour" marker it vets the surrounding heading (must concern the
 // présidentielle, must not be a reconstitution/other-election table), then
@@ -101,7 +106,11 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 		if i+1 < len(locs) {
 			end = locs[i+1][0]
 		}
-		if res, ok := extractCandidatePcts(text[start:end]); ok {
+		seg := text[start:end]
+		if c := segCut.FindStringIndex(seg); c != nil {
+			seg = seg[:c[0]] // stop before any foreign table in the gap
+		}
+		if res, ok := extractCandidatePcts(seg); ok {
 			return res, true
 		}
 	}
