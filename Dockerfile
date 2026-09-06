@@ -12,6 +12,7 @@ RUN CGO_ENABLED=0 go build -o /out/gateway          ./cmd/gateway          && \
     CGO_ENABLED=0 go build -o /out/scheduler        ./cmd/scheduler
 
 FROM alpine:3.20
-RUN apk add --no-cache ca-certificates
+# poppler-utils provides pdftotext, used by the Commission notice parser.
+RUN apk add --no-cache ca-certificates poppler-utils
 WORKDIR /app
 COPY --from=build /out/ /app/

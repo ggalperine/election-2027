@@ -21,13 +21,13 @@ import (
 // shared. Name MUST match the canonical pollster name in pollsters.go so house
 // effects and dedup line up with any other source.
 type Institut struct {
-	Key      string
-	Name     string
-	Homepage string
-	ListURL  string
-	Cycle    string
-	parse    func(root *html.Node, inst Institut) ([]models.RawPoll, error)
-	Client   *http.Client
+	Key         string
+	DisplayName string
+	Homepage    string
+	ListURL     string
+	Cycle       string
+	parse       func(root *html.Node, inst Institut) ([]models.RawPoll, error)
+	Client      *http.Client
 }
 
 // Name satisfies the Source interface.
@@ -49,49 +49,49 @@ func (i Institut) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 // page on the institut's own site that lists its 2027 presidential polls.
 var Instituts = map[string]Institut{
 	"ifop": {
-		Key: "ifop", Name: "Ifop", Cycle: "2027",
+		Key: "ifop", DisplayName: "Ifop", Cycle: "2027",
 		Homepage: "https://www.ifop.com",
 		ListURL:  "https://www.ifop.com/sondages/", // TODO confirm exact 2027 listing path
 		parse:    nil,
 	},
 	"ipsos": {
-		Key: "ipsos", Name: "Ipsos", Cycle: "2027",
+		Key: "ipsos", DisplayName: "Ipsos", Cycle: "2027",
 		Homepage: "https://www.ipsos.com/fr-fr",
 		ListURL:  "https://www.ipsos.com/fr-fr/nos-sondages-et-enquetes",
 		parse:    nil,
 	},
 	"elabe": {
-		Key: "elabe", Name: "Elabe", Cycle: "2027",
+		Key: "elabe", DisplayName: "Elabe", Cycle: "2027",
 		Homepage: "https://elabe.fr",
 		ListURL:  "https://elabe.fr/category/sondages/",
 		parse:    nil,
 	},
 	"opinionway": {
-		Key: "opinionway", Name: "OpinionWay", Cycle: "2027",
+		Key: "opinionway", DisplayName: "OpinionWay", Cycle: "2027",
 		Homepage: "https://www.opinion-way.com",
 		ListURL:  "https://www.opinion-way.com/fr/sondage-d-opinion.html",
 		parse:    nil,
 	},
 	"harris": {
-		Key: "harris", Name: "Harris Interactive", Cycle: "2027",
+		Key: "harris", DisplayName: "Harris Interactive", Cycle: "2027",
 		Homepage: "https://harris-interactive.fr",
 		ListURL:  "https://harris-interactive.fr/opinion_polls/",
 		parse:    nil,
 	},
 	"odoxa": {
-		Key: "odoxa", Name: "Odoxa", Cycle: "2027",
+		Key: "odoxa", DisplayName: "Odoxa", Cycle: "2027",
 		Homepage: "https://www.odoxa.fr",
 		ListURL:  "https://www.odoxa.fr/sondages/",
 		parse:    nil,
 	},
 	"cluster17": {
-		Key: "cluster17", Name: "Cluster17", Cycle: "2027",
+		Key: "cluster17", DisplayName: "Cluster17", Cycle: "2027",
 		Homepage: "https://cluster17.com",
 		ListURL:  "https://cluster17.com/sondages/",
 		parse:    nil,
 	},
 	"verian": {
-		Key: "verian", Name: "Verian", Cycle: "2027",
+		Key: "verian", DisplayName: "Verian", Cycle: "2027",
 		Homepage: "https://www.veriangroup.com",
 		ListURL:  "https://www.veriangroup.com/news",
 		parse:    nil,

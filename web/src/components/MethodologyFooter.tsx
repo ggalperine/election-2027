@@ -22,12 +22,19 @@ export function MethodologyFooter() {
         prévision.
       </p>
       <p className="cred">
-        Sources : <strong>nsppolls</strong> (cycle 2022) et{" "}
-        <strong>Wikipédia</strong> (cycle 2027), tous instituts confondus (Ifop,
-        Ipsos, OpinionWay, Harris Interactive, Elabe, Cluster17, …). Le lien vers
-        la notice officielle de chaque sondage figure dans le tableau des sources.
-        Résultats officiels par département : données ouvertes du ministère de
-        l'Intérieur.
+        Sources : les sondages sont recensés à partir de la{" "}
+        <a
+          href="https://www.commission-des-sondages.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Commission des sondages
+        </a>{" "}
+        — l'autorité légale auprès de laquelle chaque institut (Ifop, Ipsos,
+        OpinionWay, Harris Interactive, Elabe, Odoxa, Cluster17, Verian, …) dépose
+        la notice officielle de toute enquête publiée. Le lien vers cette notice
+        figure dans le tableau des sources. Résultats officiels par département :
+        données ouvertes du ministère de l'Intérieur.
       </p>
     </footer>
   );
