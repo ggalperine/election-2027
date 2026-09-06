@@ -1,7 +1,8 @@
 // poll-ingester fetches polls from the configured consolidated sources and
 // publishes poll.raw messages. Sources are selected via POLL_SOURCES
-// (comma-separated): nsppolls (2022 real, all instituts), wiki2027 (2027 real,
-// all instituts), sample (offline demo). Default: "nsppolls,wiki2027".
+// (comma-separated): nsppolls (2022 real, all instituts), wiki2027 (retired —
+// 2027 now comes from commission-ingester), sample (offline demo).
+// Default: "nsppolls" (2022 backtest only).
 package main
 
 import (
@@ -49,7 +50,10 @@ func main() {
 func chooseSources() []poll.Source {
 	spec := os.Getenv("POLL_SOURCES")
 	if spec == "" {
-		spec = "nsppolls,wiki2027"
+		// 2027 (both rounds) now comes from the Commission notices via the
+		// commission-ingester. poll-ingester keeps only nsppolls for the 2022
+		// backtest. Wikipedia is retired (set POLL_SOURCES=wiki2027 to re-enable).
+		spec = "nsppolls"
 	}
 	var out []poll.Source
 	for _, name := range strings.Split(spec, ",") {

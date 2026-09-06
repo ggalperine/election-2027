@@ -72,7 +72,7 @@ func (c Commission) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 	refs := parseCommissionIndex(root)
 	max := c.MaxNotices
 	if max <= 0 {
-		max = 60
+		max = 120
 	}
 	bin := c.PdftotextBin
 	if bin == "" {
