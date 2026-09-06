@@ -57,7 +57,9 @@ func chooseSources() []poll.Source {
 		case "nsppolls":
 			out = append(out, poll.NSPPolls{Cycle: "2022"})
 		case "wiki2027":
-			out = append(out, poll.Wiki2027{})
+			// Commission notices own the first round; Wikipedia is kept only for
+			// the second-round duels until the notice parser covers round 2.
+			out = append(out, poll.Wiki2027{Round2Only: true})
 		case "sample":
 			out = append(out, poll.SampleSource{})
 		}

@@ -22,6 +22,11 @@ import (
 type Wiki2027 struct {
 	Page   string
 	Client *http.Client
+	// Round2Only restricts output to second-round duel tables. First-round
+	// intentions now come from the Commission des sondages notices (legal
+	// source); Wikipedia is kept only for the run-off duels until the notice
+	// parser covers the second round too.
+	Round2Only bool
 }
 
 const wikiAPITemplate = "https://fr.wikipedia.org/w/api.php?action=parse&page=%s&prop=text&format=json&formatversion=2"
@@ -91,7 +96,7 @@ func (w Wiki2027) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 					case 2: // 2nd-round duel table
 						polls = append(polls, parseTable(n, year, 2)...)
 					default:
-						if !roundOneTaken {
+						if !roundOneTaken && !w.Round2Only {
 							got := parseTable(n, year, 1)
 							if len(got) > 0 {
 								polls = append(polls, got...)
