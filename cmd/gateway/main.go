@@ -137,12 +137,7 @@ func main() {
 			respond(w, nil, err)
 			return
 		}
-		pstats, err := st.PollsterStats(req.Context(), cycle, round)
-		if err != nil {
-			respond(w, nil, err)
-			return
-		}
-		sum := buildSummary(cycle, round, rows, pstats)
+		sum := buildSummary(cycle, round, rows, queryInt(req, "window", snapshotWindow))
 		if lu, fe, ps, err := st.LatestPoll(req.Context(), cycle, round); err == nil {
 			sum.LastUpdated = lu.UTC().Format(time.RFC3339)
 			sum.LatestPoll = fe.Format("2006-01-02")
@@ -214,25 +209,39 @@ func main() {
 }
 
 // buildSummary derives the top-of-page overview from raw rows + pollster stats.
-func buildSummary(cycle string, round int, rows []models.RawResult, pstats []models.PollsterStat) models.Summary {
-	s := models.Summary{Cycle: cycle, Round: round, NPollsters: len(pstats)}
-	for _, p := range pstats {
-		s.NPolls += p.NPolls
-	}
-	if len(pstats) > 0 {
-		// pstats is ordered by count; scan for global date range
-		first, last := pstats[0].FirstPoll, pstats[0].LastPoll
-		for _, p := range pstats {
-			if p.FirstPoll < first {
-				first = p.FirstPoll
-			}
-			if p.LastPoll > last {
-				last = p.LastPoll
-			}
+func buildSummary(cycle string, round int, rows []models.RawResult, window int) models.Summary {
+	s := models.Summary{Cycle: cycle, Round: round}
+	asOf := latestDate(rows)
+	// Coverage + counts reflect the SELECTED window (window<=0 = since the
+	// beginning) so the summary changes with the period control.
+	var first, last time.Time
+	pollsters := map[string]struct{}{}
+	polls := map[string]struct{}{} // distinct (pollster, date) ≈ distinct polls
+	for _, r := range rows {
+		if window > 0 && r.Date.Before(asOf.AddDate(0, 0, -window)) {
+			continue
 		}
-		s.FirstPoll, s.LastPoll = first, last
+		if r.Date.After(asOf) {
+			continue
+		}
+		if first.IsZero() || r.Date.Before(first) {
+			first = r.Date
+		}
+		if last.IsZero() || r.Date.After(last) {
+			last = r.Date
+		}
+		pollsters[r.Pollster] = struct{}{}
+		polls[r.Pollster+"|"+r.Date.Format("2006-01-02")] = struct{}{}
 	}
-	snap := stats.Snapshot(rows, latestDate(rows), snapshotWindow, stats.DefaultTau)
+	s.NPolls = len(polls)
+	s.NPollsters = len(pollsters)
+	if !first.IsZero() {
+		s.FirstPoll = first.Format("2006-01-02")
+	}
+	if !last.IsZero() {
+		s.LastPoll = last.Format("2006-01-02")
+	}
+	snap := stats.Snapshot(rows, asOf, window, stats.DefaultTau)
 	if len(snap) > 0 {
 		s.Leader = snap[0].Candidate
 		s.LeaderPct = snap[0].AvgPct
