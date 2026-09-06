@@ -37,6 +37,30 @@ export interface ForecastPoint {
   projected: boolean; // false = fitted history, true = future projection
 }
 
+/** One candidate's probabilistic (Monte Carlo) forecast. */
+export interface ForecastProb {
+  candidate: string;
+  party: string;
+  color: string;
+  mean: number; // weighted mean share (%)
+  p05: number; // 5th percentile of predictive distribution
+  p50: number; // median
+  p95: number; // 95th percentile
+  prob_lead: number; // P(finishes 1st in round 1), 0..1
+  prob_qualify: number; // P(reaches the run-off), 0..1
+  prob_win: number; // P(wins the election), 0..1
+  n_polls: number;
+}
+
+/** Full Monte Carlo forecast for a cycle's first round. */
+export interface Forecast {
+  as_of: string;
+  election_date: string;
+  days_left: number;
+  n_sims: number;
+  candidates: ForecastProb[];
+}
+
 export interface Poll {
   external_id: string;
   pollster: string;
@@ -139,6 +163,9 @@ export const getTimeSeries = (cycle: string, round = 1, window?: number) =>
 
 export const getForecast = (cycle: string, round = 1, window?: number) =>
   get<ForecastPoint[]>(`/api/forecast?cycle=${cycle}&round=${round}${win(window)}`);
+
+export const getSimulate = (cycle: string, window?: number) =>
+  get<Forecast>(`/api/simulate?cycle=${cycle}${win(window)}`);
 
 export const getSummary = (cycle: string, round = 1, window?: number) =>
   get<Summary>(`/api/summary?cycle=${cycle}&round=${round}${win(window)}`);

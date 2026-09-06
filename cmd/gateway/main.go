@@ -28,6 +28,23 @@ const (
 	forecastStep   = 7
 )
 
+// firstRoundDate is the date of the first round of each cycle, used as the
+// horizon of the probabilistic forecast. 2027 dates ARE PROVISIONAL — confirm
+// against the décret de convocation des électeurs once published.
+var firstRoundDate = map[string]string{
+	"2027": "2027-04-11",
+	"2022": "2022-04-10",
+}
+
+func electionDate(cycle string, fallback time.Time) time.Time {
+	if s, ok := firstRoundDate[cycle]; ok {
+		if d, err := time.Parse("2006-01-02", s); err == nil {
+			return d
+		}
+	}
+	return fallback
+}
+
 func main() {
 	cfg := config.Load()
 	ctx := context.Background()
@@ -143,6 +160,28 @@ func main() {
 			return
 		}
 		httpx.JSON(w, 200, stats.ForecastAll(rows, queryInt(req, "window", seriesWindow), stats.DefaultTau, forecastDays, forecastStep))
+	})
+
+	// Probabilistic forecast: Monte Carlo simulation of the first round giving
+	// P(lead), P(qualify for run-off) and P(win) per candidate, plus predictive
+	// intervals. round1 rows drive qualification; round2 rows calibrate the duel.
+	r.Get("/api/simulate", func(w http.ResponseWriter, req *http.Request) {
+		cycle, _ := cycleRound(req)
+		r1, err := st.RawResults(req.Context(), cycle, 1)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		r2, err := st.RawResults(req.Context(), cycle, 2)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		asOf := latestDate(r1)
+		ed := electionDate(cycle, asOf)
+		nsims := queryInt(req, "sims", stats.DefaultNSims)
+		httpx.JSON(w, 200, stats.Simulate(r1, r2, asOf, queryInt(req, "window", snapshotWindow),
+			stats.DefaultTau, ed, nsims, stats.DefaultDriftPerDay, stats.DefaultDoF))
 	})
 
 	// Individual polls with pollster, sponsor and source link (sources table).

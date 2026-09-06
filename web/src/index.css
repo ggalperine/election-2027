@@ -897,6 +897,82 @@ table.polls td.pollster {
 }
 
 /* ============================================================= */
+/*  Probabilités (simulation Monte Carlo)                        */
+/* ============================================================= */
+.prob-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.prob-table thead th {
+  text-align: right;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.prob-table th.prob-cand {
+  text-align: left;
+}
+.prob-table tbody td {
+  text-align: right;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+}
+.prob-table td.prob-cand {
+  text-align: left;
+}
+.prob-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.prob-name {
+  font-weight: 700;
+}
+.prob-party {
+  margin-left: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.prob-bar-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 120px;
+}
+.prob-bar {
+  height: 8px;
+  border-radius: 4px;
+  min-width: 2px;
+  opacity: 0.55;
+}
+.prob-val {
+  min-width: 48px;
+  text-align: right;
+  font-weight: 600;
+}
+.prob-win {
+  font-weight: 800;
+}
+@media (max-width: 640px) {
+  .prob-table th:nth-child(3),
+  .prob-table td:nth-child(3) {
+    display: none; /* hide the 90% interval on narrow screens */
+  }
+}
+
+/* ============================================================= */
 /*  Blackout légal (loi sondages 1977)                           */
 /* ============================================================= */
 .blackout {

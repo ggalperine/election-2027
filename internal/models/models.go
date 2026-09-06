@@ -128,6 +128,31 @@ type ForecastPoint struct {
 	Projected bool    `json:"projected"` // false = fitted history, true = future
 }
 
+// ForecastProb is one candidate's probabilistic forecast from the Monte Carlo
+// simulation: predictive interval plus qualification / lead / win probabilities.
+type ForecastProb struct {
+	Candidate   string  `json:"candidate"`
+	Party       string  `json:"party"`
+	Color       string  `json:"color"`
+	Mean        float64 `json:"mean"`         // weighted mean share (%)
+	P05         float64 `json:"p05"`          // 5th percentile of predictive distribution
+	P50         float64 `json:"p50"`          // median
+	P95         float64 `json:"p95"`          // 95th percentile
+	ProbLead    float64 `json:"prob_lead"`    // P(finishes 1st in round 1)
+	ProbQualify float64 `json:"prob_qualify"` // P(reaches the run-off, top 2)
+	ProbWin     float64 `json:"prob_win"`     // P(wins the election)
+	NPolls      int     `json:"n_polls"`
+}
+
+// Forecast is the full Monte Carlo forecast for a cycle's first round.
+type Forecast struct {
+	AsOf         string         `json:"as_of"`
+	ElectionDate string         `json:"election_date"`
+	DaysLeft     int            `json:"days_left"`
+	NSims        int            `json:"n_sims"`
+	Candidates   []ForecastProb `json:"candidates"`
+}
+
 // ActualResult is the final official result of a past election (reference line).
 type ActualResult struct {
 	Candidate string  `json:"candidate"`

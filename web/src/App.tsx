@@ -19,6 +19,7 @@ import { LegalFooter } from "./components/LegalFooter";
 import { Logo } from "./components/Logo";
 import { BlackoutNotice } from "./components/BlackoutNotice";
 import { activeBlackout } from "./lib/blackout";
+import { Probabilities } from "./components/Probabilities";
 
 const WINDOW_OPTIONS = [
   { value: "14", label: "Récent" },
@@ -117,6 +118,14 @@ export function App() {
           sub="Intentions de vote actuelles, agrégées et pondérées, avec leur marge d'incertitude."
         >
           <Leaderboard cycle={cycle} round={round} window={window} />
+        </Section>
+
+        <Section
+          kicker="Probabilités"
+          title="Quelles chances de qualification et de victoire"
+          sub="Simulation Monte Carlo à partir de la distribution prédictive des intentions de vote. Probabilité d'accéder au 2nd tour, d'arriver en tête et de l'emporter."
+        >
+          <Probabilities cycle={cycle} window={window} />
         </Section>
 
         <Section
