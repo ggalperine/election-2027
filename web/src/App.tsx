@@ -15,6 +15,10 @@ import { SourcesTable } from "./components/SourcesTable";
 // FranceMap kept on disk but no longer rendered.
 // import { FranceMap } from "./components/FranceMap";
 import { MethodologyFooter } from "./components/MethodologyFooter";
+import { LegalFooter } from "./components/LegalFooter";
+import { Logo } from "./components/Logo";
+import { BlackoutNotice } from "./components/BlackoutNotice";
+import { activeBlackout } from "./lib/blackout";
 
 const WINDOW_OPTIONS = [
   { value: "14", label: "Récent" },
@@ -39,10 +43,16 @@ export function App() {
     [cycleList, cycle]
   );
 
+  const blackout = activeBlackout();
+
   return (
     <>
       <header className="site-header">
         <div className="inner">
+          <div className="brand">
+            <span className="brand-logo"><Logo size={34} /></span>
+            <span className="brand-name">Elyséomètre</span>
+          </div>
           <p className="eyebrow">Agrégateur de sondages · France</p>
           <h1>Présidentielle française — le tracker</h1>
           <p className="lede">
@@ -53,6 +63,13 @@ export function App() {
         </div>
       </header>
 
+      {blackout ? (
+        <main className="app">
+          <BlackoutNotice window={blackout} />
+          <LegalFooter />
+        </main>
+      ) : (
+       <>
       <nav className="controls" aria-label="Filtres globaux">
         <div className="inner">
           <div className="control-group">
@@ -174,7 +191,10 @@ export function App() {
         </Section>
 
         <MethodologyFooter />
+        <LegalFooter />
       </main>
+       </>
+      )}
     </>
   );
 }
