@@ -135,7 +135,10 @@ func globalFullFieldScan(text string) (map[string]float64, bool) {
 			for _, v := range block {
 				sum += v
 			}
-			if sum >= 90 && sum <= 110 {
+			// Tight sum: this path is UNANCHORED, so we only trust a block that
+			// sums almost exactly to 100. A mangled multi-column layout (e.g.
+			// Verian's side-by-side hypotheses) lands off 100 and is rejected.
+			if sum >= 96 && sum <= 104 {
 				return block, true
 			}
 		}

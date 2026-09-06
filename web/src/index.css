@@ -1675,3 +1675,78 @@ table.polls td.pollster {
     font-size: 30px;
   }
 }
+
+/* ============================================================= */
+/*  Mobile / responsive dashboard                                */
+/* ============================================================= */
+@media (max-width: 820px) {
+  /* Rail becomes a slim horizontal bar on top of the content column. */
+  .dash {
+    flex-direction: column;
+  }
+  .rail {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .rail-nav {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 4px;
+    overflow-x: auto;
+  }
+  .rail-btn {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+  }
+  /* Topbar stacks: brand over the (wrapping, scrollable) filters. */
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .topbar-controls {
+    gap: 12px 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .control-group {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .app {
+    padding: 14px 12px 60px;
+  }
+  .card {
+    padding: 16px 14px;
+  }
+  /* Wide tables scroll horizontally instead of overflowing the card. */
+  .prob-table,
+  .sources-table,
+  .instituts-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .section-head h2 {
+    font-size: 19px;
+  }
+  .topbar-brand .tb-name {
+    font-size: 16px;
+  }
+  /* Segmented controls shrink a touch to fit. */
+  .segmented button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
