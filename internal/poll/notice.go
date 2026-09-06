@@ -298,7 +298,9 @@ func extractCandidatePcts(seg string) (map[string]float64, bool) {
 	for _, v := range results {
 		sum += v
 	}
-	if len(results) < 8 || sum < 85 || sum > 115 {
+	// A full-field first-round table sums to ~100 by construction; anything
+	// materially off means we merged rows from two tables or misread a column.
+	if len(results) < 8 || sum < 95 || sum > 105 {
 		return results, false
 	}
 	return results, true
