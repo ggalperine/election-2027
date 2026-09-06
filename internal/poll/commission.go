@@ -80,8 +80,9 @@ func (c Commission) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 	}
 
 	var out []models.RawPoll
+	processed := 0
 	for _, r := range refs {
-		if len(out) >= max {
+		if processed >= max {
 			break
 		}
 		text, err := c.noticeText(ctx, bin, r.NoticeURL)
@@ -90,21 +91,35 @@ func (c Commission) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 			// skipping; we simply move on.
 			continue
 		}
-		results, ok := parseFirstHypothesis(text)
-		if !ok {
-			continue // validation gate rejected — quarantined, not ingested
+		processed++
+		sample := parseSample(text)
+		if results, ok := parseFirstHypothesis(text); ok {
+			out = append(out, models.RawPoll{
+				ExternalID: "cds-" + r.ID + "-t1",
+				Cycle:      c.cycle(),
+				Pollster:   r.Institut,
+				Sponsor:    r.Sponsor,
+				FieldEnd:   r.Date,
+				SampleSize: sample,
+				Round:      1,
+				SourceURL:  r.NoticeURL,
+				Results:    results,
+			})
 		}
-		out = append(out, models.RawPoll{
-			ExternalID: "cds-" + r.ID + "-t1",
-			Cycle:      c.cycle(),
-			Pollster:   r.Institut,
-			Sponsor:    r.Sponsor,
-			FieldEnd:   r.Date,
-			SampleSize: parseSample(text),
-			Round:      1,
-			SourceURL:  r.NoticeURL,
-			Results:    results,
-		})
+		// Second-round duels from the same notice → one round-2 poll each.
+		for _, duel := range parseDuels(text) {
+			out = append(out, models.RawPoll{
+				ExternalID: "cds-" + r.ID + "-t2-" + duelPairKey(duel),
+				Cycle:      c.cycle(),
+				Pollster:   r.Institut,
+				Sponsor:    r.Sponsor,
+				FieldEnd:   r.Date,
+				SampleSize: sample,
+				Round:      2,
+				SourceURL:  r.NoticeURL,
+				Results:    duel,
+			})
+		}
 	}
 	return out, nil
 }

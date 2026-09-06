@@ -65,6 +65,40 @@ func TestParseFirstHypothesis_Ifop(t *testing.T) {
 	}
 }
 
+func TestParseDuels_Ifop(t *testing.T) {
+	raw, err := os.ReadFile("testdata_ifop.txt")
+	if err != nil {
+		t.Skipf("fixture missing: %v", err)
+	}
+	duels := parseDuels(string(raw))
+	if len(duels) < 2 {
+		t.Fatalf("expected several run-off duels, got %d: %v", len(duels), duels)
+	}
+	// Every duel: exactly 2 candidates, summing ~100, one of them Le Pen.
+	for _, d := range duels {
+		if len(d) != 2 {
+			t.Errorf("duel with %d candidates: %v", len(d), d)
+		}
+		var sum float64
+		for _, v := range d {
+			sum += v
+		}
+		if sum < 95 || sum > 105 {
+			t.Errorf("duel total %.1f: %v", sum, d)
+		}
+	}
+	// Philippe vs Le Pen 48/52 is in the notice.
+	found := false
+	for _, d := range duels {
+		if d["Philippe"] == 48 && d["Le Pen"] == 52 {
+			found = true
+		}
+	}
+	if !found {
+		t.Errorf("expected Philippe 48 / Le Pen 52 duel; got %v", duels)
+	}
+}
+
 func TestParseSample(t *testing.T) {
 	raw, err := os.ReadFile("testdata_notice.txt")
 	if err != nil {

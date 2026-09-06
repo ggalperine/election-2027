@@ -117,6 +117,97 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 	return nil, false
 }
 
+// secondRoundMarker matches a run-off heading ("2nd tour" / "second tour").
+var secondRoundMarker = regexp.MustCompile(`(?i)(2nd|2ème|2eme|2e|second|deuxième)\s+tour`)
+
+// anyRoundMarker bounds segments on either round's heading.
+var anyRoundMarker = regexp.MustCompile(`(?i)(1er|premier|2nd|2ème|2eme|2e|second|deuxième)\s+tour`)
+
+// round2Cut stops a run-off segment before a foreign table or a first-round one.
+var round2Cut = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|municipal|sénatorial|\bliste\b|(1er|premier)\s+tour`)
+
+// parseDuels extracts every second-round head-to-head (two candidates summing to
+// ~100) from a notice. Each duel becomes a round-2 poll. Deduped by pair.
+func parseDuels(text string) []map[string]float64 {
+	markers := anyRoundMarker.FindAllStringIndex(text, -1)
+	var duels []map[string]float64
+	seen := map[string]bool{}
+	for i, loc := range markers {
+		if !secondRoundMarker.MatchString(text[loc[0]:loc[1]]) {
+			continue
+		}
+		excl := strings.ToLower(text[clamp(loc[0]-80, 0, len(text)):clamp(loc[1]+40, 0, len(text))])
+		if headExclude.MatchString(excl) {
+			continue
+		}
+		ctx := strings.ToLower(text[clamp(loc[0]-260, 0, len(text)):clamp(loc[1]+160, 0, len(text))])
+		if !strings.Contains(ctx, "présidentiel") && !strings.Contains(ctx, "presidentiel") {
+			continue
+		}
+		end := len(text)
+		if i+1 < len(markers) {
+			end = markers[i+1][0]
+		}
+		seg := text[loc[1]:end]
+		if c := round2Cut.FindStringIndex(seg); c != nil {
+			seg = seg[:c[0]]
+		}
+		if pair, ok := extractDuel(seg); ok {
+			key := duelPairKey(pair)
+			if !seen[key] {
+				seen[key] = true
+				duels = append(duels, pair)
+			}
+		}
+	}
+	return duels
+}
+
+// extractDuel reads EXACTLY two candidates (summing ~100) from a run-off block.
+func extractDuel(seg string) (map[string]float64, bool) {
+	res := map[string]float64{}
+	for _, line := range strings.Split(seg, "\n") {
+		ll := strings.ToLower(line)
+		for _, form := range candidateForms {
+			if !strings.Contains(ll, form) {
+				continue
+			}
+			canon := candidate2027[form]
+			if _, seen := res[canon]; seen {
+				break
+			}
+			if ms := pctRe.FindAllStringSubmatch(line, -1); len(ms) > 0 {
+				if f, err := strconv.ParseFloat(strings.Replace(ms[len(ms)-1][1], ",", ".", 1), 64); err == nil {
+					res[canon] = f
+				}
+			}
+			break
+		}
+	}
+	if len(res) != 2 {
+		return nil, false
+	}
+	var sum float64
+	for _, v := range res {
+		sum += v
+	}
+	if sum < 90 || sum > 110 {
+		return nil, false
+	}
+	return res, true
+}
+
+func duelPairKey(m map[string]float64) string {
+	names := make([]string, 0, 2)
+	for k := range m {
+		names = append(names, k)
+	}
+	if len(names) == 2 && names[0] > names[1] {
+		names[0], names[1] = names[1], names[0]
+	}
+	return strings.Join(names, "|")
+}
+
 // extractCandidatePcts reads candidate→pct (last % on the line = "redressé")
 // from one table segment and applies the validation gate.
 func extractCandidatePcts(seg string) (map[string]float64, bool) {
