@@ -139,7 +139,7 @@ func (c Commission) noticeText(ctx context.Context, bin, url string) (string, er
 }
 
 var (
-	frMonths = map[string]time.Month{
+	cdsMonths = map[string]time.Month{
 		"janvier": time.January, "février": time.February, "fevrier": time.February,
 		"mars": time.March, "avril": time.April, "mai": time.May, "juin": time.June,
 		"juillet": time.July, "août": time.August, "aout": time.August,
@@ -223,7 +223,7 @@ func parseNoticeLine(text, href string, year int) (NoticeRef, bool) {
 	if m := dayMonthRe.FindStringSubmatch(text); m != nil && year > 0 {
 		var day int
 		fmt.Sscanf(m[1], "%d", &day)
-		if mon, ok := frMonths[strings.ToLower(m[2])]; ok {
+		if mon, ok := cdsMonths[strings.ToLower(m[2])]; ok {
 			ref.Date = time.Date(year, mon, day, 0, 0, 0, 0, time.UTC)
 		}
 	}
