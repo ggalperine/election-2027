@@ -40,7 +40,7 @@ export function LatestPolls({ cycle, round }: { cycle: string; round: number }) 
     <ChartFrame
       title="Derniers sondages"
       subtitle="Les enquêtes les plus récentes, du plus récent au plus ancien."
-      source="Source : nsppolls ; Wikipédia"
+      source="Source : Commission des sondages"
     >
       <AsyncState
         loading={loading}

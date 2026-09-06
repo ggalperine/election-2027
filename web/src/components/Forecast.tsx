@@ -120,7 +120,7 @@ export function Forecast({
       <ChartFrame
         title={`Projection à l'horizon du scrutin — ${METHOD_LABEL[method]}`}
         subtitle="Zone ombrée = incertitude croissante · à droite de la ligne verticale = futur estimé"
-        source="Source : nsppolls ; Wikipédia — Sondages agrégés, moyenne pondérée"
+        source="Source : Commission des sondages — Sondages agrégés, moyenne pondérée"
         actions={
           <Segmented<ForecastMethod>
             value={method}

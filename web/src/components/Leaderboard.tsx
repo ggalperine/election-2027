@@ -45,7 +45,7 @@ export function Leaderboard({
       <ChartFrame
         title="Intentions de vote — moyenne pondérée"
         subtitle={subtitle}
-        source="Source : nsppolls ; Wikipédia — Sondages agrégés, moyenne pondérée ; IC à 95 %"
+        source="Source : Commission des sondages — Sondages agrégés, moyenne pondérée ; IC à 95 %"
       >
 
       <AsyncState

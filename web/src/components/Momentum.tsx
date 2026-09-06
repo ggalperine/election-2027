@@ -70,7 +70,7 @@ export function Momentum({ cycle, round }: { cycle: string; round: number }) {
       <ChartFrame
         title="Momentum"
         subtitle="Progression des candidats sur les 30 derniers jours (points de %)."
-        source="Source : nsppolls ; Wikipédia"
+        source="Source : Commission des sondages"
       >
         <AsyncState
           loading={loading}

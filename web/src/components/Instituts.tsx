@@ -53,7 +53,7 @@ export function Instituts({ cycle, round }: { cycle: string; round: number }) {
             ? `${pollsters.length} instituts · activité et biais maison`
             : "Activité et biais des instituts"
         }
-        source="Source : nsppolls ; Wikipédia — Biais maison = écart moyen à la moyenne de tous les sondages"
+        source="Source : Commission des sondages — Biais maison = écart moyen à la moyenne de tous les sondages"
       >
 
       {/* (a) Activity table --------------------------------------------- */}

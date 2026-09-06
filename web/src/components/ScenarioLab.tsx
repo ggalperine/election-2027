@@ -167,7 +167,7 @@ export function ScenarioLab({
       <ChartFrame
         title="Report des voix — qui se qualifie ?"
         subtitle="Retirez un candidat du champ et transférez ses voix à un allié, puis observez le nouveau classement du 1er tour."
-        source="Source : nsppolls ; Wikipédia — Sondages agrégés, moyenne pondérée ; hypothèses de report"
+        source="Source : Commission des sondages — Sondages agrégés, moyenne pondérée ; hypothèses de report"
       >
 
       <AsyncState

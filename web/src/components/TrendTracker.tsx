@@ -142,7 +142,7 @@ export function TrendTracker({
       <ChartFrame
         title="Évolution des intentions de vote"
         subtitle="Moyenne glissante pondérée par candidat · bande = intervalle de confiance à 95 %"
-        source="Source : nsppolls ; Wikipédia — Sondages agrégés, moyenne pondérée"
+        source="Source : Commission des sondages — Sondages agrégés, moyenne pondérée"
         actions={
           <Segmented<"line" | "band">
             value={showBands ? "band" : "line"}
