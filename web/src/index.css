@@ -1127,7 +1127,8 @@ table.polls td.pollster {
   color: var(--muted);
 }
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   font: inherit;
   font-size: 14px;
   text-transform: none;
@@ -1141,7 +1142,8 @@ table.polls td.pollster {
   transition: border-color 0.15s ease;
 }
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   border-color: var(--accent);
 }
 .contact-form textarea {

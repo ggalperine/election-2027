@@ -21,6 +21,7 @@ import { BlackoutNotice } from "./components/BlackoutNotice";
 import { activeBlackout } from "./lib/blackout";
 import { Probabilities } from "./components/Probabilities";
 import { ContactForm } from "./components/ContactForm";
+import { RequestForm } from "./components/RequestForm";
 
 const WINDOW_OPTIONS = [
   { value: "14", label: "Récent" },
@@ -59,6 +60,7 @@ export function App() {
           <a className="rail-btn" href="#tendance" title="Tendance">∿</a>
           <a className="rail-btn" href="#scenarios" title="Scénarios">⇄</a>
           <a className="rail-btn" href="#sources" title="Sources">≣</a>
+          <a className="rail-btn" href="#demande" title="Demande sur-mesure">★</a>
           <a className="rail-btn" href="#contact" title="Contact">✉</a>
         </nav>
       </aside>
@@ -211,6 +213,16 @@ export function App() {
           sub="Chaque sondage individuel, son institut, son commanditaire et le lien vers la notice officielle."
         >
           <SourcesTable cycle={cycle} round={round} />
+        </Section>
+        </div>
+
+        <div id="demande">
+        <Section
+          kicker="Sur-mesure"
+          title="Besoin d'une donnée ou d'une analyse spécifique ?"
+          sub="Analyse candidat approfondie, export de données, ciblage électoral, développement dédié — dites-nous votre besoin, nous en discutons."
+        >
+          <RequestForm />
         </Section>
         </div>
 
