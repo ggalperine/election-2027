@@ -114,7 +114,67 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 			return res, true
 		}
 	}
-	return nil, false
+	// Fallback: some instituts print the full-field table far from its question.
+	// A block of ≥10 KNOWN 2027 candidates summing ~100 is almost certainly the
+	// first-round intention wherever it sits (a 2022 recall has <10 in-map names;
+	// favourability tables don't sum to 100; Elabe's 6-candidate configs are too
+	// small) — so we accept it even without a nearby marker.
+	return globalFullFieldScan(text)
+}
+
+// blockBreak ends a candidate block: a foreign section or a non-vote table.
+var blockBreak = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|municipal|sénatorial|\bliste\b|conduite par|image|confiance|favorable|popularité|(2nd|2ème|2eme|2e|second|deuxième)\s+tour`)
+
+func globalFullFieldScan(text string) (map[string]float64, bool) {
+	lines := strings.Split(text, "\n")
+	block := map[string]float64{}
+	gap := 0
+	closeBlock := func() (map[string]float64, bool) {
+		if len(block) >= 10 {
+			var sum float64
+			for _, v := range block {
+				sum += v
+			}
+			if sum >= 90 && sum <= 110 {
+				return block, true
+			}
+		}
+		block = map[string]float64{}
+		return nil, false
+	}
+	for _, line := range lines {
+		if blockBreak.MatchString(line) {
+			if r, ok := closeBlock(); ok {
+				return r, true
+			}
+			continue
+		}
+		matched := false
+		ll := strings.ToLower(line)
+		for _, form := range candidateForms {
+			if !strings.Contains(ll, form) {
+				continue
+			}
+			matched = true
+			canon := candidate2027[form]
+			if _, seen := block[canon]; !seen {
+				if ms := pctRe.FindAllStringSubmatch(line, -1); len(ms) > 0 {
+					if f, err := strconv.ParseFloat(strings.Replace(ms[len(ms)-1][1], ",", ".", 1), 64); err == nil {
+						block[canon] = f
+					}
+				}
+			}
+			break
+		}
+		if matched {
+			gap = 0
+		} else if gap++; gap > 3 {
+			if r, ok := closeBlock(); ok {
+				return r, true
+			}
+		}
+	}
+	return closeBlock()
 }
 
 // secondRoundMarker matches a run-off heading ("2nd tour" / "second tour").
