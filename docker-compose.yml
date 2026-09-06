@@ -58,6 +58,18 @@ services:
     depends_on:
       rabbitmq: { condition: service_healthy }
 
+  # Direct-source ingesters, one microservice per source (INSTITUT=…). commission
+  # is the legal-registry base (all instituts, via notice PDFs). Add per-institut
+  # services (INSTITUT=ifop, …) as their site parsers land.
+  commission-ingester:
+    build: { context: ., dockerfile: Dockerfile }
+    command: ["/app/institut-ingester"]
+    environment:
+      <<: *env
+      INSTITUT: commission
+    depends_on:
+      rabbitmq: { condition: service_healthy }
+
   results-ingester:
     build: { context: ., dockerfile: Dockerfile }
     command: ["/app/results-ingester"]

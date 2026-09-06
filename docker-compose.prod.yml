@@ -20,6 +20,9 @@ services:
   poll-ingester:
     restart: always
 
+  commission-ingester:
+    restart: always
+
   results-ingester:
     restart: always
 
