@@ -5,6 +5,7 @@ package main
 import (
 	"context"
 	"net/http"
+	"sort"
 	"strconv"
 	"time"
 
@@ -179,6 +180,32 @@ func main() {
 			stats.DefaultTau, ed, nsims, stats.DefaultDriftPerDay, stats.DefaultDoF))
 	})
 
+	// On-demand deep-dive analysis for one candidate (premium report data).
+	r.Get("/api/analysis", func(w http.ResponseWriter, req *http.Request) {
+		cycle, _ := cycleRound(req)
+		cand := req.URL.Query().Get("candidate")
+		if cand == "" {
+			httpx.JSON(w, 400, map[string]string{"error": "candidate is required"})
+			return
+		}
+		r1, err := st.RawResults(req.Context(), cycle, 1)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		duels, err := st.Duels(req.Context(), cycle)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		a, ok := buildAnalysis(cycle, cand, r1, duels)
+		if !ok {
+			httpx.JSON(w, 404, map[string]string{"error": "unknown candidate for this cycle"})
+			return
+		}
+		httpx.JSON(w, 200, a)
+	})
+
 	// Individual polls with pollster, sponsor and source link (sources table).
 	r.Get("/api/polls", func(w http.ResponseWriter, req *http.Request) {
 		cycle, round := cycleRound(req)
@@ -254,6 +281,93 @@ func buildSummary(cycle string, round int, rows []models.RawResult, window int) 
 }
 
 func round1(v float64) float64 { return float64(int(v*10+0.5)) / 10 }
+
+// buildAnalysis compiles the full engine view of one candidate for the premium
+// on-demand report: standing, momentum, house effects, forecast and run-off duels.
+func buildAnalysis(cycle, cand string, r1 []models.RawResult, duels []models.DuelObs) (models.Analysis, bool) {
+	asOf := latestDate(r1)
+	snap := stats.Snapshot(r1, asOf, snapshotWindow, stats.DefaultTau)
+	a := models.Analysis{Candidate: cand, Cycle: cycle}
+	found := false
+	for i, p := range snap {
+		if p.Candidate == cand {
+			a.Rank = i + 1
+			a.Party, a.Color = p.Party, p.Color
+			a.AvgPct, a.Lo, a.Hi, a.NPolls = p.AvgPct, p.Lo, p.Hi, p.NPolls
+			found = true
+			break
+		}
+	}
+	if !found {
+		return a, false
+	}
+
+	for _, m := range stats.Momentum(r1, asOf, 30, snapshotWindow, stats.DefaultTau) {
+		if m.Candidate == cand {
+			a.MomentumDelta, a.MomentumDir = m.Delta, m.Direction
+			break
+		}
+	}
+
+	fc := stats.Simulate(r1, duels, asOf, snapshotWindow, stats.DefaultTau,
+		electionDate(cycle, asOf), stats.DefaultNSims, stats.DefaultDriftPerDay, stats.DefaultDoF)
+	for _, p := range fc.Candidates {
+		if p.Candidate == cand {
+			a.ProbLead, a.ProbQualify, a.ProbWin = p.ProbLead, p.ProbQualify, p.ProbWin
+			a.P05, a.P50, a.P95 = p.P05, p.P50, p.P95
+			break
+		}
+	}
+
+	for _, he := range stats.HouseEffects(r1, 2) {
+		if he.Candidate == cand {
+			a.HouseEffects = append(a.HouseEffects, he)
+		}
+	}
+
+	a.Duels = candidateDuels(cand, duels)
+	a.GeneratedAt = asOf.Format("2006-01-02")
+	return a, true
+}
+
+// candidateDuels averages the candidate's second-round score against each
+// opponent, sorted strongest → weakest.
+func candidateDuels(cand string, duels []models.DuelObs) []models.DuelSummary {
+	type acc struct {
+		sum   float64
+		n     int
+		color string
+	}
+	by := map[string]*acc{}
+	for _, d := range duels {
+		var mine, share float64
+		var opp string
+		if d.A == cand {
+			share, opp = d.PctA, d.B
+		} else if d.B == cand {
+			share, opp = d.PctB, d.A
+		} else {
+			continue
+		}
+		mine = share
+		x := by[opp]
+		if x == nil {
+			x = &acc{}
+			by[opp] = x
+		}
+		x.sum += mine
+		x.n++
+	}
+	out := make([]models.DuelSummary, 0, len(by))
+	for opp, x := range by {
+		share := round1(x.sum / float64(x.n))
+		out = append(out, models.DuelSummary{
+			Opponent: opp, Share: share, Wins: share > 50, NPolls: x.n,
+		})
+	}
+	sort.Slice(out, func(i, j int) bool { return out[i].Share > out[j].Share })
+	return out
+}
 
 func respond(w http.ResponseWriter, data any, err error) {
 	if err != nil {

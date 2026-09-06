@@ -165,6 +165,41 @@ type Forecast struct {
 	Candidates   []ForecastProb `json:"candidates"`
 }
 
+// DuelSummary is one candidate's average run-off score against a given opponent.
+type DuelSummary struct {
+	Opponent string  `json:"opponent"`
+	Color    string  `json:"color"`
+	Share    float64 `json:"share"`   // this candidate's mean second-round %
+	Wins     bool    `json:"wins"`    // share > 50
+	NPolls   int     `json:"n_polls"`
+}
+
+// Analysis is the on-demand deep-dive report for a single candidate (premium
+// product). It compiles the whole engine's view of one candidate.
+type Analysis struct {
+	Candidate   string         `json:"candidate"`
+	Party       string         `json:"party"`
+	Color       string         `json:"color"`
+	Cycle       string         `json:"cycle"`
+	Rank        int            `json:"rank"`
+	AvgPct      float64        `json:"avg_pct"`
+	Lo          float64        `json:"lo"`
+	Hi          float64        `json:"hi"`
+	NPolls      int            `json:"n_polls"`
+	MomentumDelta float64      `json:"momentum_delta"` // pts over 30 days
+	MomentumDir   string       `json:"momentum_dir"`
+	ProbLead    float64        `json:"prob_lead"`
+	ProbQualify float64        `json:"prob_qualify"`
+	ProbWin     float64        `json:"prob_win"`
+	P05         float64        `json:"p05"`
+	P50         float64        `json:"p50"`
+	P95         float64        `json:"p95"`
+	HouseEffects []HouseEffect `json:"house_effects"` // this candidate only
+	Duels       []DuelSummary  `json:"duels"`          // sorted best → worst
+	GeneratedAt string         `json:"generated_at"`
+	Narrative   string         `json:"narrative,omitempty"` // AI synthesis (premium)
+}
+
 // ActualResult is the final official result of a past election (reference line).
 type ActualResult struct {
 	Candidate string  `json:"candidate"`
