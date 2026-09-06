@@ -1008,6 +1008,7 @@ table.polls td.pollster {
   padding: 11px 0;
   border-bottom: 1px solid var(--border);
   color: var(--ink);
+  white-space: nowrap;
 }
 .prob-table td.prob-cand {
   text-align: left;
@@ -1043,9 +1044,10 @@ table.polls td.pollster {
   opacity: 0.55;
 }
 .prob-val {
-  min-width: 48px;
+  min-width: 56px;
   text-align: right;
   font-weight: 600;
+  white-space: nowrap;
 }
 .prob-win {
   font-weight: 800;

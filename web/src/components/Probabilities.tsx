@@ -6,11 +6,12 @@ import { ChartFrame } from "./ChartFrame";
 
 // P(x) formatted as a French percentage. Below 0.5% we say "<0,5 %" rather
 // than "0 %" — a small but non-zero chance should not read as impossible.
+// The probability cells use white-space:nowrap (CSS) so ">99,5 %" never wraps.
 function prob(p: number): string {
-  if (p <= 0) return "0 %";
-  if (p < 0.005) return "<0,5 %";
-  if (p > 0.995) return ">99,5 %";
-  return `${(p * 100).toFixed(0).replace(".", ",")} %`;
+  if (p <= 0) return "0 %";
+  if (p < 0.005) return "<0,5 %";
+  if (p > 0.995) return ">99,5 %";
+  return `${(p * 100).toFixed(0).replace(".", ",")} %`;
 }
 
 export function Probabilities({ cycle, window }: { cycle: string; window: number }) {
