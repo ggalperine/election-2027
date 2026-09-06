@@ -65,36 +65,43 @@ var candidateForms = sortedKeysByLenDesc(candidate2027)
 // cell on a candidate line (the redressé / final column).
 var pctRe = regexp.MustCompile(`(\d{1,2}(?:[.,]\d)?)\s*%?`)
 
-// presidentialFirstRoundQ matches the legally-standardised first-round vote
-// question that heads each intentions table ("Si le 1er tour de l'élection
-// présidentielle avait lieu…"). We anchor on this wording — which is far more
-// stable across instituts than any table layout — to isolate the presidential
-// first round from run-off, European or legislative tables in the same notice.
-var presidentialFirstRoundQ = regexp.MustCompile(`(?i)(1er|premier)\s+tour\s+de\s+l.{0,3}élection\s+présidentielle`)
+// firstRoundMarker matches any "1er tour" / "premier tour" heading. We anchor on
+// this (far more stable across instituts than table layout) then vet the heading
+// context, because the presidential wording is often wrapped across lines.
+var firstRoundMarker = regexp.MustCompile(`(?i)(1er|premier)\s+tour`)
 
-// otherQuestion marks the start of any other question block (2nd round, or the
-// next hypothesis) so a first-round segment stops before it.
-var otherQuestion = regexp.MustCompile(`(?i)(2(nd|e|ème)?|second|deuxième)\s+tour\s+de\s+l.{0,3}élection|hypothèse\s+[2-9]|élections?\s+(européennes|législatives)|liste`)
+// headExclude rejects a heading that introduces a NON-2027-intention table:
+// a past-vote reconstitution/recall, or a legislative/European election.
+var headExclude = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|municipal|sénatorial`)
 
 // parseFirstHypothesis extracts the first-round BASE-hypothesis intentions.
-// It splits the notice into segments starting at each presidential first-round
-// question and returns the first segment that passes the validation gate — so
-// the questionnaire (no %) and unrelated tables (European/legislative/run-off)
-// are skipped, and Hypothèse 1 is picked over 2, 3, …
+// For each "1er tour" marker it vets the surrounding heading (must concern the
+// présidentielle, must not be a reconstitution/other-election table), then
+// extracts candidate→pct from the segment up to the next marker. The first
+// segment passing the validation gate wins — so methodology prose, the
+// questionnaire (no %), the 2022 recall and run-off tables are all skipped.
 func parseFirstHypothesis(text string) (map[string]float64, bool) {
-	locs := presidentialFirstRoundQ.FindAllStringIndex(text, -1)
+	locs := firstRoundMarker.FindAllStringIndex(text, -1)
 	for i, loc := range locs {
+		// Exclusion is judged on a TIGHT window (a reconstitution/other-election
+		// keyword right next to the marker), so a distant one doesn't disqualify.
+		excl := strings.ToLower(text[clamp(loc[0]-80, 0, len(text)):clamp(loc[1]+40, 0, len(text))])
+		if headExclude.MatchString(excl) {
+			continue
+		}
+		// "présidentiel" is looked for on a WIDER window, because a data-table
+		// marker (e.g. "ITV 1er tour") can sit a few lines below the question
+		// that names the présidentielle.
+		ctx := strings.ToLower(text[clamp(loc[0]-260, 0, len(text)):clamp(loc[1]+160, 0, len(text))])
+		if !strings.Contains(ctx, "présidentiel") && !strings.Contains(ctx, "presidentiel") {
+			continue
+		}
 		start := loc[1]
 		end := len(text)
 		if i+1 < len(locs) {
 			end = locs[i+1][0]
 		}
-		seg := text[start:end]
-		// Cut the segment at the next non-first-round question if it appears.
-		if m := otherQuestion.FindStringIndex(seg); m != nil {
-			seg = seg[:m[0]]
-		}
-		if res, ok := extractCandidatePcts(seg); ok {
+		if res, ok := extractCandidatePcts(text[start:end]); ok {
 			return res, true
 		}
 	}
@@ -146,14 +153,14 @@ func parseSample(text string) int {
 	return n
 }
 
-func indexOfFirst(s string, subs ...string) int {
-	best := -1
-	for _, sub := range subs {
-		if i := strings.Index(s, sub); i >= 0 && (best < 0 || i < best) {
-			best = i
-		}
+func clamp(v, lo, hi int) int {
+	if v < lo {
+		return lo
 	}
-	return best
+	if v > hi {
+		return hi
+	}
+	return v
 }
 
 func sortedKeysByLenDesc(m map[string]string) []string {
