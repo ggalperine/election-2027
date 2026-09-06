@@ -230,7 +230,7 @@ export function App() {
         <Section
           kicker="Contact"
           title="Nous écrire"
-          sub="Une question, une remarque méthodologique, une demande presse ou professionnelle ?"
+          sub="Une question, une remarque méthodologique, une demande presse ? Une utilisation ou un besoin spécifique ? Décrivez-le précisément — tout est réalisable sur-mesure."
         >
           <ContactForm />
         </Section>
