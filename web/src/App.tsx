@@ -20,6 +20,7 @@ import { Logo } from "./components/Logo";
 import { BlackoutNotice } from "./components/BlackoutNotice";
 import { activeBlackout } from "./lib/blackout";
 import { Probabilities } from "./components/Probabilities";
+import { ContactForm } from "./components/ContactForm";
 
 const WINDOW_OPTIONS = [
   { value: "14", label: "Récent" },
@@ -58,6 +59,7 @@ export function App() {
           <a className="rail-btn" href="#tendance" title="Tendance">∿</a>
           <a className="rail-btn" href="#scenarios" title="Scénarios">⇄</a>
           <a className="rail-btn" href="#sources" title="Sources">≣</a>
+          <a className="rail-btn" href="#contact" title="Contact">✉</a>
         </nav>
       </aside>
 
@@ -209,6 +211,16 @@ export function App() {
           sub="Chaque sondage individuel, son institut, son commanditaire et le lien vers la notice officielle."
         >
           <SourcesTable cycle={cycle} round={round} />
+        </Section>
+        </div>
+
+        <div id="contact">
+        <Section
+          kicker="Contact"
+          title="Nous écrire"
+          sub="Une question, une remarque méthodologique, une demande presse ou professionnelle ?"
+        >
+          <ContactForm />
         </Section>
         </div>
 

@@ -150,6 +150,27 @@ async function get<T>(path: string): Promise<T> {
 /* Endpoints                                                           */
 /* ------------------------------------------------------------------ */
 
+async function post<T>(path: string, body: unknown): Promise<T> {
+  const res = await fetch(`${BASE}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`API ${path}: ${res.status}`);
+  return res.json() as Promise<T>;
+}
+
+export interface ContactPayload {
+  name: string;
+  email: string;
+  subject?: string;
+  message: string;
+  website?: string; // honeypot
+}
+
+export const postContact = (p: ContactPayload) =>
+  post<{ ok: boolean }>("/api/contact", p);
+
 export const getCycles = () => get<Cycle[]>("/api/cycles");
 
 /** window = days back from the latest poll; 0 = since the beginning; undefined = server default. */

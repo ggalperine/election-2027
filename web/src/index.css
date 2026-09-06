@@ -1103,6 +1103,98 @@ table.polls td.pollster {
 }
 
 /* ============================================================= */
+/*  Contact form                                                 */
+/* ============================================================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.contact-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.contact-form button {
+  appearance: none;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.contact-form button:hover {
+  filter: brightness(1.1);
+}
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.contact-err {
+  font-size: 13px;
+  color: var(--danger);
+}
+.contact-done {
+  font-size: 15px;
+  color: var(--pos);
+  margin: 0;
+}
+@media (max-width: 560px) {
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================= */
 /*  Legal footer                                                 */
 /* ============================================================= */
 .legal-footer {

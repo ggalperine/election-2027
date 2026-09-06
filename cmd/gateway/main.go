@@ -4,9 +4,12 @@ package main
 
 import (
 	"context"
+	"encoding/json"
+	"io"
 	"net/http"
 	"sort"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/go-chi/chi/v5"
@@ -58,7 +61,7 @@ func main() {
 
 	r := chi.NewRouter()
 	r.Use(middleware.Logger, middleware.Recoverer)
-	r.Use(cors.Handler(cors.Options{AllowedOrigins: []string{"*"}, AllowedMethods: []string{"GET"}}))
+	r.Use(cors.Handler(cors.Options{AllowedOrigins: []string{"*"}, AllowedMethods: []string{"GET", "POST", "OPTIONS"}, AllowedHeaders: []string{"Content-Type"}}))
 
 	r.Get("/health", func(w http.ResponseWriter, _ *http.Request) {
 		httpx.JSON(w, 200, map[string]string{"status": "ok"})
@@ -219,6 +222,41 @@ func main() {
 		cycle, round := cycleRound(req)
 		data, err := st.ActualResults(req.Context(), cycle, round)
 		respond(w, data, err)
+	})
+
+	// Contact form submission (stored in contact_messages).
+	r.Post("/api/contact", func(w http.ResponseWriter, req *http.Request) {
+		var in struct {
+			Name    string `json:"name"`
+			Email   string `json:"email"`
+			Subject string `json:"subject"`
+			Message string `json:"message"`
+			Website string `json:"website"` // honeypot: bots fill it, humans don't
+		}
+		if err := json.NewDecoder(io.LimitReader(req.Body, 1<<16)).Decode(&in); err != nil {
+			httpx.JSON(w, 400, map[string]string{"error": "invalid body"})
+			return
+		}
+		in.Name, in.Email = strings.TrimSpace(in.Name), strings.TrimSpace(in.Email)
+		in.Subject, in.Message = strings.TrimSpace(in.Subject), strings.TrimSpace(in.Message)
+		if in.Website != "" { // spam bot → pretend success, store nothing
+			httpx.JSON(w, 200, map[string]bool{"ok": true})
+			return
+		}
+		if in.Name == "" || in.Message == "" || !strings.Contains(in.Email, "@") ||
+			len(in.Name) > 200 || len(in.Email) > 200 || len(in.Subject) > 300 || len(in.Message) > 5000 {
+			httpx.JSON(w, 400, map[string]string{"error": "champs invalides"})
+			return
+		}
+		ip := req.Header.Get("X-Forwarded-For")
+		if ip == "" {
+			ip = req.RemoteAddr
+		}
+		if err := st.SaveContact(req.Context(), in.Name, in.Email, in.Subject, in.Message, ip); err != nil {
+			respond(w, nil, err)
+			return
+		}
+		httpx.JSON(w, 200, map[string]bool{"ok": true})
 	})
 
 	// Winner per department for the France map (choropleth).

@@ -96,6 +96,14 @@ func (s *Store) SavePoll(ctx context.Context, p models.RawPoll) error {
 }
 
 // SaveGeoResult persists one official geo result row idempotently.
+// SaveContact stores one contact-form submission.
+func (s *Store) SaveContact(ctx context.Context, name, email, subject, message, ip string) error {
+	_, err := s.pool.Exec(ctx, `
+		INSERT INTO contact_messages(name, email, subject, message, ip)
+		VALUES($1,$2,$3,$4,$5)`, name, email, subject, message, ip)
+	return err
+}
+
 func (s *Store) SaveGeoResult(ctx context.Context, g models.GeoResult) error {
 	cid, err := s.candidateID(ctx, g.Candidate, "")
 	if err != nil {
