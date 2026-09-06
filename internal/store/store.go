@@ -136,6 +136,60 @@ func (s *Store) RawResults(ctx context.Context, cycle string, round int) ([]mode
 	return out, rows.Err()
 }
 
+// Duels returns second-round head-to-head observations for a cycle: each poll
+// that tested exactly two candidates becomes one DuelObs. Used to calibrate the
+// run-off model in the Monte Carlo forecast.
+func (s *Store) Duels(ctx context.Context, cycle string) ([]models.DuelObs, error) {
+	rows, err := s.pool.Query(ctx, `
+		SELECT p.id, p.field_end::date, ps.name, c.name, pr.pct, COALESCE(p.sample_size,0)
+		FROM polls p
+		JOIN poll_results pr ON pr.poll_id = p.id
+		JOIN candidates c ON c.id = pr.candidate_id
+		JOIN pollsters ps ON ps.id = p.pollster_id
+		WHERE p.cycle = $1 AND p.round = 2
+		ORDER BY p.id, pr.pct DESC`, cycle)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	type entry struct {
+		date     time.Time
+		pollster string
+		cand     string
+		pct      float64
+		sample   int
+	}
+	byPoll := map[int64][]entry{}
+	var order []int64
+	for rows.Next() {
+		var id int64
+		var e entry
+		if err := rows.Scan(&id, &e.date, &e.pollster, &e.cand, &e.pct, &e.sample); err != nil {
+			return nil, err
+		}
+		if _, ok := byPoll[id]; !ok {
+			order = append(order, id)
+		}
+		byPoll[id] = append(byPoll[id], e)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	var out []models.DuelObs
+	for _, id := range order {
+		es := byPoll[id]
+		if len(es) != 2 {
+			continue // only clean two-way duels
+		}
+		out = append(out, models.DuelObs{
+			Date: es[0].date, Pollster: es[0].pollster, SampleSize: es[0].sample,
+			A: es[0].cand, PctA: es[0].pct,
+			B: es[1].cand, PctB: es[1].pct,
+		})
+	}
+	return out, nil
+}
+
 // LatestPoll returns the ingest time, field_end and institut of the most recent
 // poll for a cycle+round.
 func (s *Store) LatestPoll(ctx context.Context, cycle string, round int) (lastUpdated, fieldEnd time.Time, pollster string, err error) {

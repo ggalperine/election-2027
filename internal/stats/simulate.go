@@ -133,20 +133,72 @@ func weightedStats(rows []models.RawResult, asOf time.Time, windowDays int, tau 
 	return out
 }
 
-// runoffStrength returns each candidate's mean second-round vote share, pooled
-// across every duel in which they were tested. Used as the duel model.
-func runoffStrength(round2 []models.RawResult, asOf time.Time, tau float64) map[string]float64 {
-	s := weightedStats(round2, asOf, 0, tau) // window 0 = all history
-	out := map[string]float64{}
-	for _, c := range s {
-		out[c.cand] = c.mu
+// duelKey is an unordered candidate pair.
+func duelKey(a, b string) string {
+	if a <= b {
+		return a + "\x00" + b
+	}
+	return b + "\x00" + a
+}
+
+// duelModel holds, per candidate pair, the recency-weighted mean vote share of
+// the alphabetically-first candidate — the empirical run-off split.
+type duelModel struct {
+	shareFirst map[string]float64 // key -> mean share of the lexicographically smaller name
+}
+
+// buildDuelModel aggregates the head-to-head observations into a pair matrix,
+// recency-weighting each duel by sample size × exp(-age/tau).
+func buildDuelModel(duels []models.DuelObs, asOf time.Time, tau float64) duelModel {
+	if tau <= 0 {
+		tau = DefaultTau
+	}
+	type acc struct{ sumW, sumWShareFirst float64 }
+	m := map[string]*acc{}
+	for _, d := range duels {
+		age := asOf.Sub(d.Date).Hours() / 24
+		if age < 0 {
+			continue
+		}
+		resp := float64(d.SampleSize)
+		if resp <= 0 {
+			resp = 1000
+		}
+		w := resp * math.Exp(-age/tau)
+		// share of the lexicographically-smaller name in this duel
+		first, share := d.A, d.PctA
+		if d.B < d.A {
+			first, share = d.B, d.PctB
+		}
+		_ = first
+		key := duelKey(d.A, d.B)
+		a := m[key]
+		if a == nil {
+			a = &acc{}
+			m[key] = a
+		}
+		a.sumW += w
+		a.sumWShareFirst += w * share
+	}
+	out := duelModel{shareFirst: map[string]float64{}}
+	for k, a := range m {
+		if a.sumW > 0 {
+			out.shareFirst[k] = a.sumWShareFirst / a.sumW
+		}
 	}
 	return out
 }
 
+// probFirstWins returns the modelled share of the lexicographically-smaller
+// name in an a-vs-b duel, and whether the pair was actually polled.
+func (dm duelModel) shareOfFirst(a, b string) (float64, bool) {
+	s, ok := dm.shareFirst[duelKey(a, b)]
+	return s, ok
+}
+
 // Simulate runs the Monte Carlo forecast. round1 rows drive qualification;
-// round2 rows (may be nil) calibrate the run-off duel.
-func Simulate(round1, round2 []models.RawResult, asOf time.Time, windowDays int, tau float64,
+// duels (may be nil) calibrate the run-off via a candidate-pair matrix.
+func Simulate(round1 []models.RawResult, duels []models.DuelObs, asOf time.Time, windowDays int, tau float64,
 	electionDate time.Time, nSims int, driftPerDay, dof float64) models.Forecast {
 
 	if nSims <= 0 {
@@ -166,7 +218,7 @@ func Simulate(round1, round2 []models.RawResult, asOf time.Time, windowDays int,
 	driftVar := driftPerDay * driftPerDay * daysLeft // random-walk variance ∝ time
 
 	k := len(cands)
-	strength := runoffStrength(round2, asOf, tau)
+	dm := buildDuelModel(duels, asOf, tau)
 
 	// Total sd per candidate = polling SE ⊕ drift.
 	sigma := make([]float64, k)
@@ -218,7 +270,7 @@ func Simulate(round1, round2 []models.RawResult, asOf time.Time, windowDays int,
 		if second >= 0 {
 			qualifyCount[second]++
 			// 4. run-off between first and second
-			winner := duelWinner(rng, cands[first].cand, cands[second].cand, draw[first], draw[second], strength)
+			winner := duelWinner(rng, cands[first].cand, cands[second].cand, draw[first], draw[second], dm)
 			if winner == 0 {
 				winCount[first]++
 			} else {
@@ -258,19 +310,26 @@ func Simulate(round1, round2 []models.RawResult, asOf time.Time, windowDays int,
 }
 
 // duelWinner returns 0 if candidate a wins the run-off, 1 if b wins.
-// The baseline split comes from actual second-round polling (their mean run-off
-// scores, normalised); when that is missing we fall back to the first-round
-// shares. A per-simulation Gaussian shock (~duel polling error) is applied.
-func duelWinner(rng *rand.Rand, a, b string, firstA, firstB float64, strength map[string]float64) int {
-	sa, oka := strength[a]
-	sb, okb := strength[b]
-	if !oka || !okb || sa+sb == 0 {
-		sa, sb = firstA, firstB // fallback: relative first-round strength
+// The split comes from the actual head-to-head polling for this exact pair
+// (duel matrix); when that pair was never polled we fall back to the relative
+// first-round shares. A per-simulation Gaussian shock (~run-off polling error)
+// is applied to propagate duel uncertainty.
+func duelWinner(rng *rand.Rand, a, b string, firstA, firstB float64, dm duelModel) int {
+	var shareA float64
+	if sf, ok := dm.shareOfFirst(a, b); ok {
+		// sf is the polled share of the lexicographically-smaller name.
+		if a <= b {
+			shareA = sf
+		} else {
+			shareA = 100 - sf
+		}
+	} else {
+		den := firstA + firstB
+		if den == 0 {
+			den = 1
+		}
+		shareA = firstA / den * 100 // fallback: relative first-round strength
 	}
-	if sa+sb == 0 {
-		sa, sb = 1, 1
-	}
-	shareA := sa / (sa + sb) * 100
 	// duel uncertainty ≈ 2.5 pt sd (typical run-off polling error)
 	shareA += rng.NormFloat64() * 2.5
 	if shareA >= 50 {

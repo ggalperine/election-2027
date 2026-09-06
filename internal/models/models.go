@@ -42,6 +42,18 @@ type Poll struct {
 	Results    map[string]float64 `json:"results"`
 }
 
+// DuelObs is one second-round head-to-head observation (a poll testing exactly
+// two candidates), used to calibrate the run-off model.
+type DuelObs struct {
+	Date       time.Time
+	Pollster   string
+	A          string
+	PctA       float64
+	B          string
+	PctB       float64
+	SampleSize int
+}
+
 // RawResult is a single (poll date, candidate, pct, sample) tuple fed to the stats engine.
 type RawResult struct {
 	Date       time.Time

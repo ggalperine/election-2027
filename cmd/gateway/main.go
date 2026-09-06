@@ -172,7 +172,7 @@ func main() {
 			respond(w, nil, err)
 			return
 		}
-		r2, err := st.RawResults(req.Context(), cycle, 2)
+		duels, err := st.Duels(req.Context(), cycle)
 		if err != nil {
 			respond(w, nil, err)
 			return
@@ -180,7 +180,7 @@ func main() {
 		asOf := latestDate(r1)
 		ed := electionDate(cycle, asOf)
 		nsims := queryInt(req, "sims", stats.DefaultNSims)
-		httpx.JSON(w, 200, stats.Simulate(r1, r2, asOf, queryInt(req, "window", snapshotWindow),
+		httpx.JSON(w, 200, stats.Simulate(r1, duels, asOf, queryInt(req, "window", snapshotWindow),
 			stats.DefaultTau, ed, nsims, stats.DefaultDriftPerDay, stats.DefaultDoF))
 	})
 
