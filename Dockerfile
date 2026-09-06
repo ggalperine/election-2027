@@ -7,6 +7,7 @@ COPY . .
 RUN CGO_ENABLED=0 go build -o /out/gateway          ./cmd/gateway          && \
     CGO_ENABLED=0 go build -o /out/aggregator       ./cmd/aggregator       && \
     CGO_ENABLED=0 go build -o /out/poll-ingester    ./cmd/poll-ingester    && \
+    CGO_ENABLED=0 go build -o /out/institut-ingester ./cmd/institut-ingester && \
     CGO_ENABLED=0 go build -o /out/results-ingester ./cmd/results-ingester && \
     CGO_ENABLED=0 go build -o /out/scheduler        ./cmd/scheduler
 
