@@ -59,7 +59,11 @@ var candidate2027 = map[string]string{
 // Order longest-first so "de villepin" wins over "villepin", etc.
 var candidateForms = sortedKeysByLenDesc(candidate2027)
 
-var pctRe = regexp.MustCompile(`(\d{1,2}(?:[.,]\d)?)\s*%`)
+// A percentage cell: 1–2 digits, optional decimal, optional % sign. The % is
+// optional because some instituts (e.g. Ifop) print bare numbers in Brut/
+// Redressé columns rather than "%"-suffixed values. We always take the LAST such
+// cell on a candidate line (the redressé / final column).
+var pctRe = regexp.MustCompile(`(\d{1,2}(?:[.,]\d)?)\s*%?`)
 
 // presidentialFirstRoundQ matches the legally-standardised first-round vote
 // question that heads each intentions table ("Si le 1er tour de l'élection

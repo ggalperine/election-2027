@@ -1,0 +1,896 @@
+Baromètre de l’élection présidentielle - vague 5
+
+                                                 Notice technique
+
+
+
+
+FD N°122732
+Contact Ifop :
+Frédéric Dabi
+Département Opinion et Stratégies d'Entreprise
+TEL : 01 45 84 14 44
+prenom.nom@ifop.com
+AOUT 2026
+                                         Méthodologie
+
+Ce document présente les résultats d’une étude réalisée par l’Ifop. Elle respecte fidèlement
+les principes scientifiques et déontologiques de l’enquête par sondage. Les enseignements
+qu’elle indique reflètent un état de l’opinion à l’instant de sa réalisation et non pas une
+prédiction.
+
+Aucune publication totale ou partielle ne peut être faite sans l’accord exprès de l’Ifop.
+
+
+ Etude réalisée par Ifop-Fiducial pour LCI, le Figaro et Sud
+ Radio
+
+         Echantillon              L’enquête a été menée auprès d’un échantillon de 1 598 personnes
+                                  inscrites sur les listes électorales, extrait d’un échantillon de
+                                  1 800 personnes, représentatif de la population française âgée de
+                                  18 ans et plus.
+
+
+       Méthodologie
+                                  La représentativité de l’échantillon a été assurée par la méthode
+                                  des quotas (sexe, âge, profession de la personne interrogée) après
+                                  stratification par région et catégorie d'agglomération.
+
+
+
+       Mode de recueil
+                                  Les interviews ont été réalisées par questionnaire auto-administré
+                                  en ligne du 24 et 25 août 2026.
+
+
+
+
+Conditions d’interrogation : Les questions ont été placées à la suite des questions permettant d’établir les
+quotas.
+Tout interviewé ayant complété un questionnaire a obtenu des points cumulables pour une valeur inférieure
+à 1 euro.
+L’enquête a fait l’objet d’un redressement sociodémographique (données INSEE 2020) et d’un redressement
+politique sur la base de la reconstitution des votes suivants : présidentielle 2022 1er tour, européennes 2024,
+législatives 2024 1er tour
+
+           La présente notice est consultable sur le site de la commission des sondages
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                              2
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+                   Précision relative aux marges d’erreur
+
+La théorie statistique permet de mesurer l’incertitude à attacher à chaque résultat
+d’une enquête. Cette incertitude s’exprime par un intervalle de confiance situé de
+part et d’autre de la valeur observée et dans lequel la vraie valeur a une probabilité
+déterminée de se trouver. Cette incertitude, communément appelée « marge
+d’erreur », varie en fonction de la taille de l’échantillon et du pourcentage observé
+comme le montre le tableau ci-dessous :
+
+
+
+
+                   INTERVALLE DE CONFIANCE A 95% DE CHANCE
+                 Si le pourcentage trouvé est…
+    Taille de      5 ou 95%      10 ou 90%       20 ou 80%    30 ou 70%      40 ou 60%          50%
+ l’échantillon
+      100            4,4             6,0              8,0            9,2           9,8            10,0
+      200            3,1             4,2              5,7            6,5           6,9            7,1
+      300            2,5             3,5              4,6            5,3           5,7            5,8
+      400            2,2             3,0              4,0            4,6           4,9            5,0
+      500            1,9             2,7              3,6            4,1           4,4            4,5
+      600            1,8             2,4              3,3            3,7           4,0            4,1
+      700            1,6             2,3              3,0            3,5           3,7            3,8
+      800            1,5             2,1              2,8            3,2           3,5            3,5
+      900            1,4             2,0              2,6            3,0           3,2            3,3
+     1 000           1,4             1,8              2,5            2,8           3,0            3,1
+     1 100           1,3             1,8              2,4            2,7           2,9            3,0
+     1 200           1,2             1,7              2,3            2,6           2,8            2,8
+     1 300           1,2             1,6              2,2            2,5           2,7            2,7
+     1 400           1,1             1,6              2,1            2,4           2,6            2,6
+     1 500           1,1             1,5              2,0            2,3           2,4            2,5
+     2 000           1,0             1,3              1,8            2,0           2,2            2,2
+     3 000           0,8             1,1              1,4            1,6           1,8            1,8
+Exemple de lecture du tableau : dans le cas d'un échantillon de 1 500 personnes, si le pourcentage mesuré
+est de 10 %, la marge d'erreur est égale à 1,5. Le vrai pourcentage est donc compris entre 8,5 % et 11,5 %.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                          3
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+                                       Structure de l’échantillon
+                                                                           Brut (%)          Redressé (%)
+  SEXE DE L'INTERVIEWÉ(E)
+    Homme                                                                    47,8                47,7
+    Femme                                                                    52,2                52,3
+  AGE DE L'INTERVIEWÉ(E)
+    18 à 24 ans                                                              11,0                10,3
+    25 à 34 ans                                                              15,7                14,8
+    35 à 49 ans                                                              23,4                24,0
+    50 à 64 ans                                                              22,9                24,4
+    65 ans - 74 ans                                                          13,8                14,0
+    75 ans et plus                                                           13,2                12,5
+  PROFESSION DE L'INTERVIEWÉ(E)
+    Agriculteurs                                                             0,7                 0,7
+    Artisans                                                                 3,6                 3,8
+    Cadre et prof. int. supérieure                                           10,8                11,2
+    Profession intermédiaire                                                 15,0                15,0
+    Employé                                                                  16,8                15,8
+    Ouvrier                                                                  12,6                12,1
+    Retraité anciens CSP+                                                    16,3                13,2
+    Retraité anciens CSP-                                                    16,0                16,1
+    Elève, étudiant                                                          4,6                 6,4
+    Inactif n’ayant jamais travaillé                                         3,6                 5,6
+  REGION
+    Grand-Est                                                                7,6                 8,5
+    Nouvelle-Aquitaine                                                       8,9                 9,5
+    Auvergne-Rhône-Alpes                                                     12,3                12,3
+    Bourgogne-Franche-Comté                                                  4,3                 4,3
+    Bretagne                                                                 5,3                 5,2
+    Centre-Val-De-Loire                                                      4,0                 3,9
+    Ile-De-France                                                            19,8                18,4
+    Occitanie                                                                9,5                 9,4
+    Hauts-de-France                                                          8,7                 8,9
+    Normandie                                                                5,1                 5,1
+    Pays de la Loire                                                         5,9                 5,8
+    PACA, Corse                                                              8,5                 8,5
+  CATEGORIE D’AGGLOMERATION
+    CC1                                                                      21,5                21,1
+    CC2                                                                      17,2                18,2
+    CC3                                                                      14,3                13,9
+    CC4                                                                      31,3                30,6
+    CC5                                                                      15,7                16,3
+  TOTAL                                                                     100,0               100,0
+
+  * En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                               4
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+     Reconstitution du 1er tour de l’élection présidentielle
+                             2022
+
+
+                                                                                                        Brut   Redressé
+                                                                                                        (%)      (%)
+  • Nathalie Arthaud .........................................................................          1,2      0,6
+
+  • Philippe Poutou ...........................................................................         1,3      0,8
+
+  • Fabien Roussel .............................................................................        2,4      2,3
+
+  • Jean-Luc Mélenchon ....................................................................             17,7     21,5
+
+  • Anne Hidalgo................................................................................        2,4      1,7
+
+  • Yannick Jadot ...............................................................................       5,0      4,6
+
+  • Emmanuel Macron ......................................................................              27,5     27,8
+
+  • Valérie Pécresse ...........................................................................        6,7      4,8
+
+  • Nicolas Dupont-Aignan ................................................................              2,7      2,1
+
+  • Marine Le Pen ..............................................................................        25,1     23,5
+
+  • Éric Zemmour...............................................................................         3,8      7,1
+
+  • Jean Lassalle.................................................................................      3,8      3,2
+
+     TOTAL ..........................................................................................   100      100
+
+
+       - Ne se prononcent pas .........................................................                 20,2
+
+  * En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                          5
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+  Reconstitution du vote aux élections européennes 2024
+                                                                             Brut             Redressé
+                                                                              (%)                (%)
+
+     Une liste d’extrême gauche                                              2,0                 0,7
+     La liste de La France insoumise                                         8,2                 9,8
+     La liste du Parti Communiste                                            2,1                 2,4
+     La liste du Parti Socialiste et de Place Publique                       13,7               13,8
+     La liste des Ecologistes                                                6,8                 5,4
+     La liste de Renaissance                                                 15,9               14,5
+     La liste du Parti Animaliste                                            1,5                 2,0
+     Une liste divers écologistes                                            0,4                 2,0
+    La liste Les Républicains                                                11,2                7,3
+     La liste Alliance Rurale                                                0,9                 2,4
+     La liste du Rassemblement National                                      31,5               31,7
+     La liste Reconquête                                                     3,8                 5,4
+     La liste des Patriotes                                                  0,3                 0,9
+     La liste de l’UPR                                                       0,1                 1,0
+     Une autre liste                                                         1,7                 0,7
+    TOTAL                                                                   100,0               100,0
+    Ne se prononcent pas                                                     35,0
+
+
+
+  * En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                               6
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+ Reconstitution du 1er tour des élections législatives 2024
+                                                                             Brut             Redressé
+                                                                              (%)                (%)
+
+     Extrême gauche                                                          1,9                 1,2
+
+     NFP                                                                     25,8               28,7
+
+     Divers gauche                                                           1,4                 1,0
+
+     ENS Ensemble !                                                          23,6               22,4
+
+     Divers centre                                                           0,9                 0,8
+
+     LR & DVD                                                                11,7                9,5
+
+     RN & alliés                                                             31,3               34,0
+
+     Droite souverainiste, divers EXD - Reconquête                           1,8                 1,1
+
+     DIVERS                                                                  1,6                 1,3
+
+  TOTAL                                                                     100,0               100,0
+    Ne se prononcent pas                                                     33,2
+
+  * En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                               7
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+                                                L’intention d’aller voter
+
+
+Question          :         [Aux personnes inscrites sur les listes électorales] Vous personnellement,
+                            envisagez-vous d’aller voter à la prochaine élection présidentielle qui aura lieu le
+                            18 avril 2027 ?
+
+
+
+
+  Base : Ensemble des personnes inscrites sur les listes électorales                                      Brut   Redressé
+                                                                                                          (%)      (%)
+  • Oui ...............................................................................................   95,6     94,9
+
+  • Non ..............................................................................................    4,4      5,1
+
+     TOTAL ..........................................................................................     100      100
+
+
+
+
+Question          :         [Aux personnes inscrites sur les listes électorales envisageant d’aller voter à la
+                            prochaine élection présidentielle] Et diriez-vous que… ?
+
+
+
+
+                                                                                                          Brut   Redressé
+                                                                                                          (%)      (%)
+  • C’est tout à fait certain ...............................................................             75,2     77,3
+
+  • C’est pratiquement certain .........................................................                  19,2     16,1
+
+  • Il y a de grandes chances ............................................................                4,6      5,1
+
+  • Ce n’est pas certain .....................................................................            1,0      1,5
+
+     TOTAL ..........................................................................................     100      100
+
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                            8
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+           L’intention de vote au premier tour de l’élection
+           présidentielle - hypothèse E. Philippe et G. Attal
+                               candidats
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                              0,5
+                                            Jean-Luc Mélenchon                             16
+                                            Fabien Roussel                                 3
+                                            Marine Tondelier                               3
+                                            Raphaël Glucksmann                             11
+                                            Gabriel Attal                                  8
+                                            Edouard Philippe                              14,5
+                                            Bruno Retailleau                               6
+                                            Nicolas Dupont-Aignan                         1,5
+                                            Marine Le Pen                                  33
+                                            Éric Zemmour                                  3,5
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        25,7
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 188 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 930 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    9
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+       L’intention de vote au premier tour de l’élection
+    présidentielle - hypothèse E. Philippe candidat du bloc
+                            central
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                               1
+                                            Jean-Luc Mélenchon                             17
+                                            Fabien Roussel                                 3
+                                            Marine Tondelier                               3
+                                            Raphaël Glucksmann                             12
+                                            Edouard Philippe                               18
+                                            Bruno Retailleau                               8
+                                            Nicolas Dupont-Aignan                         1,5
+                                            Marine Le Pen                                  33
+                                            Éric Zemmour                                  3,5
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        27,5
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 158 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 920 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    10
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+           L’intention de vote au premier tour de l’élection
+           présidentielle – G. Attal candidat du bloc central
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                              0,5
+                                            Jean-Luc Mélenchon                             17
+                                            Fabien Roussel                                 3
+                                            Marine Tondelier                               3
+                                            Raphaël Glucksmann                             15
+                                            Gabriel Attal                                  14
+                                            Bruno Retailleau                               9
+                                            Nicolas Dupont-Aignan                         1,5
+                                            Marine Le Pen                                  34
+                                            Éric Zemmour                                   3
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        28,6
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 141 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 909 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    11
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+       L’intention de vote au premier tour de l’élection
+     présidentielle – E. Philippe candidat bloc central et R.
+      Glucksmann candidat unique de la gauche non LFI
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                               1
+                                            Jean-Luc Mélenchon                             18
+                                            Raphaël Glucksmann                             15
+                                            Edouard Philippe                               19
+                                            Bruno Retailleau                               8
+                                            Nicolas Dupont-Aignan                         2,5
+                                            Marine Le Pen                                  33
+                                            Éric Zemmour                                  3,5
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        26,4
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 176 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 925 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    12
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+          L’intention de vote au premier tour de l’élection
+         présidentielle – G. Attal candidat bloc central et R.
+         Glucksmann candidat unique de la gauche non LFI
+
+
+ Question :
+                       Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                              1,5
+                                            Jean-Luc Mélenchon                            18,5
+                                            Raphaël Glucksmann                             17
+                                            Gabriel Attal                                  15
+                                            Bruno Retailleau                               9
+                                            Nicolas Dupont-Aignan                          2
+                                            Marine Le Pen                                  34
+                                            Éric Zemmour                                   3
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        28,4
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 144 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 898 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    13
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+       L’intention de vote au premier tour de l’élection
+     présidentielle – E. Philippe candidat bloc central et F.
+        Hollande candidat unique de la gauche non LFI
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                              1,5
+                                            Jean-Luc Mélenchon                             19
+                                            François Hollande                              12
+                                            Edouard Philippe                               21
+                                            Bruno Retailleau                               8
+                                            Nicolas Dupont-Aignan                          2
+                                            Marine Le Pen                                  34
+                                            Éric Zemmour                                  2,5
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        29,8
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 122 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 889 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    14
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+         L’intention de vote au premier tour de l’élection
+       présidentielle – B. Le Maire candidat du bloc central
+
+
+
+ Question :            Si dimanche prochain se déroulait le premier tour de l’élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                              Base : Ensemble des personnes inscrites   Résultats
+                                                      sur les listes électorales         publiés
+
+
+
+
+                                                                                          (%)
+                                            Nathalie Arthaud                               1
+                                            Jean-Luc Mélenchon                             17
+                                            Fabien Roussel                                 3
+                                            Marine Tondelier                               3
+                                            Raphaël Glucksmann                             18
+                                            Bruno Le Maire                                 6
+                                            Bruno Retailleau                               12
+                                            Nicolas Dupont-Aignan                          2
+                                            Marine Le Pen                                  35
+                                            Éric Zemmour                                   3
+                                            TOTAL                                         100
+                                            • Ne se prononcent pas                        31,2
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 100 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 872 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    15
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+          L’intention de vote au second tour de l’élection
+         présidentielle - hypothèse E. Philippe et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              Edouard Philippe                             48
+                                              Marine Le Pen                                52
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      28,0
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 150 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 883 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    16
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+            L’intention de vote au second tour de l’élection
+            présidentielle - hypothèse G. Attal et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              Gabriel Attal                                46
+                                              Marine Le Pen                                54
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      30,9
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 105 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 850 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    17
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+       L’intention de vote au second tour de l’élection
+    présidentielle - hypothèse J.L. Mélenchon et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              Jean-Luc Mélenchon                           33
+                                              Marine Le Pen                                67
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      40,6
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 949 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 731 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                  18
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+       L’intention de vote au second tour de l’élection
+    présidentielle - hypothèse R. Glucksmann et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              Raphaël Glucksmann                           45
+                                              Marine Le Pen                                55
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      30,7
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 107 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 860 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    19
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+          L’intention de vote au second tour de l’élection
+        présidentielle - hypothèse F. Hollande et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                   En pourcentage des suffrages exprimés
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              François Hollande                            46
+                                              Marine Le Pen                                54
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      30,1
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 1 117 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 870 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                    20
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+        L’intention de vote au second tour de l’élection
+      présidentielle - hypothèse B. Retailleau et M. Le Pen
+
+
+
+ Question :            Si dimanche prochain se déroulait le second tour de l'élection
+                       présidentielle, pour lequel des candidats suivants y aurait-il le plus de
+                       chances que vous votiez ?
+
+
+
+
+                                                  Base : Ensemble des personnes         Résultats
+                                                 inscrites sur les listes électorales    publiés
+
+
+
+
+                                                                                          (%)
+                                              Bruno Retailleau                             42
+                                              Marine Le Pen                                58
+                                              TOTAL                                       100
+                                              • Ne se prononcent pas                      41,2
+
+
+* En raison des arrondis, les totaux sont susceptibles d’être supérieurs ou inférieurs à 100 de 0,1 point.
+
+
+
+
+Sur toutes les personnes inscrites sur les listes électorales interrogées, 940 personnes ont exprimé une intention de vote. Sur
+toutes les personnes inscrites sur les listes électorales et certaines d’aller voter interrogées, 720 personnes ont exprimé une
+intention de vote.
+
+
+
+
+NOTICE TECHNIQUE : Ifop-Fiducia pour LCI, Le Figaro et Sud Radio                                                                  21
+Baromètre de l’élection présidentielle - vague 5  Août 2026
+

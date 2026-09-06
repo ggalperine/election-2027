@@ -35,6 +35,36 @@ func TestParseFirstHypothesis_Cluster17(t *testing.T) {
 	}
 }
 
+// Ifop notice: bare numbers (no %), NSPP reported separately, and a 2022
+// reconstitution table that must NOT be mistaken for the 2027 intentions.
+func TestParseFirstHypothesis_Ifop(t *testing.T) {
+	raw, err := os.ReadFile("testdata_ifop.txt")
+	if err != nil {
+		t.Skipf("fixture missing: %v", err)
+	}
+	res, ok := parseFirstHypothesis(string(raw))
+	if !ok {
+		t.Fatalf("validation gate rejected a valid Ifop notice; parsed=%v", res)
+	}
+	want := map[string]float64{
+		"Le Pen":     33,
+		"Mélenchon":  16,
+		"Philippe":   14.5,
+		"Attal":      8,
+		"Glucksmann": 11,
+		"Retailleau": 6,
+	}
+	for cand, exp := range want {
+		if got := res[cand]; got != exp {
+			t.Errorf("%s: got %.1f, want %.1f (2027 intentions, not 2022 reconstitution)", cand, got, exp)
+		}
+	}
+	// Macron must NOT appear — that would mean we parsed the 2022 recall table.
+	if _, bad := res["Macron"]; bad {
+		t.Errorf("parsed the 2022 reconstitution table (Macron present)")
+	}
+}
+
 func TestParseSample(t *testing.T) {
 	raw, err := os.ReadFile("testdata_notice.txt")
 	if err != nil {
