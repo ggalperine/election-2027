@@ -1,4 +1,8 @@
+import { useAsync } from "../lib/useAsync";
+import { getStats } from "../lib/api";
+
 export function LegalFooter() {
+  const { data: stats } = useAsync(() => getStats(), []);
   return (
     <footer className="legal-footer">
       <div className="legal-grid">
@@ -21,15 +25,18 @@ export function LegalFooter() {
           <h4>Données &amp; vie privée</h4>
           <p>
             Ce site <strong>ne dépose aucun cookie</strong> et n'utilise
-            <strong> aucun traceur publicitaire ou analytique</strong>. Aucune
-            donnée personnelle n'est collectée, stockée ni revendue. Aucun compte
-            n'est requis.
+            <strong> aucun traceur publicitaire</strong>. Aucun compte n'est requis.
+            La fréquentation est mesurée de façon <strong>anonyme et agrégée</strong> :
+            un décompte de visites via une empreinte quotidienne à sens unique
+            (IP + navigateur), <strong>sans cookie</strong>, non réversible et non
+            reliable d'un jour à l'autre. Aucune donnée personnelle n'est conservée
+            ni revendue.
           </p>
           <p>
-            Conforme au <strong>RGPD</strong> : en l'absence de traitement de
-            données personnelles, aucun consentement n'est nécessaire. Les seules
-            données affichées sont des <strong>sondages publics agrégés</strong> et
-            des <strong>résultats électoraux officiels</strong>.
+            Conforme au <strong>RGPD</strong> : mesure d'audience anonyme exemptée
+            de consentement (délibération CNIL). Les seules données affichées sont
+            des <strong>sondages publics agrégés</strong> et des{" "}
+            <strong>résultats électoraux officiels</strong>.
           </p>
         </section>
 
@@ -49,6 +56,13 @@ export function LegalFooter() {
           </p>
         </section>
       </div>
+
+      {stats && (stats.today > 0 || stats.total_7d > 0) && (
+        <p className="legal-visits">
+          👁 {stats.today} visiteur{stats.today > 1 ? "s" : ""} aujourd'hui ·{" "}
+          {stats.total_7d} sur 7 jours
+        </p>
+      )}
 
       <p className="legal-copy">
         © 2026 Elyséomètre — elyseometre.fr. Tous droits réservés. Les données

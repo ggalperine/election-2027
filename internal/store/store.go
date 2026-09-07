@@ -96,6 +96,34 @@ func (s *Store) SavePoll(ctx context.Context, p models.RawPoll) error {
 }
 
 // SaveGeoResult persists one official geo result row idempotently.
+// RecordVisit registers a unique (day, visitor) pair; dedup is free via the PK.
+func (s *Store) RecordVisit(ctx context.Context, day, visitor string) error {
+	_, err := s.pool.Exec(ctx,
+		`INSERT INTO visits(day, visitor) VALUES($1::date, $2) ON CONFLICT DO NOTHING`, day, visitor)
+	return err
+}
+
+// VisitCounts returns unique-visitor counts per day for the last n days (most
+// recent first).
+func (s *Store) VisitCounts(ctx context.Context, n int) ([]models.DayVisits, error) {
+	rows, err := s.pool.Query(ctx,
+		`SELECT day::text, count(*) FROM visits
+		 WHERE day > CURRENT_DATE - $1::int GROUP BY day ORDER BY day DESC`, n)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var out []models.DayVisits
+	for rows.Next() {
+		var d models.DayVisits
+		if err := rows.Scan(&d.Day, &d.Visitors); err != nil {
+			return nil, err
+		}
+		out = append(out, d)
+	}
+	return out, rows.Err()
+}
+
 // SaveContact stores one contact-form submission.
 func (s *Store) SaveContact(ctx context.Context, name, email, subject, message, ip string) error {
 	_, err := s.pool.Exec(ctx, `

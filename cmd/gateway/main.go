@@ -4,9 +4,12 @@ package main
 
 import (
 	"context"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"io"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -62,6 +65,32 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger, middleware.Recoverer)
 	r.Use(cors.Handler(cors.Options{AllowedOrigins: []string{"*"}, AllowedMethods: []string{"GET", "POST", "OPTIONS"}, AllowedHeaders: []string{"Content-Type"}}))
+
+	// Privacy-friendly visitor counting (no cookie): a daily one-way hash of
+	// IP+UA that cannot be linked across days. Best-effort, never blocks a request.
+	visitSecret := def(os.Getenv("VISIT_SECRET"), "elyseometre-visit-salt")
+	r.Use(func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+			if req.Method == http.MethodGet && strings.HasPrefix(req.URL.Path, "/api/") && req.URL.Path != "/api/stats" {
+				day := time.Now().UTC().Format("2006-01-02")
+				ip := req.Header.Get("X-Forwarded-For")
+				if i := strings.IndexByte(ip, ','); i >= 0 {
+					ip = ip[:i]
+				}
+				if ip == "" {
+					ip = req.RemoteAddr
+				}
+				sum := sha256.Sum256([]byte(visitSecret + "|" + day + "|" + strings.TrimSpace(ip) + "|" + req.UserAgent()))
+				visitor := hex.EncodeToString(sum[:8])
+				go func() {
+					c, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+					defer cancel()
+					_ = st.RecordVisit(c, day, visitor)
+				}()
+			}
+			next.ServeHTTP(w, req)
+		})
+	})
 
 	r.Get("/health", func(w http.ResponseWriter, _ *http.Request) {
 		httpx.JSON(w, 200, map[string]string{"status": "ok"})
@@ -222,6 +251,28 @@ func main() {
 		cycle, round := cycleRound(req)
 		data, err := st.ActualResults(req.Context(), cycle, round)
 		respond(w, data, err)
+	})
+
+	// Public visitor stats (daily unique visitors, no cookie).
+	r.Get("/api/stats", func(w http.ResponseWriter, req *http.Request) {
+		days, err := st.VisitCounts(req.Context(), 8)
+		if err != nil {
+			respond(w, nil, err)
+			return
+		}
+		today := time.Now().UTC().Format("2006-01-02")
+		yday := time.Now().UTC().AddDate(0, 0, -1).Format("2006-01-02")
+		var out models.VisitStats
+		for _, d := range days {
+			out.Total7d += d.Visitors
+			if d.Day == today {
+				out.Today = d.Visitors
+			} else if d.Day == yday {
+				out.Yesterday = d.Visitors
+			}
+		}
+		out.Days = days
+		httpx.JSON(w, 200, out)
 	})
 
 	// Contact form submission (stored in contact_messages).

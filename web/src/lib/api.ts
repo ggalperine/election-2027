@@ -171,6 +171,15 @@ export interface ContactPayload {
 export const postContact = (p: ContactPayload) =>
   post<{ ok: boolean }>("/api/contact", p);
 
+export interface VisitStats {
+  today: number;
+  yesterday: number;
+  total_7d: number;
+  days: { day: string; visitors: number }[];
+}
+
+export const getStats = () => get<VisitStats>("/api/stats");
+
 export const getCycles = () => get<Cycle[]>("/api/cycles");
 
 /** window = days back from the latest poll; 0 = since the beginning; undefined = server default. */

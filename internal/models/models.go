@@ -165,6 +165,20 @@ type Forecast struct {
 	Candidates   []ForecastProb `json:"candidates"`
 }
 
+// DayVisits is the unique-visitor count for one day.
+type DayVisits struct {
+	Day      string `json:"day"`
+	Visitors int    `json:"visitors"`
+}
+
+// VisitStats is the public visitor summary.
+type VisitStats struct {
+	Today     int         `json:"today"`
+	Yesterday int         `json:"yesterday"`
+	Total7d   int         `json:"total_7d"`
+	Days      []DayVisits `json:"days"`
+}
+
 // DuelSummary is one candidate's average run-off score against a given opponent.
 type DuelSummary struct {
 	Opponent string  `json:"opponent"`

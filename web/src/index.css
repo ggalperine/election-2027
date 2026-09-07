@@ -1844,3 +1844,11 @@ table.polls td.pollster {
     padding: 5px 8px;
   }
 }
+
+.legal-visits {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
