@@ -306,16 +306,22 @@ func extractCandidatePcts(seg string) (map[string]float64, bool) {
 	return results, true
 }
 
-// parseSample pulls the sample size ("Échantillon : 1 628") from notice text.
+// sampleRe matches a count immediately followed by "personnes" ("1 628
+// personnes", "1500 personnes"). Anchoring on "personnes" avoids the stray
+// numbers around the word "échantillon" in the margin-of-error table.
+var sampleRe = regexp.MustCompile(`(\d[\d \x{00a0}.]{2,7})\s*personnes`)
+var nonDigit = regexp.MustCompile(`\D`)
+
+// parseSample returns the interviewed sample size: the FIRST "N personnes" whose
+// value is a plausible poll sample (500–200000).
 func parseSample(text string) int {
-	re := regexp.MustCompile(`(?i)échantillon\s*(?:utile)?\s*[:=]?\s*([0-9][0-9 \.]{2,})`)
-	m := re.FindStringSubmatch(text)
-	if m == nil {
-		return 0
+	cleaner := strings.NewReplacer(" ", "", " ", "", ".", "")
+	for _, m := range sampleRe.FindAllStringSubmatch(text, -1) {
+		if n, err := strconv.Atoi(cleaner.Replace(m[1])); err == nil && n >= 500 && n <= 200000 {
+			return n
+		}
 	}
-	clean := strings.NewReplacer(" ", "", ".", "", " ", "").Replace(m[1])
-	n, _ := strconv.Atoi(clean)
-	return n
+	return 0
 }
 
 func clamp(v, lo, hi int) int {
