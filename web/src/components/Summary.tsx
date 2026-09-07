@@ -1,6 +1,6 @@
 import { getSummary } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
-import { pct, frDate, frDateTime, safeColor } from "../lib/format";
+import { pct, frDate, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
 
 export function Summary({
@@ -89,7 +89,8 @@ export function Summary({
 
       {s && s.n_polls > 0 && (
         <p className="summary-updated">
-          Mis à jour le {frDateTime(s.last_updated)}
+          Dernier sondage : {frDate(s.latest_poll)}
+          {s.latest_pollster ? ` — ${s.latest_pollster}` : ""}
         </p>
       )}
     </div>
