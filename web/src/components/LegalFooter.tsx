@@ -1,8 +1,4 @@
-import { useAsync } from "../lib/useAsync";
-import { getStats } from "../lib/api";
-
 export function LegalFooter() {
-  const { data: stats } = useAsync(() => getStats(), []);
   return (
     <footer className="legal-footer">
       <div className="legal-grid">
@@ -56,13 +52,6 @@ export function LegalFooter() {
           </p>
         </section>
       </div>
-
-      {stats && (stats.today > 0 || stats.total_7d > 0) && (
-        <p className="legal-visits">
-          👁 {stats.today} visiteur{stats.today > 1 ? "s" : ""} aujourd'hui ·{" "}
-          {stats.total_7d} sur 7 jours
-        </p>
-      )}
 
       <p className="legal-copy">
         © 2026 Elyséomètre — elyseometre.fr. Tous droits réservés. Les données
