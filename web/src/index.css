@@ -1305,9 +1305,9 @@ table.polls td.pollster {
 }
 .stat-tiles .tile.leader .tile-value {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
 }
 .stat-tiles .tile.period {
   grid-column: span 2;
