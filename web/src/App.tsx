@@ -69,7 +69,7 @@ export function App() {
         <header className="topbar">
           <div className="topbar-brand">
             <span className="tb-name">Elyséomètre</span>
-            <span className="tb-sub">Présidentielle 2027 · agrégateur scientifique</span>
+            <span className="tb-sub">Présidentielle 2027 · agrégateur de sondages</span>
           </div>
           {!blackout && (
             <div className="topbar-controls">
