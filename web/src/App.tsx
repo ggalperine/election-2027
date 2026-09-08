@@ -20,6 +20,7 @@ import { Logo } from "./components/Logo";
 import { BlackoutNotice } from "./components/BlackoutNotice";
 import { activeBlackout } from "./lib/blackout";
 import { Probabilities } from "./components/Probabilities";
+import { BestConfig } from "./components/BestConfig";
 import { ContactForm } from "./components/ContactForm";
 import { RequestForm } from "./components/RequestForm";
 
@@ -128,6 +129,18 @@ export function App() {
           <Leaderboard cycle={cycle} round={round} window={window} />
         </Section>
         </div>
+
+        {round === 1 && (
+          <div id="config">
+            <Section
+              kicker="Configurations"
+              title="Score par candidat dans sa configuration"
+              sub="Vue complémentaire : chaque candidat à son meilleur score mesuré, dans l'hypothèse construite autour de lui. La somme dépasse 100 % (scénarios exclusifs superposés) — n'entre pas dans la moyenne pondérée."
+            >
+              <BestConfig cycle={cycle} window={window} />
+            </Section>
+          </div>
+        )}
 
         <div id="proba">
         <Section

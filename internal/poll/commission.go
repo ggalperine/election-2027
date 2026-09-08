@@ -106,6 +106,21 @@ func (c Commission) Fetch(ctx context.Context) ([]models.RawPoll, error) {
 				Results:    results,
 			})
 		}
+		// Per-candidate best-config view (round 3): each candidate's highest score
+		// across all first-round hypotheses. Complementary, sums > 100.
+		if best := parseCandidateBestConfig(text); len(best) >= 8 {
+			out = append(out, models.RawPoll{
+				ExternalID: "cds-" + r.ID + "-cfg",
+				Cycle:      c.cycle(),
+				Pollster:   r.Institut,
+				Sponsor:    r.Sponsor,
+				FieldEnd:   r.Date,
+				SampleSize: sample,
+				Round:      3,
+				SourceURL:  r.NoticeURL,
+				Results:    best,
+			})
+		}
 		// Second-round duels from the same notice → one round-2 poll each.
 		for _, duel := range parseDuels(text) {
 			out = append(out, models.RawPoll{

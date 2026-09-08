@@ -21,6 +21,16 @@ export function MethodologyFooter() {
         (<code>linreg</code>). La bande d'incertitude s'élargit avec l'horizon de
         prévision.
       </p>
+      <p>
+        Un sondage teste souvent <strong>plusieurs hypothèses</strong> de premier
+        tour (le bloc central alignant Attal <em>ou</em> Philippe, jamais les deux).
+        La moyenne pondérée retient une <strong>hypothèse de référence unique par
+        sondage</strong> (la première publiée) pour garder un champ cohérent
+        sommant à 100 % et comparable entre instituts ; le report Attal/Philippe se
+        modélise dans le simulateur de scénarios. Le bloc «&nbsp;score par candidat
+        dans sa configuration&nbsp;» présente, à part, le meilleur score de chaque
+        candidat toutes hypothèses confondues.
+      </p>
       <p className="cred">
         Sources : les sondages sont recensés à partir de la{" "}
         <a

@@ -86,17 +86,28 @@ var segCut = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|mu
 // segment passing the validation gate wins — so methodology prose, the
 // questionnaire (no %), the 2022 recall and run-off tables are all skipped.
 func parseFirstHypothesis(text string) (map[string]float64, bool) {
+	if segs := firstRoundSegments(text); len(segs) > 0 {
+		return segs[0], true // base hypothesis = first valid full-field table
+	}
+	// Fallback: some instituts print the full-field table far from its question.
+	// A block of ≥10 KNOWN 2027 candidates summing ~100 is almost certainly the
+	// first-round intention wherever it sits (a 2022 recall has <10 in-map names;
+	// favourability tables don't sum to 100; Elabe's 6-candidate configs are too
+	// small) — so we accept it even without a nearby marker.
+	return globalFullFieldScan(text)
+}
+
+// firstRoundSegments returns every valid full-field first-round hypothesis table
+// found in the notice (one map per hypothesis). Used both for the base
+// hypothesis (segment 0) and the per-candidate best-config view.
+func firstRoundSegments(text string) []map[string]float64 {
+	var out []map[string]float64
 	locs := firstRoundMarker.FindAllStringIndex(text, -1)
 	for i, loc := range locs {
-		// Exclusion is judged on a TIGHT window (a reconstitution/other-election
-		// keyword right next to the marker), so a distant one doesn't disqualify.
 		excl := strings.ToLower(text[clamp(loc[0]-80, 0, len(text)):clamp(loc[1]+40, 0, len(text))])
 		if headExclude.MatchString(excl) {
 			continue
 		}
-		// "présidentiel" is looked for on a WIDER window, because a data-table
-		// marker (e.g. "ITV 1er tour") can sit a few lines below the question
-		// that names the présidentielle.
 		ctx := strings.ToLower(text[clamp(loc[0]-260, 0, len(text)):clamp(loc[1]+160, 0, len(text))])
 		if !strings.Contains(ctx, "présidentiel") && !strings.Contains(ctx, "presidentiel") {
 			continue
@@ -108,18 +119,35 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 		}
 		seg := text[start:end]
 		if c := segCut.FindStringIndex(seg); c != nil {
-			seg = seg[:c[0]] // stop before any foreign table in the gap
+			seg = seg[:c[0]]
 		}
 		if res, ok := extractCandidatePcts(seg); ok {
-			return res, true
+			out = append(out, res)
 		}
 	}
-	// Fallback: some instituts print the full-field table far from its question.
-	// A block of ≥10 KNOWN 2027 candidates summing ~100 is almost certainly the
-	// first-round intention wherever it sits (a 2022 recall has <10 in-map names;
-	// favourability tables don't sum to 100; Elabe's 6-candidate configs are too
-	// small) — so we accept it even without a nearby marker.
-	return globalFullFieldScan(text)
+	return out
+}
+
+// parseCandidateBestConfig returns, per candidate, their HIGHEST score across all
+// first-round hypotheses of the notice — so a bloc candidate (Attal, Philippe…)
+// is scored in the configuration built around them, not only in the base one.
+// The map's total exceeds 100 by construction (mutually-exclusive scenarios
+// superposed); it is a complementary view, never mixed into the poll-of-polls.
+func parseCandidateBestConfig(text string) map[string]float64 {
+	best := map[string]float64{}
+	for _, m := range firstRoundSegments(text) {
+		for k, v := range m {
+			if v > best[k] {
+				best[k] = v
+			}
+		}
+	}
+	if len(best) == 0 {
+		if m, ok := globalFullFieldScan(text); ok {
+			return m
+		}
+	}
+	return best
 }
 
 // blockBreak ends a candidate block: a foreign section or a non-vote table.
