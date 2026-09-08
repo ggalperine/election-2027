@@ -117,6 +117,8 @@ export function App() {
           </main>
         ) : (
           <main className="app">
+        <Summary cycle={cycle} round={round} window={window} />
+
         <div id="course">
         <Section
           kicker="Instantané"
@@ -126,8 +128,6 @@ export function App() {
           <Leaderboard cycle={cycle} round={round} window={window} />
         </Section>
         </div>
-
-        <Summary cycle={cycle} round={round} window={window} />
 
         <div id="proba">
         <Section

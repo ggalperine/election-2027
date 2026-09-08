@@ -1,7 +1,9 @@
-import { getSummary } from "../lib/api";
+import { getSummary, getAggregates } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { pct, frDate, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
+
+const RANK_LABEL = ["Leader", "2ᵉ", "3ᵉ"];
 
 export function Summary({
   cycle,
@@ -16,8 +18,13 @@ export function Summary({
     () => getSummary(cycle, round, window),
     [cycle, round, window]
   );
+  const { data: agg } = useAsync(
+    () => getAggregates(cycle, round, window),
+    [cycle, round, window]
+  );
 
   const s = data;
+  const podium = (agg ?? []).slice(0, 3);
   const empty = !loading && (!s || s.n_polls === 0);
 
   return (
@@ -31,25 +38,24 @@ export function Summary({
 
       {s && s.n_polls > 0 && (
         <div className="stat-tiles">
-          <div className="tile leader">
-            <span
-              className="accent-bar"
-              style={{ background: safeColor(s.leader_color) }}
-            />
-            <div className="tile-label">Leader</div>
-            <div className="tile-value">
+          {podium.map((c, i) => (
+            <div className="tile leader" key={c.candidate}>
               <span
-                className="lead-name"
-                style={{ color: safeColor(s.leader_color) }}
-              >
-                {s.leader}
-              </span>{" "}
-              <span className="tnum lead-pct">
-                {pct(s.leader_pct)}
-                <span className="unit">&nbsp;%</span>
-              </span>
+                className="accent-bar"
+                style={{ background: safeColor(c.color) }}
+              />
+              <div className="tile-label">{RANK_LABEL[i]}</div>
+              <div className="tile-value">
+                <span className="lead-name" style={{ color: safeColor(c.color) }}>
+                  {c.candidate}
+                </span>{" "}
+                <span className="tnum lead-pct">
+                  {pct(c.avg_pct)}
+                  <span className="unit">&nbsp;%</span>
+                </span>
+              </div>
             </div>
-          </div>
+          ))}
 
           <div className="tile">
             <div className="tile-label">Avance</div>
