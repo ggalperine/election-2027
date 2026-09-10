@@ -1,6 +1,6 @@
 import { getSummary, getAggregates } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
-import { pct, frDate, safeColor } from "../lib/format";
+import { pct, frDate, frDateTime, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
 
 const RANK_LABEL = ["Leader", "2ᵉ", "3ᵉ"];
@@ -97,6 +97,13 @@ export function Summary({
         <p className="summary-updated">
           Dernier sondage : {frDate(s.latest_poll)}
           {s.latest_pollster ? ` — ${s.latest_pollster}` : ""}
+          {s.last_updated ? (
+            <>
+              {" "}
+              <span className="arrow-sep">·</span> Dernière mise à jour :{" "}
+              {frDateTime(s.last_updated)}
+            </>
+          ) : null}
         </p>
       )}
     </div>
