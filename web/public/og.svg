@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1b2d"/>
+      <stop offset="1" stop-color="#16243a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <!-- content band: y 285..915 (centered 630) -->
+  <g transform="translate(0,285)">
+    <!-- tricolore top rule -->
+    <rect x="0" y="0" width="400" height="8" fill="#0055A4"/>
+    <rect x="400" y="0" width="400" height="8" fill="#ffffff"/>
+    <rect x="800" y="0" width="400" height="8" fill="#EF4135"/>
+
+    <!-- Logo: dôme + barres tricolores -->
+    <g transform="translate(96,150) scale(2.2)" stroke-linecap="round">
+      <path d="M8 30c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#e8eef7" stroke-width="2.5" fill="none"/>
+      <line x1="24" y1="7" x2="24" y2="12" stroke="#e8eef7" stroke-width="2.5"/>
+      <circle cx="24" cy="6" r="1.8" fill="#e8eef7"/>
+      <rect x="14" y="30" width="5.5" height="10" rx="1.2" fill="#0055A4"/>
+      <rect x="21.25" y="24" width="5.5" height="16" rx="1.2" fill="#e8eef7"/>
+      <rect x="28.5" y="27" width="5.5" height="13" rx="1.2" fill="#EF4135"/>
+      <line x1="10" y1="41" x2="38" y2="41" stroke="#e8eef7" stroke-width="2.5"/>
+    </g>
+
+    <text x="240" y="235" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" fill="#ffffff">Élyséomètre</text>
+    <text x="242" y="292" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#9db2cf" letter-spacing="1">Présidentielle 2027 · agrégateur de sondages</text>
+
+    <g font-family="Helvetica, Arial, sans-serif" fill="#cdd9ea" font-size="29">
+      <text x="96" y="420">◆ Moyenne pondérée depuis les notices de la Commission des sondages</text>
+      <text x="96" y="470">◆ Biais par institut · backtest 2022 · modèle prédictif Monte-Carlo</text>
+    </g>
+
+    <text x="96" y="575" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#7fa8e0">www.elyseometre.fr</text>
+  </g>
+</svg>
