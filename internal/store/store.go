@@ -239,6 +239,38 @@ func (s *Store) LatestPoll(ctx context.Context, cycle string, round int) (lastUp
 	return
 }
 
+// EnsureIngestRuns creates the ingest-run heartbeat table if missing. Called at
+// scheduler startup so it also applies to pre-existing DB volumes (the initdb
+// migrations only run on a fresh data directory).
+func (s *Store) EnsureIngestRuns(ctx context.Context) error {
+	_, err := s.pool.Exec(ctx, `
+		CREATE TABLE IF NOT EXISTS ingest_runs (
+			id     BIGSERIAL PRIMARY KEY,
+			kind   TEXT NOT NULL,
+			ran_at TIMESTAMPTZ NOT NULL DEFAULT now()
+		)`)
+	return err
+}
+
+// RecordIngestRun stamps a fetch-pipeline run (kind = "cron" | "startup").
+func (s *Store) RecordIngestRun(ctx context.Context, kind string) error {
+	_, err := s.pool.Exec(ctx, `INSERT INTO ingest_runs (kind) VALUES ($1)`, kind)
+	return err
+}
+
+// LastIngestRun returns the most recent fetch-pipeline run time. Zero time when
+// no run has been recorded yet.
+func (s *Store) LastIngestRun(ctx context.Context) (time.Time, error) {
+	var t *time.Time
+	if err := s.pool.QueryRow(ctx, `SELECT MAX(ran_at) FROM ingest_runs`).Scan(&t); err != nil {
+		return time.Time{}, err
+	}
+	if t == nil {
+		return time.Time{}, nil
+	}
+	return *t, nil
+}
+
 // PollsterStats returns per-institut activity for a cycle+round.
 func (s *Store) PollsterStats(ctx context.Context, cycle string, round int) ([]models.PollsterStat, error) {
 	rows, err := s.pool.Query(ctx, `

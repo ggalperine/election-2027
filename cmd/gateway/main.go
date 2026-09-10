@@ -176,6 +176,12 @@ func main() {
 			sum.LatestPoll = fe.Format("2006-01-02")
 			sum.LatestPollster = ps
 		}
+		// "Dernière mise à jour" = last fetch-pipeline (cron) run, not the
+		// newest poll's insert time. Falls back to the poll time above when
+		// no run has been recorded yet.
+		if run, err := st.LastIngestRun(req.Context()); err == nil && !run.IsZero() {
+			sum.LastUpdated = run.UTC().Format(time.RFC3339)
+		}
 		httpx.JSON(w, 200, sum)
 	})
 

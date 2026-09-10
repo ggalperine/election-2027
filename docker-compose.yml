@@ -82,6 +82,7 @@ services:
     command: ["/app/scheduler"]
     environment: *env
     depends_on:
+      postgres: { condition: service_healthy }
       rabbitmq: { condition: service_healthy }
 
   web:

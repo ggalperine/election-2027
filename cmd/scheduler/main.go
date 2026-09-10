@@ -13,6 +13,7 @@ import (
 
 	"github.com/ggalperine/election2027/internal/config"
 	"github.com/ggalperine/election2027/internal/rabbit"
+	"github.com/ggalperine/election2027/internal/store"
 )
 
 func main() {
@@ -25,6 +26,21 @@ func main() {
 	}
 	defer rb.Close()
 
+	// Heartbeat store: records each fetch-pipeline run so the API can surface a
+	// truthful "Dernière mise à jour" (last cron), independent of whether the
+	// run produced a new poll.
+	st, err := store.New(ctx, cfg.DatabaseURL)
+	if err != nil {
+		log.Fatal().Err(err).Msg("store")
+	}
+	defer st.Close()
+	if err := st.EnsureIngestRuns(ctx); err != nil {
+		log.Fatal().Err(err).Msg("ensure ingest_runs")
+	}
+	if err := st.RecordIngestRun(ctx, "startup"); err != nil {
+		log.Error().Err(err).Msg("record startup run")
+	}
+
 	// CRON_SPEC overrides the default (every 12h, at 06:00 and 18:00). Format: robfig/cron.
 	spec := os.Getenv("CRON_SPEC")
 	if spec == "" {
@@ -34,6 +50,9 @@ func main() {
 	c := cron.New()
 	_, err = c.AddFunc(spec, func() {
 		log.Info().Msg("cron: triggering daily fetch")
+		if err := st.RecordIngestRun(ctx, "cron"); err != nil {
+			log.Error().Err(err).Msg("record cron run")
+		}
 		if err := rb.Publish(ctx, rabbit.KeyFetchPolls, map[string]string{"reason": "cron"}); err != nil {
 			log.Error().Err(err).Msg("publish fetch.polls")
 		}
