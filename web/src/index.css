@@ -519,6 +519,43 @@ a:hover {
   margin-bottom: 10px;
   min-height: 15px;
 }
+/* Candidate header: portrait + name/party, side by side */
+.stat-card .cand-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 8px;
+  padding-right: 22px; /* clear the absolute rank badge */
+  margin-bottom: 10px;
+}
+.stat-card .cand-head .cand-id {
+  min-width: 0;
+}
+.stat-card .cand-head .cand {
+  padding-left: 0;
+  margin-bottom: 1px;
+}
+.stat-card .cand-head .party {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.avatar {
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+}
+.avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .stat-card .big {
   font-size: 34px;
   font-weight: 800;

@@ -3,6 +3,7 @@ import { useAsync } from "../lib/useAsync";
 import { pct, intFr, frDate, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
 import { ChartFrame } from "./ChartFrame";
+import { Avatar } from "./Avatar";
 
 export function Leaderboard({
   cycle,
@@ -65,8 +66,13 @@ export function Leaderboard({
               <div className="stat-card" key={r.candidate}>
                 <span className="accent-bar" style={{ background: c }} />
                 <span className="rank">#{i + 1}</span>
-                <div className="cand">{r.candidate}</div>
-                <div className="party">{r.party}</div>
+                <div className="cand-head">
+                  <Avatar name={r.candidate} color={c} />
+                  <div className="cand-id">
+                    <div className="cand">{r.candidate}</div>
+                    <div className="party">{r.party}</div>
+                  </div>
+                </div>
                 <div className="big tnum">
                   {pct(r.avg_pct)}
                   <span className="unit">%</span>
