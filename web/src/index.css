@@ -1463,6 +1463,9 @@ table.polls td.pollster {
   border-radius: 3px;
   flex: none;
 }
+.mom-cand .avatar-fallback {
+  font-size: 10px;
+}
 .mom-name {
   font-size: 13px;
   font-weight: 700;

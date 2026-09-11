@@ -4,6 +4,7 @@ import { useAsync } from "../lib/useAsync";
 import { pct, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
 import { ChartFrame } from "./ChartFrame";
+import { Avatar } from "./Avatar";
 
 /** Signed percentage-point value with French comma and explicit + sign. */
 function signedPts(v: number, digits = 1): string {
@@ -23,7 +24,7 @@ function MomentumCard({ m }: { m: MomentumPoint }) {
   return (
     <div className="mom-card">
       <div className="mom-cand">
-        <span className="dot" style={{ background: c }} />
+        <Avatar name={m.candidate} color={c} size={24} />
         <span className="mom-name">{m.candidate}</span>
       </div>
       <div className="mom-current tnum">
