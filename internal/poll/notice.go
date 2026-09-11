@@ -87,7 +87,12 @@ var segCut = regexp.MustCompile(`(?i)reconstitu|souvenir|législ|legisl|europ|mu
 // questionnaire (no %), the 2022 recall and run-off tables are all skipped.
 func parseFirstHypothesis(text string) (map[string]float64, bool) {
 	if segs := firstRoundSegments(text); len(segs) > 0 {
-		return segs[0], true // base hypothesis = first valid full-field table
+		// base hypothesis = first valid full-field table, but reconciled against
+		// the peer hypotheses: a notice's hypotheses vary ONLY the bloc candidate
+		// tested, so a stable candidate (Le Pen, Zemmour…) that is a gross outlier
+		// vs its value across ≥2 peers is a source/extraction row-swap, not a real
+		// swing — we repair it from the peer median (see reconcileBase).
+		return reconcileBase(segs), true
 	}
 	// Fallback: some instituts print the full-field table far from its question.
 	// A block of ≥10 KNOWN 2027 candidates summing ~100 is almost certainly the
@@ -95,6 +100,62 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 	// favourability tables don't sum to 100; Elabe's 6-candidate configs are too
 	// small) — so we accept it even without a nearby marker.
 	return globalFullFieldScan(text)
+}
+
+// swapTolerance is the point gap above which a base-hypothesis candidate value
+// is treated as a misread rather than a real hypothesis-to-hypothesis swing.
+// Legit variation for a stable candidate across hypotheses is a few points; a
+// row/label swap (e.g. OpinionWay Presitrack notice 10259, whose Hyp-1 table
+// files Le Pen at 4% and Zemmour at 34% — the reverse of Hyp-2/3) is ~30.
+const swapTolerance = 8
+
+// reconcileBase returns segs[0] (the base hypothesis) with any grossly
+// inconsistent candidate value repaired from the median of that candidate across
+// the OTHER hypotheses. It only acts when a candidate appears in the base plus
+// ≥2 peers (so the median is meaningful) and the base deviates by more than
+// swapTolerance — bloc candidates that are legitimately present in only one or
+// two hypotheses, or that shift by a few points, are left untouched.
+func reconcileBase(segs []map[string]float64) map[string]float64 {
+	base := segs[0]
+	if len(segs) < 3 {
+		return base // need ≥2 peers for a trustworthy median
+	}
+	out := make(map[string]float64, len(base))
+	for k, v := range base {
+		out[k] = v
+	}
+	for cand, bv := range base {
+		var peers []float64
+		for _, s := range segs[1:] {
+			if pv, ok := s[cand]; ok {
+				peers = append(peers, pv)
+			}
+		}
+		if len(peers) < 2 {
+			continue
+		}
+		m := median(peers)
+		if bv-m > swapTolerance || m-bv > swapTolerance {
+			out[cand] = m
+		}
+	}
+	return out
+}
+
+func median(xs []float64) float64 {
+	s := append([]float64(nil), xs...)
+	for i := 0; i < len(s); i++ {
+		for j := i + 1; j < len(s); j++ {
+			if s[j] < s[i] {
+				s[i], s[j] = s[j], s[i]
+			}
+		}
+	}
+	n := len(s)
+	if n%2 == 1 {
+		return s[n/2]
+	}
+	return (s[n/2-1] + s[n/2]) / 2
 }
 
 // firstRoundSegments returns every valid full-field first-round hypothesis table
