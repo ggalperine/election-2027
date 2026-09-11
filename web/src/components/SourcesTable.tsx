@@ -3,6 +3,7 @@ import { getPolls, type Poll } from "../lib/api";
 import { useAsync } from "../lib/useAsync";
 import { pct, intFr, frDate, safeColor } from "../lib/format";
 import { AsyncState } from "./ui";
+import { Avatar } from "./Avatar";
 
 type SortKey = "pollster" | "sponsor" | "field_end" | "sample_size" | "lead";
 type Dir = "asc" | "desc";
@@ -109,10 +110,7 @@ export function SourcesTable({ cycle, round }: { cycle: string; round: number })
                   <td>
                     {top ? (
                       <span className="lead-tag">
-                        <span
-                          className="dot"
-                          style={{ background: leadColor(top.cand) }}
-                        />
+                        <Avatar name={top.cand} color={leadColor(top.cand)} size={20} />
                         {top.cand}{" "}
                         <span className="muted tnum">{pct(top.val)}%</span>
                       </span>

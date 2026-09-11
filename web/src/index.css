@@ -771,6 +771,9 @@ table.polls td.pollster {
   border-radius: 3px;
   flex: none;
 }
+.lead-tag .avatar-fallback {
+  font-size: 8.5px;
+}
 
 /* ============================================================= */
 /*  Latest polls                                                 */
