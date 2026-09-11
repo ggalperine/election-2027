@@ -1,0 +1,728 @@
+   La candidature de Marine Le Pen à
+l’élection présidentielle et le rapport de
+             force électoral
+                       Juillet 2026
+
+    Notice pour le site de la Commission des Sondages
+Méthodologie
+
+
+                                                                                                                   Note de lecture
+
+                                                                                                                   •   Les intentions de vote reflètent un
+                                                                                                                       équilibre des forces à un instant
+                                                                                                                       précis. Elles ne doivent en aucun cas
+                                                                                                                       être    interprétées    comme     des
+                                                                                                                       prédictions des résultats électoraux.
+
+                                                            Publics interrogés
+                                                                                                                   •   Les hypothèses d’intentions de vote
+ Etude                                                                                                                 ont été posées dans un ordre
+                                                                                                                       aléatoire.
+
+ en ligne                                                   Echantillon de 987 personnes inscrites sur les
+                                                            listes électorales, issu d’un échantillon de 1047
+                                                                                                                   •   L’enquête     a    fait  l’objet    d’un
+                                                                                                                       redressement sociodémographique
+                                                            répondants représentatif de la population                  (données        INSEE)      et      d’un
+ Réalisée du 8 au 10 juillet 2026
+                                                            française âgée de 18 ans et plus                           redressement politique sur la base
+ Les interviews ont été réalisées en ligne sur                                                                         de la reconstitution des votes
+                                                            La représentativité de l’échantillon est assurée par       suivants : présidentielle 1er tour 2022,
+ Panel.
+                                                            la méthode des quotas (sexe, âge, profession de            européennes 2024
+                                                            l’individu et région).                                 •   Les résultats de cette enquête sont
+ Questionnaire quantitatif autoadministré
+                                                                                                                       soumis     aux    marges       d’erreurs
+ Les panélistes ayant complété le                                                                                      inhérentes aux lois statistiques, elles
+ questionnaire obtiennent des points                                                                                   sont précisées dans la page qui suit.
+ cumulables pour une valeur inférieure à 1
+ euro.
+
+
+Enquête réalisée pour le journal L’Hémicycle et publiée le vendredi 10 juillet 2026
+Précisions techniques sur les marges d’erreur
+
+
+ La théorie statistique permet d’évaluer le degré d’incertitude associé à                               Les résultats de cette étude sont soumis aux marges d’erreur, comme
+ chaque résultat d’enquête. Cette incertitude se traduit par un intervalle de                           toute enquête quantitative réalisée par sondage.
+ confiance, défini autour de la valeur mesurée, dans lequel la valeur réelle a
+                                                                                                        Les marges d’erreurs données dans les sondages se basent sur
+ une probabilité donnée de se situer. Couramment désignée sous le terme
+                                                                                                        l’hypothèse d'un échantillonnage aléatoire.
+ de « marge d’erreur », cette incertitude dépend à la fois de la taille de
+ l’échantillon et du pourcentage obtenu, comme l’illustre le tableau ci-                                Si les marges d’erreurs réelles dans les sondages dont l'échantillonnage
+ dessous.                                                                                               est construit selon la méthode des quotas ne sont pas mesurables
+ Pour un échantillon de xxx individus, à 95% de confiance, les intervalles                              scientifiquement, on estime en pratique qu’elles sont proches de celles
+ de confiance selon les proportions observées sont :                                                    calculées dans le cas d'un échantillonnage aléatoire.
+
+                                                                                                        La marge d’erreur dépend de la taille de la population, ainsi que de la
+                                                                                                        proportion à laquelle on l’applique.
+
+
+
+                      Taille de    Si le pourcentage trouvé est…
+                   l’échantillon
+                                   5 ou 95 %      10 ou 90%        20 ou 80%   30 ou 70%   40 ou 60%   50%
+
+                      1047            1,3            1,8              2,4         2,8         3,0      3,0
+
+    Intention de       818            1,5            2,1              2,7         3,1         3,4      3,4
+        vote
+Données sociodémographiques
+
+                              BRUT   REDRESSE
+ GENRE
+ Homme                         49      47,8
+
+ Femme                         51      52,2
+
+ AGE
+ 18 - 24 ans                   8       10,3
+
+ 25 - 34 ans                   14      14,4
+
+ 35 - 49 ans                   26      23,5
+
+ 50 - 64 ans                   23      24,2
+
+ 65 ans et plus                29      27,7
+
+ PROFESSION DE L’INTERVIEWE
+ PCS+                          37     30,4
+
+ PCS -                         26     27,6
+
+ Inactifs                      37     42,0
+
+ REGION UDA 5
+ Région Parisienne             22     18,4
+
+ Ouest                         19     23,0
+
+ Nord Est                      14     21,8
+
+ Sud Ouest                     28     11,8
+
+ Sud Est                       17     25,1
+Données politiques
+Inscrits sur les listes électorales
+
+
+ Vote au 1er tour de l’élection présidentielle de 2022    Vote au 1er tour des élections législatives de 2024
+
+                                                                                                                BRUT   REDRESSE
+ Exprimés                               BRUT   REDRESSE   Exprimés
+
+ Nathalie Arthaud                                         Un(e) candidat(e) d’extrême gauche                    4,0       1,2
+                                        0,9      0,6
+ Philippe Poutou                                          Un(e) candidat(e) du Nouveau Front Populaire          19,1     28,3
+                                         1,4     0,8
+ Fabien Roussel                         2,8      2,3      Un(e) candidat(e) de la majorité présidentielle       17,4     21,8
+ Jean-Luc Mélenchon                     12,5     21,9
+ Anne Hidalgo                                             Un(e) candidat(e) Les Républicains                    12,7     7,3
+                                        3,3       1,8
+ Yannick Jadot                          5,5      4,6      Un(e) candidat(e) du Rassemblement national           38,6     33,4
+ Emmanuel Macron                        24,1     27,8
+                                                          Un(e) autre candidat(e)                                8,1     8,0
+ Jean Lassalle                          6,6       3,1
+ Valérie Pécresse                       4,3      4,8      Abstention, blanc, nul, sans réponse
+                                                                                                                33,0     33,0
+ Nicolas Dupont-Aignan                  2,6       2,1
+ Eric Zemmour                           5,7       7,1
+ Marine Le Pen                          30,1     23,1
+
+
+ Abstention, blanc, nul, sans réponse   25,2     25,2
+Résultats avant redressement
+
+  Suite à la décision de justice qui vient d'être rendue, Marine Le Pen a annoncé qu'elle serait la
+  candidate du Rassemblement national à l'élection présidentielle. Selon vous, est-ce …
+
+
+
+                                                        Je ne sais pas de quelle      Je ne sais pas s’il s’agit d’une
+  Plutôt une bonne chose   Plutôt une mauvaise chose    décision de justice il est     bonne ou d’une mauvaise
+                                                                question                          chose
+
+           34                         42                            3                               21
+
+
+
+
+  Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+  Rassemblement national à l’élection présidentielle ?
+
+
+
+
+                                                        Aucun des deux, j’aurais
+      Marine Le Pen             Jordan Bardella        préféré que ce soit un autre           Je ne sais pas
+                                                                candidat
+
+           24                         28                           34                               14
+   Suite à la décision de justice qui vient d'être rendue, Marine Le Pen a annoncé qu'elle serait
+   la candidate du Rassemblement national à l'élection présidentielle. Selon vous, est-ce …
+
+    En %
+
+                Plutôt une bonne chose                                              Plutôt une mauvaise chose
+                Je ne sais pas de quelle décision de justice il est question        Je ne sais pas s'il s'agit d'une bonne ou d'une mauvaise chose
+
+
+
+
+                                                                          20
+
+                                                                                             35
+                                                                    3
+
+
+
+
+                                                                               42
+
+
+
+
+Base: Ensemble (n=1047)
+ Suite à la décision de justice qui vient d’avoir lieu, la décision de Marine Le Pen d’être candidate
+ à l’élection présidentielle est…
+      En %
+
+
+
+                                                                                                             Je ne sais pas s’il s’agit d’une Je ne sais pas de quelle décision
+                                                       Plutôt une bonne chose   Plutôt une mauvaise chose
+                                                                                                            bonne ou d’une mauvaise chose         de justice il est question
+
+                  Total                                         35                         42                              20                                 3
+                  Sexe
+                  Un homme                                      33                         45                              19                                 3
+                  Une femme                                     35                         39                              22                                 4
+                  Âge
+                  18 à 24 ans                                   28                         50                              17                                 5
+                  25 à 34 ans                                   29                         41                              23                                 7
+                  35 à 49 ans                                   33                         45                              18                                 4
+                  50 à 64 ans                                   42                         34                              23                                 1
+                  65 ans et plus                                38                         42                              20                                 0
+                  Profession du chef de ménage
+                  ST PCS+                                       31                         46                              19                                 4
+                  - Commerçant, artisan, chef
+                                                                47                         43                              10                                 0
+                  d'entreprise
+                  - Cadre, profession intellectuelle            26                         48                              21                                 5
+                  - Profession intermédiaire                    28                         46                              22                                 4
+                  ST PCS-                                       37                         36                              23                                 4
+                  - Employé                                     29                         41                              24                                 6
+                  - Ouvrier                                     46                         31                              22                                 1
+                  ST Inactif, retraité                          38                         42                              19                                 1
+                  - Retraité PCS+                               35                         44                              20                                 1
+                  - Retraité PCS-                               44                         36                              20                                 0
+
+
+
+
+Base : ensemble
+ Suite à la décision de justice qui vient d’avoir lieu, la décision de Marine Le Pen d’être candidate
+ à l’élection présidentielle est…
+      En %
+
+                                                                                                            Je ne sais pas de quelle décision    Je ne sais pas s’il s’agit d’une
+                                                       Plutôt une bonne chose   Plutôt une mauvaise chose
+                                                                                                                de justice il est question      bonne ou d’une mauvaise chose
+
+
+                  Total                                         35                         42                              3                                   20
+                  Préférence partisane
+
+                  Grande gauche (EXG, PC, FI, PS,               17                         66                              1                                   16
+                  EELV)
+                  - La France Insoumise                         14                         71                              1                                   14
+                  - Parti socialiste                            15                         73                              0                                   12
+
+                                                                21                         46                              3                                   30
+                  - Les Ecologistes - EELV
+
+                  Ensemble (Renaissance, Modem,                 12                         71                              0                                   17
+                  Horizons)
+
+                  - Renaissance (ex La République               13                         69                              0                                   18
+                  En Marche)
+
+                  Droite (UDI, Les Républicains, RN,            66                         20                              2                                   12
+                  Reconquête)
+                  - Les Républicains                            44                         32                              3                                   21
+
+                                                                74                         16                              1                                   9
+                  - Le Rassemblement national
+                                                                19                         40                              7                                   34
+                  Sans préférence partisane
+                  Classement Gauche / Droite
+                  Extrême-gauche                                12                         72                               1                                  15
+                  Gauche                                        12                         67                               5                                  16
+                  Centre                                        21                         50                               3                                  26
+                  Droite                                        42                         39                               2                                  17
+                  Extrême-droite                                66                         18                               2                                  14
+                  Sans opinion                                  23                         25                              10                                  42
+
+
+
+
+Base : ensemble
+ Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+ Rassemblement National à l’élection présidentielle ?
+      En %
+
+
+                                                                                                         Je ne sais pas de quelle     Je ne sais pas s’il s’agit
+                                                 Plutôt une bonne chose      Plutôt une mauvaise chose   décision de justice il est   d’une bonne ou d’une
+                                                                                                                 question                mauvaise chose
+
+
+                  Total                                     35                          42                           3                           20
+                  Vote au 1er tour des élections législatives en juin 2024
+                  Un(e) candidat(e) du                      6                           78                           1                           15
+                  Nouveau Front Populaire
+                  Un(e) candidat(e) de la                  24                           60                           0                           16
+                  majorité présidentielle
+                  Un(e) candidat(e) Les                    40                           35                           2                           23
+                  Républicains
+
+                  Un(e) candidat(e) du                      72                          14                           2                           12
+                  Rassemblement national
+                  Abstention, blanc, nul, sans
+                                                            22                          41                           6                           31
+                  réponse
+                  Vote au 1er tour de l'élection présidentielle 2022
+                  Jean-Luc Mélenchon                       15                           66                           2                           17
+                  Emmanuel Macron                          21                           61                           3                           15
+                  Marine Le Pen                            71                           14                           1                           14
+                  Abstention, blanc, nul, sans
+                                                           19                           42                           7                           32
+                  réponse
+                  Vote au 2d tour de l'élection présidentielle 2022
+                  Emmanuel Macron                          19                           61                           3                           17
+                  Marine Le Pen                            70                           14                           1                           15
+                  Abstention, blanc, nul, sans
+                                                           18                           49                           5                           28
+                  réponse
+
+
+
+
+Base : ensemble
+ Suite à la décision de justice qui vient d’avoir lieu, la décision de Marine Le Pen d’être candidate
+ à l’élection présidentielle est…
+      En %
+
+
+
+                                                                                                      Je ne sais pas s’il s’agit d’une   Je ne sais pas de quelle
+                                                 Plutôt une bonne chose   Plutôt une mauvaise chose    bonne ou d’une mauvaise           décision de justice il est
+                                                                                                                  chose                          question
+
+
+
+
+                  Total                                   35                         42                             20                               3
+
+                  Intention de vote
+
+                  Fabien Roussel                          10                         85                              5                               0
+
+                                                          13                         77                              8                               2
+                  Jean-Luc Mélenchon
+
+                                                          10                         70                             20                               0
+                  Raphaël Glucksmann
+
+                  Edouard Philippe                        18                         57                             23                               2
+
+                  Gabriel Attal                           16                         75                              9                               0
+
+                  Bruno Retailleau                        33                         41                             26                               0
+
+                  Marine Le Pen                           74                         10                             15                               1
+
+                  Eric Zemmour                            79                         15                              6                               0
+
+                  Abstention, blanc, nul, sans            13                         40                             36                              11
+                  réponse
+
+
+
+
+Base : ensemble
+   Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+   Rassemblement national à l’élection présidentielle ?
+
+    En %
+
+                                                 Ensemble         Sympathisants RN
+
+                             Jordan Bardella                30
+
+
+
+
+                               Marine Le Pen           24
+
+
+
+                              Aucun des deux,
+                                                             32
+j’aurais préféré que ce soit un autre candidat
+
+
+
+                                Je ne sais pas    14
+
+
+
+
+Base: Ensemble
+ Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+ Rassemblement National à l’élection présidentielle ?
+      En %
+
+
+
+
+                                                                             Aucun des deux, j’aurais préféré que
+                                           Marine Le Pen   Jordan Bardella                                          Je ne sais pas
+                                                                                 ce soit un autre candidat
+
+      Total                                     24               30                          32                          14
+      Sexe
+      Un homme                                  25               31                          31                          13
+      Une femme                                 25               28                          32                          15
+      Âge
+      18 à 24 ans                               18               35                          34                          13
+      25 à 34 ans                               19               33                          31                          17
+      35 à 49 ans                               23               32                          32                          13
+      50 à 64 ans                               30               33                          23                          14
+      65 ans et plus                            30               21                          36                          13
+      Profession du chef de ménage
+      ST PCS+                                   26               26                          32                          16
+      - Commerçant, artisan, chef
+                                                43               27                          20                          10
+      d'entreprise
+      - Cadre, profession intellectuelle        27               19                          33                          21
+      - Profession intermédiaire                20               30                          36                          14
+      ST PCS-                                   18               44                          25                          13
+      - Employé                                 16               37                          34                          13
+      - Ouvrier                                 22               50                          16                          12
+      ST Inactif, retraité                      28               21                          37                          14
+      - Retraité PCS+                           30               18                          39                          13
+      - Retraité PCS-                           36               24                          29                          11
+
+
+
+
+Base : ensemble
+ Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+ Rassemblement National à l’élection présidentielle ?
+      En %
+
+                                                                                         Aucun des deux, j’aurais préféré
+                                                       Marine Le Pen   Jordan Bardella                                      Je ne sais pas
+                                                                                          que ce soit un autre candidat
+
+
+                  Total                                     24               30                        32                        14
+                  Préférence partisane
+                  Grande gauche (EXG, PC, FI, PS,           17               19                        51                        13
+                  EELV)
+                  - La France Insoumise                     18               16                        55                        11
+                  - Parti socialiste                        17               13                        55                        15
+
+                  - Les Ecologistes - EELV                  18               19                        45                        18
+
+                  Ensemble (Renaissance,                    11               17                        63                         9
+                  Modem, Horizons)
+                  - Renaissance (ex La République           9                21                        63                         7
+                  En Marche)
+                  Droite (UDI, Les Républicains, RN,        40               51                         5                         4
+                  Reconquête)
+                  - Les Républicains                        40               44                        10                         6
+
+                  - Le Rassemblement national               40               55                         2                         3
+
+                  Sans préférence partisane                 17               18                        38                        27
+                  Classement Gauche / Droite
+                  Extrême-gauche                            11               16                        59                        14
+                  Gauche                                    16                8                        59                        17
+                  Centre                                    17               22                        41                        20
+                  Droite                                    30               41                        21                         8
+                  Extrême-droite                            41               48                         6                         5
+                  Sans opinion                              15               22                        29                        34
+
+
+
+
+Base : ensemble
+ Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+ Rassemblement National à l’élection présidentielle ?
+      En %
+
+                                                                                                Aucun des deux, j’aurais
+                                                          Marine Le Pen      Jordan Bardella   préféré que ce soit un autre   Je ne sais pas
+                                                                                                        candidat
+
+
+                  Total                                         24                 30                      32                      14
+                  Vote au 1er tour des élections législatives en juin 2024
+                  Un(e) candidat(e) du                          11                 11                      56                      22
+                  Nouveau Front Populaire
+                  Un(e) candidat(e) de la                       16                 24                      50                      10
+                  majorité présidentielle
+                  Un(e) candidat(e) Les                         25                 55                      14                       6
+                  Républicains
+
+                  Un(e) candidat(e) du                           42                49                       3                       6
+                  Rassemblement national
+                  Abstention, blanc, nul, sans
+                                                                 19                20                      39                      22
+                  réponse
+                  Vote au 1er tour de l'élection présidentielle 2022
+                  Jean-Luc Mélenchon                            10                 24                      52                      14
+                  Emmanuel Macron                               16                 20                      52                      12
+                  Marine Le Pen                                 41                 51                       2                      6
+                  Abstention, blanc, nul, sans
+                                                                17                 19                      38                      26
+                  réponse
+                  Vote au 2d tour de l'élection présidentielle 2022
+                  Emmanuel Macron                               16                 22                      48                      14
+                  Marine Le Pen                                 41                 51                      3                        5
+                  Abstention, blanc, nul, sans
+                                                                17                 18                      42                      23
+                  réponse
+
+
+
+
+Base : ensemble
+ Entre Marine Le Pen et Jordan Bardella, qui auriez-vous préféré voir représenter le
+ Rassemblement National à l’élection présidentielle ?
+      En %
+
+
+
+                                                                                    Aucun des deux, j’aurais
+                                                 Marine Le Pen   Jordan Bardella   préféré que ce soit un autre   Je ne sais pas
+                                                                                            candidat
+
+
+
+
+                                                      24               30                      32                      14
+                  Total
+                  Intention de vote
+
+                                                      14               6                       65                      15
+                  Fabien Roussel
+                                                      11               14                      61                      14
+                  Jean-Luc Mélenchon
+                                                      14               12                      55                      19
+                  Raphaël Glucksmann
+                                                      14               28                      45                      13
+                  Edouard Philippe
+                                                      14               27                      55                       4
+                  Gabriel Attal
+                                                      31               42                      16                      11
+                  Bruno Retailleau
+                                                      45               48                       1                       6
+                  Marine Le Pen
+                                                      45               34                      18                       3
+                  Eric Zemmour
+                  Abstention, blanc, nul, sans        13               18                      41                      28
+                  réponse
+
+
+
+
+Base : ensemble
+L’intention de vote au 1er tour de l’élection présidentielle
+
+Si le premier tour de l'élection présidentielle avait lieu dimanche prochain et que vous aviez le choix entre les candidats suivants pour qui y aurait-il le
+plus de chances que vous votiez ?
+
+
+Base : inscrits sur les listes électorales n=987
+En % des votes exprimés
+
+
+                                                                                                                           37
+
+
+
+
+                                                                                      17
+                                              15
+                                                       11
+                                                                     8                                    7
+                                                                                                                                            3
+                     2
+           Fabien ROUSSEL               Jean-Luc     Raphaël    Gabriel ATTAL   Edouard PHILIPPE   Bruno RETAILLEAU   Marine LE PEN   Eric ZEMMOUR
+                                       MELENCHON   GLUCKSMANN
+
+
+
+
+N’ont pas exprimé d’intention de vote : 23 %
+ L’intention de vote au 1er tour de l’élection présidentielle
+  En %
+
+
+
+                                                     Fabien     Jean-Luc     Raphaël    Edouard                      Bruno
+                                                                                                   Gabriel Attal                Marine Le Pen Eric Zemmour
+                                                     Roussel   Mélenchon   Glucksmann   Philippe                   Retailleau
+
+                Total                                  2          15           11         17            8              7             37            3
+                Sexe
+                Un homme                               2          15           12         16            7              9             34            5
+                Une femme                              2          15           10         18            9              5             40            1
+                Âge
+                18 à 24 ans                            1          38            2         10            15            2              32            0
+                25 à 34 ans                            1          25           11         18             9            4              32            0
+                35 à 49 ans                            2          11           11         19             7            7              38            5
+                50 à 64 ans                            1          9            10         18             5            5              49            3
+                65 ans et plus                         5          6            15         17             7            11             34            5
+                Profession du chef de ménage
+                ST PCS+                                1          19           12         15            11             7             33            2
+                - Commerçant, artisan, chef
+                                                       4          22           14          6            13             6             35            0
+                d'entreprise
+                - Cadre, profession intellectuelle     2          14           17         20            13             5             25            4
+                - Profession intermédiaire             1          21           8          15             7             9             39            0
+                ST PCS-                                0          18           7          18             5             4             46            2
+                - Employé                              0          17           11         18             7             2             42            3
+                - Ouvrier                              1          18           3          19             2             6             50            1
+                ST Inactif, retraité                   2          9            13         18             8            10             35            5
+                - Retraité PCS+                        2          7            14         21             8            12             30            6
+                - Retraité PCS-                        7          3            14         9              3             9             52            3
+
+
+
+
+Base : ont exprimé une intention de vote (n=818)
+ L’intention de vote au 1er tour de l’élection présidentielle
+  En %
+
+                                         Fabien Roussel   Jean-Luc Mélenchon Raphaël Glucksmann   Edouard Philippe   Gabriel Attal   Bruno Retailleau   Marine Le Pen   Eric Zemmour
+
+               Total                           2                  15                11                  17                8                 7                37              3
+               Préférence partisane
+
+               Grande gauche                   5                  45                30                   9                5                 1                5               0
+               (EXG, PC, FI, PS, EELV)
+               - La France Insoumise           0                  93                 0                   0                3                 0                4               0
+
+               - Parti socialiste              4                  11                62                  10                7                 1                5               0
+               - Les Ecologistes -             3                  17                48                  16                7                 0                9               0
+               EELV
+               Ensemble
+               (Renaissance,                   0                  0                  5                  68                24                2                1               0
+               Modem, Horizons)
+               - Renaissance (ex La
+               République En                   0                  0                  6                  56                35                3                0               0
+               Marche)
+               Droite (UDI, Les
+               Républicains, RN,               0                  2                  0                   6                3                12                71              6
+               Reconquête)
+               - Les Républicains              0                  4                  0                  23                9                42                21              1
+               - Le Rassemblement              1                  1                  0                   0                0                 4                94              0
+               national
+               Sans préférence                 3                  9                 10                  23                13                7                32              3
+               partisane
+               Classement Gauche / Droite
+               Extrême-gauche                  8                  66                19                   0                0                 1                6               0
+               Gauche                          5                  23                43                  12                10                2                 5              0
+               Centre                          2                  13                 9                  28                23                3                21              1
+               Droite                          0                   4                 3                  41                 8               11                32              2
+               Extrême-droite                  0                   4                 1                  4                  1               11                73              7
+               Sans opinion                    0                   6                 2                  16                 5               11                55              5
+
+
+
+
+Base : ont exprimé une intention de vote (n=818)
+ L’intention de vote au 1er tour de l’élection présidentielle
+  En %
+                                                               Jean-Luc        Raphaël
+                                        Fabien Roussel                                    Edouard Philippe   Gabriel Attal   Bruno Retailleau   Marine Le Pen   Eric Zemmour
+                                                              Mélenchon      Glucksmann
+
+                  Total                        2                    15           11             17                8                 7                37              3
+                  Vote au 1er tour des élections législatives en juin 2024
+                  Un(e) candidat(e)
+                  du Nouveau Front             7                    46           36              9                0                 0                2               0
+                  Populaire
+                  Un(e) candidat(e)
+                  de la majorité               1                     4           14             46                26                5                4               0
+                  présidentielle
+
+                  Un(e) candidat(e)            0                   11            4              19                6                35                22              3
+                  Les Républicains
+                  Un(e) candidat(e)
+                  du Rassemblement              1                   1            0               3                0                 3                87              5
+                  national
+                  Abstention, blanc,
+                                                2                  15            6              23                14                6                33              1
+                  nul, sans réponse
+                  Vote au 1er tour de l'élection présidentielle 2022
+                  Jean-Luc
+                                                3                  69            6              12                3                 1                6               0
+                  Mélenchon
+                  Emmanuel Macron               1                   7            11             41                25                7                 6              2
+                  Marine Le Pen                 0                   0            0               1                 1                3                93              2
+                  Abstention, blanc,
+                                                3                  22            5              22                11                6                31              0
+                  nul, sans réponse
+                  Vote au 2d tour de l'élection présidentielle 2022
+                  Emmanuel Macron              2                   14            21             34                16                7                 5              1
+                  Marine Le Pen                2                    4            2               1                 0                5                81              5
+                  Abstention, blanc,
+                                               6                   33            8              13                6                10                22              2
+                  nul, sans réponse
+
+
+
+
+Base : ont exprimé une intention de vote (n=818)
+Précisions techniques sur les marges d’erreur
+
+
+ La théorie statistique permet d’évaluer le degré d’incertitude associé à                               Les résultats de cette étude sont soumis aux marges d’erreur, comme
+ chaque résultat d’enquête. Cette incertitude se traduit par un intervalle de                           toute enquête quantitative réalisée par sondage.
+ confiance, défini autour de la valeur mesurée, dans lequel la valeur réelle a
+                                                                                                        Les marges d’erreurs données dans les sondages se basent sur
+ une probabilité donnée de se situer. Couramment désignée sous le terme
+                                                                                                        l’hypothèse d'un échantillonnage aléatoire.
+ de « marge d’erreur », cette incertitude dépend à la fois de la taille de
+ l’échantillon et du pourcentage obtenu, comme l’illustre le tableau ci-                                Si les marges d’erreurs réelles dans les sondages dont l'échantillonnage
+ dessous.                                                                                               est construit selon la méthode des quotas ne sont pas mesurables
+ Pour un échantillon de 938 individus, à 95% de confiance, les intervalles                              scientifiquement, on estime en pratique qu’elles sont proches de celles
+ de confiance selon les proportions observées sont :                                                    calculées dans le cas d'un échantillonnage aléatoire.
+
+                                                                                                        La marge d’erreur dépend de la taille de la population, ainsi que de la
+                                                                                                        proportion à laquelle on l’applique.
+                      Taille de    Si le pourcentage trouvé est…
+                   l’échantillon
+                                     5 ou      10 ou 90%      20 ou 80%   30 ou 70%   40 ou 60%   50%
+                                     95 %
+                      1047            1,4          1,9             2,5       2,9         3,1      3,2
+
+    Intention de       818            1,6          2,3             3,0       3,5         3,7      3,8
+        vote
+                                    Merci !
+
+
+Laure SALVAING
+Directrice générale Verian France
+
+laure.salvaing@veriangroup.com
+06 28 76 49 47
+

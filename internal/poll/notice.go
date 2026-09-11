@@ -99,7 +99,13 @@ func parseFirstHypothesis(text string) (map[string]float64, bool) {
 	// first-round intention wherever it sits (a 2022 recall has <10 in-map names;
 	// favourability tables don't sum to 100; Elabe's 6-candidate configs are too
 	// small) — so we accept it even without a nearby marker.
-	return globalFullFieldScan(text)
+	if res, ok := globalFullFieldScan(text); ok {
+		return res, true
+	}
+	// Last resort: a TRANSPOSED table (candidates as column headers, one % row
+	// below) — Verian prints its first round this way, so the per-line
+	// candidate→% scans above find nothing. See parseTransposedFirstRound.
+	return parseTransposedFirstRound(text)
 }
 
 // swapTolerance is the point gap above which a base-hypothesis candidate value
@@ -156,6 +162,129 @@ func median(xs []float64) float64 {
 		return s[n/2]
 	}
 	return (s[n/2-1] + s[n/2]) / 2
+}
+
+// bareNumRe matches a bare percentage cell in a transposed value row: 1–2 digits
+// with an optional decimal, NO "%" sign (Verian prints "37" not "37%"). Used to
+// read the "Total" row of a transposed table by column.
+var bareNumRe = regexp.MustCompile(`\d{1,2}(?:[.,]\d)?`)
+
+// colVal pairs a value with the character column it sits at, so a transposed
+// table's header candidates and its value row can be aligned by position.
+type colVal struct {
+	col int
+	val float64
+}
+
+// parseTransposedFirstRound reads a first-round table laid out TRANSPOSED —
+// candidate names across a header line, a single "% row" (the ensemble/"Total"
+// row) beneath — which the per-line candidate→% scans cannot see. Verian's
+// notices are built this way. We find a header line carrying ≥8 known candidates,
+// then the nearest "Total"/all-numeric row with a matching count of cells, and
+// zip the two by column order. The usual validation gate still applies.
+func parseTransposedFirstRound(text string) (map[string]float64, bool) {
+	lines := strings.Split(text, "\n")
+	for i, line := range lines {
+		hdr := candidateColumns(line)
+		if len(hdr) < 8 {
+			continue
+		}
+		// Scan the next few lines for the ensemble value row: prefer one labelled
+		// "Total", else the first all-numeric row with one cell per candidate.
+		for j := i + 1; j < len(lines) && j <= i+8; j++ {
+			vals := numberColumns(lines[j])
+			if len(vals) != len(hdr) {
+				continue
+			}
+			isTotal := strings.Contains(strings.ToLower(lines[j]), "total")
+			// Zip header↔values by column order (robust to wrapped names).
+			sortByCol(hdr)
+			sortByCol(vals)
+			res := map[string]float64{}
+			for k := range hdr {
+				res[candidate2027[hdr[k].name]] = vals[k].val
+			}
+			if ok := validateFirstRound(res); ok {
+				return res, true
+			}
+			if isTotal {
+				break // the labelled ensemble row didn't validate — don't drift into subgroups
+			}
+		}
+	}
+	return nil, false
+}
+
+// namedCol pairs a candidate surface form with the column it starts at.
+type namedCol struct {
+	col  int
+	name string // surface form (key into candidate2027)
+}
+
+// candidateColumns returns each DISTINCT known candidate found on a line with the
+// column it starts at (first surface form wins per canonical name), so a header
+// row can be aligned against its value row.
+func candidateColumns(line string) []namedCol {
+	ll := strings.ToLower(line)
+	seenCanon := map[string]bool{}
+	var out []namedCol
+	for _, form := range candidateForms {
+		idx := strings.Index(ll, form)
+		if idx < 0 {
+			continue
+		}
+		canon := candidate2027[form]
+		if seenCanon[canon] {
+			continue
+		}
+		seenCanon[canon] = true
+		out = append(out, namedCol{col: idx, name: form})
+	}
+	return out
+}
+
+// numberColumns returns every bare number on a line with its column.
+func numberColumns(line string) []colVal {
+	var out []colVal
+	for _, loc := range bareNumRe.FindAllStringIndex(line, -1) {
+		if f, err := strconv.ParseFloat(strings.Replace(line[loc[0]:loc[1]], ",", ".", 1), 64); err == nil {
+			out = append(out, colVal{col: loc[0], val: f})
+		}
+	}
+	return out
+}
+
+func sortByCol[T namedCol | colVal](xs []T) {
+	for i := 0; i < len(xs); i++ {
+		for k := i + 1; k < len(xs); k++ {
+			if colOf(xs[k]) < colOf(xs[i]) {
+				xs[i], xs[k] = xs[k], xs[i]
+			}
+		}
+	}
+}
+
+func colOf[T namedCol | colVal](x T) int {
+	switch v := any(x).(type) {
+	case namedCol:
+		return v.col
+	case colVal:
+		return v.col
+	}
+	return 0
+}
+
+// validateFirstRound is the shared gate: a full-field first round has ≥8 known
+// candidates and sums to ~100.
+func validateFirstRound(res map[string]float64) bool {
+	if len(res) < 8 {
+		return false
+	}
+	var sum float64
+	for _, v := range res {
+		sum += v
+	}
+	return sum >= 95 && sum <= 105
 }
 
 // firstRoundSegments returns every valid full-field first-round hypothesis table
