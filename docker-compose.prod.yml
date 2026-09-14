@@ -28,6 +28,10 @@ services:
 
   scheduler:
     restart: always
+    # Check the Commission des sondages registry every 3h (not just 06:00/18:00)
+    # so a notice filed during the day is picked up the same day.
+    environment:
+      CRON_SPEC: "0 */3 * * *"
 
   web:
     restart: always
