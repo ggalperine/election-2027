@@ -176,24 +176,34 @@ func ForecastAll(rows []models.RawResult, windowDays int, tau float64, horizonDa
 	return out
 }
 
-// holtForecast: double exponential smoothing (level + trend).
+// holtForecast: double exponential smoothing with a DAMPED trend (Gardner).
+// Plain Holt extrapolates the last trend linearly forever, which blows up on the
+// short, sparse series we get here: a candidate who has just entered the field
+// (e.g. Hollande: 2.4% → 7% then flat) shows a one-off level jump that Holt reads
+// as momentum and projects to ~45%. The damping factor phi<1 shrinks each future
+// step's trend contribution (phi + phi² + … → phi/(1-phi)), so the projection
+// levels off instead of running away, while a genuine sustained trend still bends
+// the curve.
 func holtForecast(cand string, pts []seriesPt, horizonDays, stepDays int) []models.ForecastPoint {
 	col := pts[len(pts)-1].col
-	const alpha, beta = 0.5, 0.3
+	const alpha, beta, phi = 0.5, 0.3, 0.8
 	level := pts[0].v
 	trend := pts[1].v - pts[0].v
 	var resid []float64
 	for i := 1; i < len(pts); i++ {
-		resid = append(resid, pts[i].v-(level+trend))
-		newLevel := alpha*pts[i].v + (1-alpha)*(level+trend)
-		trend = beta*(newLevel-level) + (1-beta)*trend
+		resid = append(resid, pts[i].v-(level+phi*trend))
+		newLevel := alpha*pts[i].v + (1-alpha)*(level+phi*trend)
+		trend = beta*(newLevel-level) + (1-beta)*phi*trend
 		level = newLevel
 	}
 	sigma := std(resid)
 	last := pts[len(pts)-1].t
 	out := historyPoints("holt", cand, col, pts)
+	dampSum, pk := 0.0, 1.0 // dampSum = Σ phi^i for i=1..k
 	for k := 1; k <= horizonDays/stepDays; k++ {
-		f := level + float64(k)*trend
+		pk *= phi
+		dampSum += pk
+		f := level + dampSum*trend
 		band := Z95 * sigma * math.Sqrt(float64(k))
 		out = append(out, projPoint("holt", cand, col, last.AddDate(0, 0, k*stepDays), f, band))
 	}
