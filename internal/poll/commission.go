@@ -190,10 +190,12 @@ var (
 		{"Elabe", []string{"ELABE"}},
 		{"Odoxa", []string{"ODOXA"}},
 		{"OpinionWay", []string{"OPINIONWAY", "OPINION WAY"}},
+		// Toluna must precede Harris Interactive: the registry files Toluna as
+		// "TOLUNA HARRIS INTERACTIVE", which would otherwise match HARRIS first.
+		{"Toluna Harris Interactive", []string{"TOLUNA"}},
 		{"Harris Interactive", []string{"HARRIS INTERACTIVE", "HARRIS"}},
 		{"Verian", []string{"VERIAN", "KANTAR"}},
 		{"YouGov", []string{"YOUGOV"}},
-		{"Toluna Harris Interactive", []string{"TOLUNA"}},
 	}
 )
 

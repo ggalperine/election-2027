@@ -72,7 +72,7 @@ func (s *Store) SavePoll(ctx context.Context, p models.RawPoll) error {
 	err = tx.QueryRow(ctx, `
 		INSERT INTO polls(external_id, cycle, pollster_id, sponsor, field_start, field_end, sample_size, round, source_url)
 		VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)
-		ON CONFLICT(external_id) DO UPDATE SET sample_size=EXCLUDED.sample_size, sponsor=EXCLUDED.sponsor
+		ON CONFLICT(external_id) DO UPDATE SET pollster_id=EXCLUDED.pollster_id, sample_size=EXCLUDED.sample_size, sponsor=EXCLUDED.sponsor
 		RETURNING id`,
 		p.ExternalID, cycle, pollsterID, p.Sponsor, p.FieldStart, p.FieldEnd, p.SampleSize, p.Round, p.SourceURL).Scan(&pollID)
 	if err != nil {
@@ -177,7 +177,7 @@ func (s *Store) RawResults(ctx context.Context, cycle string, round int) ([]mode
 // run-off model in the Monte Carlo forecast.
 func (s *Store) Duels(ctx context.Context, cycle string) ([]models.DuelObs, error) {
 	rows, err := s.pool.Query(ctx, `
-		SELECT p.id, p.field_end::date, ps.name, c.name, pr.pct, COALESCE(p.sample_size,0)
+		SELECT p.id, p.field_end::date, ps.name, c.name, c.color, pr.pct, COALESCE(p.sample_size,0)
 		FROM polls p
 		JOIN poll_results pr ON pr.poll_id = p.id
 		JOIN candidates c ON c.id = pr.candidate_id
@@ -192,6 +192,7 @@ func (s *Store) Duels(ctx context.Context, cycle string) ([]models.DuelObs, erro
 		date     time.Time
 		pollster string
 		cand     string
+		color    string
 		pct      float64
 		sample   int
 	}
@@ -200,7 +201,7 @@ func (s *Store) Duels(ctx context.Context, cycle string) ([]models.DuelObs, erro
 	for rows.Next() {
 		var id int64
 		var e entry
-		if err := rows.Scan(&id, &e.date, &e.pollster, &e.cand, &e.pct, &e.sample); err != nil {
+		if err := rows.Scan(&id, &e.date, &e.pollster, &e.cand, &e.color, &e.pct, &e.sample); err != nil {
 			return nil, err
 		}
 		if _, ok := byPoll[id]; !ok {
@@ -219,8 +220,8 @@ func (s *Store) Duels(ctx context.Context, cycle string) ([]models.DuelObs, erro
 		}
 		out = append(out, models.DuelObs{
 			Date: es[0].date, Pollster: es[0].pollster, SampleSize: es[0].sample,
-			A: es[0].cand, PctA: es[0].pct,
-			B: es[1].cand, PctB: es[1].pct,
+			A: es[0].cand, ColorA: es[0].color, PctA: es[0].pct,
+			B: es[1].cand, ColorB: es[1].color, PctB: es[1].pct,
 		})
 	}
 	return out, nil
