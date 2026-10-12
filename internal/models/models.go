@@ -48,8 +48,10 @@ type DuelObs struct {
 	Date       time.Time
 	Pollster   string
 	A          string
+	ColorA     string
 	PctA       float64
 	B          string
+	ColorB     string
 	PctB       float64
 	SampleSize int
 }
